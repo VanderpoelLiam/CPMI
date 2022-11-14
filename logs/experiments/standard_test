@@ -1,0 +1,128 @@
+Sender: LSF System <lsfadmin@eu-g3-020>
+Subject: Job 221598536: <standard_no_500_0.0000E+00_0.0000E+00> in cluster <euler> Done
+
+Job <standard_no_500_0.0000E+00_0.0000E+00> was submitted from host <eu-login-28> by user <euler_username> in cluster <euler> at Tue Jun 14 18:05:50 2022
+Job was executed on host(s) <4*eu-g3-020>, in queue <gpu.4h>, as user <euler_username> in cluster <euler> at Tue Jun 14 18:06:02 2022
+</cluster/home/euler_username> was used as the home directory.
+</cluster/work/cotterell/liam/master-thesis> was used as the working directory.
+Started at Tue Jun 14 18:06:02 2022
+Terminated at Tue Jun 14 18:37:39 2022
+Results reported at Tue Jun 14 18:37:39 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+src/generate.sh standard xsum-summarizer-no-500 0.0 0.0
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1641.88 sec.
+    Max Memory :                                 5601 MB
+    Average Memory :                             3696.74 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               2591.00 MB
+    Max Swap :                                   2 MB
+    Max Processes :                              5
+    Max Threads :                                14
+    Run time :                                   1897 sec.
+    Turnaround time :                            1909 sec.
+
+The output (if any) follows:
+
+2022-06-14 18:08:59 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-06-14 18:09:07 | INFO | fairseq_cli.generate | {'_name': None, 'common': {'_name': None, 'no_progress_bar': True, 'log_interval': 100, 'log_format': 'none', 'log_file': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': False, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 128, 'fp16_scale_window': None, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': None, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': 'checkpoints/summarization_model/standard/checkpoint_best.pt', 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None, 'print_tokens': False}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': False, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': False, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': None, 'batch_size': 4, 'required_batch_size_multiple': 8, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': None, 'batch_size_valid': 4, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 0, 'max_update': 0, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [0.25], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': 'checkpoint_last.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': False, 'reset_lr_scheduler': False, 'reset_meters': False, 'reset_optimizer': False, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': False, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'loss', 'maximize_best_checkpoint_metric': False, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'_name': None, 'beam': 5, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': 'checkpoints/language_model/standard/checkpoint_best.pt', 'ent_threshold': 0.0, 'lm_weight': -0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'wav2vec2', 'extractor_mode': 'default', 'encoder_layers': 12, 'encoder_embed_dim': 768, 'encoder_ffn_embed_dim': 3072, 'encoder_attention_heads': 12, 'activation_fn': 'gelu', 'layer_type': 'transformer', 'dropout': 0.1, 'attention_dropout': 0.1, 'activation_dropout': 0.0, 'encoder_layerdrop': 0.0, 'dropout_input': 0.0, 'dropout_features': 0.0, 'final_dim': 0, 'layer_norm_first': False, 'conv_feature_layers': '[(512, 10, 5)] + [(512, 3, 2)] * 4 + [(512,2,2)] + [(512,2,2)]', 'conv_bias': False, 'logit_temp': 0.1, 'quantize_targets': False, 'quantize_input': False, 'same_quantizer': False, 'target_glu': False, 'feature_grad_mult': 1.0, 'quantizer_depth': 1, 'quantizer_factor': 3, 'latent_vars': 320, 'latent_groups': 2, 'latent_dim': 0, 'mask_length': 10, 'mask_prob': 0.65, 'mask_selection': 'static', 'mask_other': 0.0, 'no_mask_overlap': False, 'mask_min_space': 1, 'require_same_masks': True, 'mask_dropout': 0.0, 'mask_channel_length': 10, 'mask_channel_prob': 0.0, 'mask_channel_before': False, 'mask_channel_selection': 'static', 'mask_channel_other': 0.0, 'no_mask_channel_overlap': False, 'mask_channel_min_space': 1, 'num_negatives': 100, 'negatives_from_everywhere': False, 'cross_sample_negatives': 0, 'codebook_negatives': 0, 'conv_pos': 128, 'conv_pos_groups': 16, 'pos_conv_depth': 1, 'latent_temp': [2.0, 0.5, 0.999995], 'max_positions': 100000, 'checkpoint_activations': False, 'required_seq_len_multiple': 1, 'crop_seq_to_multiple': 1, 'depthwise_conv_kernel_size': 31, 'attn_type': '', 'pos_enc_type': 'abs', 'fp16': False}, 'task': {'_name': 'translation', 'data': 'data/xsum-summarizer-no-500', 'source_lang': None, 'target_lang': None, 'load_alignments': False, 'left_pad_source': True, 'left_pad_target': False, 'max_source_positions': 1024, 'max_target_positions': 1024, 'upsample_primary': -1, 'truncate_source': True, 'num_batch_buckets': 0, 'train_subset': 'train', 'dataset_impl': None, 'required_seq_len_multiple': 1, 'eval_bleu': False, 'eval_bleu_args': '{}', 'eval_bleu_detok': 'space', 'eval_bleu_detok_args': '{}', 'eval_tokenized_bleu': False, 'eval_bleu_remove_bpe': None, 'eval_bleu_print_samples': False}, 'criterion': {'_name': 'cross_entropy', 'sentence_avg': True}, 'optimizer': None, 'lr_scheduler': {'_name': 'fixed', 'force_anneal': None, 'lr_shrink': 0.1, 'warmup_updates': 0, 'lr': [0.25]}, 'scoring': {'_name': 'bleu', 'pad': 1, 'eos': 2, 'unk': 3}, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'simul_type': None}
+2022-06-14 18:09:07 | INFO | fairseq.tasks.translation | [source] dictionary: 49992 types
+2022-06-14 18:09:07 | INFO | fairseq.tasks.translation | [target] dictionary: 49992 types
+2022-06-14 18:09:07 | INFO | fairseq_cli.generate | loading model(s) from checkpoints/summarization_model/standard/checkpoint_best.pt
+2022-06-14 18:09:18 | INFO | fairseq.data.data_utils | loaded 10,834 examples from: data/xsum-summarizer-no-500/test.source-target.source
+2022-06-14 18:09:18 | INFO | fairseq.data.data_utils | loaded 10,834 examples from: data/xsum-summarizer-no-500/test.source-target.target
+2022-06-14 18:09:18 | INFO | fairseq.tasks.translation | data/xsum-summarizer-no-500 test source-target 10834 examples
+2022-06-14 18:09:20 | INFO | fairseq.tasks.language_modeling | dictionary: 49992 types
+S-8715	Friends , collaborators and fans have been paying tribute on their social media accounts .
+T-8715	James Horner , the Hollywood composer who wrote the Oscar-winning score for Titanic , has died in a California plane crash aged 61 .
+H-8715	-1.0822639465332031	Tributes have been paid to fans who have been paying tribute to the victims of the Manchester attack .
+P-8715	-13.4288 -13.1343 -11.4433 -8.1337 -14.0387 -9.0811 -7.6412 -11.3504 -13.6664 -10.5541 -12.1562 -10.7089 -7.3257 -14.3488 -10.6316 -10.9356 -10.3480 -13.1039 -13.3188 -0.1098
+RANK-8715	18004 1110 210 15985 74 5224 21 36 393 6258 41909 9 2662 19807 362 3461 8297 43 41 9
+P_SM-8715	-13.4288 -13.1343 -11.4433 -8.1337 -14.0387 -9.0811 -7.6412 -11.3504 -13.6664 -10.5541 -12.1562 -10.7089 -7.3257 -14.3488 -10.6316 -10.9356 -10.3480 -13.1039 -13.3188 -0.1098
+P_LM-8715	-15.0019 -13.7440 -10.6734 -11.0960 -12.9952 -15.9595 -11.6778 -11.5752 -11.9614 -11.2799 -12.6064 -15.5506 -12.1392 -15.3277 -16.6433 -10.2479 -8.0527 -10.3548 -14.0123 -11.0402
+ENT_LM-8715	1.9155 2.0531 4.1757 2.0872 5.2610 1.8106 3.4889 3.5256 5.2009 1.0551 0.6185 4.0894 5.8946 1.1778 0.8914 4.2296 1.6321 1.2970 3.0369 5.8046
+ENT_SM-8715	2.6108 1.1999 0.9917 2.2638 4.3779 3.3493 4.5130 3.8186 6.2478 1.6110 1.2288 4.5590 5.4001 1.3512 4.0854 5.8627 2.2658 1.2851 0.9216 1.0394
+S-6584	A selection of photos from across the African continent this week :
+T-6584	Images courtesy of AFP , AP , EPA and Reuters
+H-6584	-0.29450592398643494	Images courtesy of AFP , EPA , Getty Images and Reuters
+P-6584	-7.9336 -4.6095 -7.2571 -1.7980 -10.7476 -3.6682 -10.0757 -2.1956 -4.4001 -10.1321 -8.3574 -0.2145
+RANK-6584	41027 34342 886 3878 12 47433 12 27404 41485 3753 35186 13451
+P_SM-6584	-7.9336 -4.6095 -7.2571 -1.7980 -10.7476 -3.6682 -10.0757 -2.1956 -4.4001 -10.1321 -8.3574 -0.2145
+P_LM-6584	-11.1070 -22.8810 -20.1485 -11.3859 -15.3257 -15.4132 -20.7669 -21.1513 -5.7895 -25.4517 -14.9144 -9.9849
+ENT_LM-6584	2.7014 0.0187 1.2380 1.1962 1.8933 0.6793 0.4841 0.0020 1.4580 0.1710 0.4224 5.5736
+ENT_SM-6584	3.4703 5.1271 1.8792 4.2782 2.4680 4.0990 3.1065 3.1811 4.3191 0.9399 1.5781 1.7491
+S-3961	Here is her life in pictures :
+T-3961	Cilla Black , whose career as a singer and entertainer spanned more than 50 years , has died at the age of 72 .
+H-3961	-1.2404141426086426	All pictures are copyrighted .
+P-3961	-11.2750 -4.7701 -10.7405 -5.7411 -12.3142 -0.1424
+RANK-3961	13322 9853 101 35301 1497 10257
+P_SM-3961	-11.2750 -4.7701 -10.7405 -5.7411 -12.3142 -0.1424
+P_LM-3961	-10.1215 -15.8194 -14.3888 -29.2149 -13.1182 -9.1487
+ENT_LM-3961	6.4268 3.1833 1.3583 0.0421 0.2737 5.6864
+ENT_SM-3961	3.8566 5.2566 2.1341 4.1186 1.1683 1.2874
+S-2820	More to follow
+T-2820	Carl Frampton suffered the first defeat of his professional career as Leo Santa Cruz won on points to regain the WBA featherweight title in Las Vegas .
+H-2820	-1.8237967491149902	More than a million people in the UK have signed a new contract to stay with the Premier League .
+P-2820	-17.4241 -6.7083 -11.2140 -10.2270 -9.0922 -9.8727 -11.2481 -9.4962 -12.2794 -4.1995 -12.8086 -9.1521 -11.8670 -11.7534 -8.7242 -3.3529 -9.6926 -11.4373 -12.9826 -14.4033 -0.1566
+RANK-2820	29518 2405 4008 2471 3770 635 86 656 193 3257 1374 144 19895 1383 37937 211 2220 4296 157 2220 561
+P_SM-2820	-17.4241 -6.7083 -11.2140 -10.2270 -9.0922 -9.8727 -11.2481 -9.4962 -12.2794 -4.1995 -12.8086 -9.1521 -11.8670 -11.7534 -8.7242 -3.3529 -9.6926 -11.4373 -12.9826 -14.4033 -0.1566
+P_LM-2820	-14.0219 -13.5964 -18.0480 -12.2230 -13.5803 -13.8865 -14.6785 -15.1699 -11.7523 -13.2576 -17.6157 -12.6312 -11.0411 -15.7968 -14.5854 -14.5733 -14.2166 -10.4437 -14.8582 -14.6920 -10.8879
+ENT_LM-2820	2.8936 4.4989 2.2130 4.5417 3.2171 4.7023 3.8812 2.9490 4.5144 1.5992 0.1414 2.1853 2.4535 4.8107 2.4121 1.8782 4.7422 0.0365 2.0238 3.3656 5.7108
+ENT_SM-2820	0.4575 7.5497 6.8040 3.5850 4.7506 4.9704 2.0580 5.1658 5.6521 4.0572 4.6074 6.1988 4.5331 4.7198 3.6897 5.7116 5.9760 1.4599 3.9084 1.2566 1.4033
+S-4812	4 February 2017 Last updated at 05 : 32 GMT Video journalist : Tend@@ ai M@@ si@@ y@@ az@@ vi@@ ri@@ yo
+T-4812	Thousands of Zimbabwean widows are forced out of their homes by their in-@@ laws each year .
+H-4812	-1.443187952041626	In our series of letters from African journalists , film-maker and columnist Far@@ ai Seven@@ zo looks at why the country &apos;s recent recent recent recent recent recent attacks in the United States .
+P-4812	-14.3552 -3.5430 -3.8998 -8.8092 -6.8569 -7.8493 -4.5447 -7.9804 -11.0573 -6.0981 -13.5202 -3.8891 -0.9075 -4.0219 -2.1162 -2.0686 -12.4502 -1.4193 -5.4602 -10.7208 -9.3966 -8.8128 -3.6806 -4.6681 -5.5284 -6.1367 -6.5775 -6.8839 -10.5230 -10.1746 -11.6514 -10.0951 -13.1225 -13.3011 -0.2150
+RANK-4812	7477 16142 7596 1689 10414 5642 4780 34573 22563 35760 731 30090 43940 15640 25125 35581 8084 136 2982 1505 4176 439 7166 36256 4390 18716 1833 7348 12867 2300 313 2306 4724 9 6397
+P_SM-4812	-14.3552 -3.5430 -3.8998 -8.8092 -6.8569 -7.8493 -4.5447 -7.9804 -11.0574 -6.0981 -13.5202 -3.8891 -0.9075 -4.0219 -2.1162 -2.0686 -12.4502 -1.4193 -5.4602 -10.7208 -9.3966 -8.8128 -3.6806 -4.6681 -5.5284 -6.1367 -6.5775 -6.8839 -10.5230 -10.1746 -11.6514 -10.0951 -13.1225 -13.3011 -0.2150
+P_LM-4812	-12.2440 -10.5492 -10.7883 -12.6133 -10.4346 -9.9800 -7.9424 -10.8030 -12.3531 -11.0129 -11.8601 -10.5619 -8.3883 -19.5967 -15.0671 -10.5816 -16.0715 -14.1317 -10.1365 -13.6252 -13.2815 -13.9369 -7.7293 -8.3162 -8.7651 -9.1296 -9.3607 -9.5702 -13.7961 -13.1357 -12.9303 -16.7466 -13.4643 -14.2024 -9.3975
+ENT_LM-4812	5.2530 6.7854 1.6272 4.6726 2.7791 6.0238 2.6469 4.1402 5.6466 2.6385 3.8563 4.0491 1.7696 0.0100 0.1207 4.0553 0.5845 3.1205 4.3053 6.8184 2.4304 6.3219 5.7199 5.5532 5.4909 5.5203 5.5565 5.6347 2.4030 4.4126 3.8049 0.3391 3.5392 4.4521 5.6206
+ENT_SM-4812	6.0208 5.0693 5.9457 3.6165 1.8463 1.2174 2.7332 3.3476 4.6686 4.1737 2.0048 1.5989 1.6995 1.4343 1.8904 5.2225 1.3990 4.0557 6.1510 6.2705 3.9070 7.4044 7.1637 7.1480 7.0285 6.9676 7.0363 7.1618 3.0607 6.2893 5.5935 3.0426 1.4425 1.4903 1.8348
+S-10776	Who were the victims ? Calls in Germany for tighter gun laws German train stabbing : De Maiziere warns of lone attacks
+T-10776	Two days after a German-@@ Iranian teenager killed nine people and then shot himself dead at Munich &apos;s Olympia shopping centre , this is what we know from the information given by police and prosecution sources .
+H-10776	-1.3738478422164917	There has been a spate of attacks in Germany in the wake of the Paris attacks .
+P-10776	-12.0533 -14.7374 -7.9954 -13.9369 -8.9943 -12.1365 -10.7207 -11.1980 -12.8981 -9.6574 -12.5188 -14.7032 -6.5966 -12.4553 -7.6047 -8.2044 -13.9886 -0.1297
+RANK-10776	41015 3820 242 163 25916 632 4950 1084 20375 2860 182 32753 10 308 16194 9311 19 20
+P_SM-10776	-12.0533 -14.7374 -7.9954 -13.9369 -8.9943 -12.1365 -10.7207 -11.1980 -12.8981 -9.6574 -12.5188 -14.7032 -6.5966 -12.4553 -7.6047 -8.2044 -13.9886 -0.1297
+P_LM-10776	-11.9563 -14.8263 -7.5653 -11.1477 -15.3391 -12.1011 -14.6346 -13.5501 -14.1863 -14.5213 -13.4989 -19.8820 -15.0318 -10.3927 -10.7307 -11.9182 -14.5994 -9.4377
+ENT_LM-10776	2.7212 1.9922 4.2446 6.1988 0.0126 5.0102 2.5334 3.7377 2.9539 0.9475 0.6376 0.0043 1.7231 5.0366 0.4518 1.9561 4.2562 5.5865
+ENT_SM-10776	5.7041 1.9146 5.4573 5.1893 2.1448 2.4576 1.5198 2.9974 2.8332 4.2648 4.2319 0.9854 4.2824 2.4040 0.1881 2.3775 1.0210 1.1989
+S-10069	Football Rugby Union Rugby League Cricket Tennis Basketball Athletics Speed@@ way Ice Hockey Radio 5 live and 5 live sports extra
+T-10069	A rundown of all the latest BBC radio commentaries online .
+H-10069	-2.025906801223755	The 2016 Rugby Football League has been announced , with the BBC Sport Sport Sport Sport Wales &apos; Player of the Year 2016 .
+P-10069	-12.2243 -5.8713 -6.3804 -6.6063 -6.3261 -17.1703 -10.7883 -6.7576 -8.8494 -7.1667 -8.9617 -7.3249 -2.9947 -3.7772 -4.3731 -4.8415 -4.9034 -3.9681 -5.9435 -6.7073 -11.7457 -8.8112 -6.0002 -13.0019 -0.2266
+RANK-10069	325 7667 5518 880 1335 410 2526 1626 30 498 143 2844 33693 1226 1015 13050 66 60 43000 241 1023 20102 27183 760 1274
+P_SM-10069	-12.2243 -5.8713 -6.3804 -6.6063 -6.3261 -17.1703 -10.7883 -6.7576 -8.8494 -7.1667 -8.9617 -7.3249 -2.9947 -3.7772 -4.3731 -4.8415 -4.9034 -3.9681 -5.9435 -6.7073 -11.7457 -8.8112 -6.0002 -13.0019 -0.2266
+P_LM-10069	-10.8699 -10.7095 -11.9849 -13.8549 -8.1009 -12.7955 -12.2685 -13.5413 -11.7275 -13.9661 -10.9417 -8.6352 -12.7809 -13.6724 -14.3102 -14.7226 -9.9206 -6.3692 -18.8506 -20.5557 -11.0294 -12.5228 -9.1534 -13.6641 -10.5660
+ENT_LM-10069	8.1503 6.1105 0.5176 0.8270 4.1745 4.6668 5.4198 2.7580 4.1303 5.3256 6.1912 4.7282 1.6912 2.2343 2.7490 3.2442 4.7289 5.9515 0.1900 0.0086 0.3198 5.0634 5.2262 2.3909 5.7650
+ENT_SM-10069	6.9852 7.0983 4.6200 3.7648 6.5534 3.4926 5.4923 3.3828 4.0447 6.0754 6.3782 2.6330 6.4362 6.5318 6.5656 6.5875 5.0874 7.2434 2.6541 3.0661 2.8195 4.7656 3.1487 1.4003 1.9067
+S-9108	A partial eclipse was visible in Australia , parts of South East Asia and the Pacific .
+T-9108	People across Indonesia and the Pacific have witnessed a total solar eclipse , with some parts of Indonesia in total darkness for up to three minutes .
+H-9108	-1.55870521068573	A solar eclipse has been declared in parts of Australia .
+P-9108	-16.9518 -7.6313 -10.4607 -10.9703 -14.3602 -8.4359 -11.5460 -5.6038 -12.7660 -13.3348 -13.6417 -0.1127
+RANK-9108	2080 37678 43312 101 13681 20603 1061 21144 1860 7377 41 8635
+P_SM-9108	-16.9518 -7.6313 -10.4607 -10.9703 -14.3602 -8.4359 -11.5460 -5.6038 -12.7660 -13.3348 -13.6417 -0.1127
+P_LM-9108	-9.9723 -9.9687 -9.0532 -11.2649 -13.7415 -12.3371 -11.0681 -11.0011 -15.1836 -13.0479 -15.5879 -10.7669
+ENT_LM-9108	7.5408 2.5632 3.9781 4.3119 4.3604 3.6990 4.2128 0.2871 3.0137 2.2636 1.7437 5.5274
+ENT_SM-9108	5.0785 3.7789 3.1775 4.8852 6.4908 4.8638 3.7282 2.2460 3.1741 2.5547 0.9435 1.0666
+S-2400	7 October 2016 Last updated at 18 : 17 BST Journalist D@@ idi Akin@@ yel@@ ure investigates why African art has become big business .
+T-2400	Buyers of African art have descended on London this week for an auction at Bon@@ hams and the 1 : 54 Contemporary Art Fair .
+H-2400	-1.318164587020874	In our series of letters from African journalists , film-maker and writer Ada@@ obi Tricia N@@ wa@@ ub@@ ani looks at how the art of art has been found in Africa .
+P-2400	-13.9643 -8.4621 -5.9024 -10.9082 -6.6081 -11.3905 -5.7407 -7.8676 -11.5162 -8.1225 -14.7884 -4.6973 -3.8374 -6.2395 -6.9429 -2.6814 -4.1275 -5.8350 -3.1047 -14.5823 -2.5884 -9.2526 -9.5160 -9.1715 -11.0576 -9.2982 -7.3535 -10.1751 -12.0265 -10.0795 -5.5455 -13.9526 -0.1088
+RANK-2400	707 1511 38031 629 15441 7 17001 34614 2984 49331 2484 4132 24753 8469 12582 14140 35162 13778 2651 42153 46 9127 96 25482 3191 14680 1760 1771 4028 1917 7695 561 6
+P_SM-2400	-13.9643 -8.4621 -5.9024 -10.9082 -6.6081 -11.3905 -5.7407 -7.8676 -11.5162 -8.1225 -14.7884 -4.6973 -3.8374 -6.2395 -6.9429 -2.6814 -4.1275 -5.8350 -3.1047 -14.5823 -2.5884 -9.2526 -9.5160 -9.1715 -11.0576 -9.2982 -7.3535 -10.1751 -12.0265 -10.0795 -5.5455 -13.9526 -0.1088
+P_LM-2400	-12.2440 -10.5492 -10.7883 -12.6133 -10.4346 -9.9800 -7.9424 -10.8030 -12.3531 -11.0129 -11.8601 -13.4145 -16.2854 -15.2475 -11.0907 -14.0931 -15.3686 -15.0624 -12.0272 -15.3438 -14.4225 -11.6296 -14.0836 -10.2891 -12.9012 -13.1482 -11.5067 -10.9017 -13.7551 -12.3765 -14.0932 -14.1489 -9.7127
+ENT_LM-2400	5.2530 6.7854 1.6272 4.6726 2.7791 6.0238 2.6469 4.1402 5.6466 2.6385 3.8563 3.7946 0.0030 0.0044 0.0344 0.0156 0.0061 0.0078 3.9272 0.5492 3.4198 3.5560 5.5641 2.9310 6.4552 3.9211 4.5092 5.7342 2.5692 3.3739 2.4350 4.1648 5.7239
+ENT_SM-2400	5.0373 0.9573 3.4938 0.9438 1.2308 0.3304 1.4628 2.0836 4.8376 2.9580 1.8260 5.4803 3.3068 2.2872 3.4838 7.1468 3.3814 1.1485 4.6115 1.5225 3.9357 6.5384 6.2966 4.4019 4.0193 4.4324 6.4708 7.2582 3.8547 3.7976 2.2479 0.8987 1.0292
+S-3508	2 December 2016 Last updated at 18 : 32 GMT We look back at the 22-@@ year rule of the controversial and outspoken leader .
+T-3508	Gambia &apos;s Yahya Jammeh , who once said he would rule the country for &quot; one billion years , &quot; has lost the presidential election to property magnate Adama Barrow .
+H-3508	-0.8217752575874329	In our series of letters from African journalists , film-maker and columnist Far@@ ai Seven@@ zo looks at the leader of the African Union .

@@ -1,0 +1,1135 @@
+Job <train_lang> was submitted from host <eu-login-03> by user <euler_username> in cluster <euler> at Thu Mar 10 21:43:49 2022
+Job was executed on host(s) <4*eu-g3-045>, in queue <gpu.24h>, as user <euler_username> in cluster <euler> at Thu Mar 10 21:44:08 2022
+</cluster/home/euler_username> was used as the home directory.
+</cluster/work/cotterell/liam/master-thesis> was used as the working directory.
+Started at Thu Mar 10 21:44:08 2022
+Terminated at Fri Mar 11 09:44:15 2022
+Results reported at Fri Mar 11 09:44:15 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+fairseq-train --task language_modeling data/xsum-lang --save-dir checkpoints/lang_model --arch transformer_lm --share-decoder-input-output-embed --dropout 0.1 --optimizer adam --adam-betas "(0.9, 0.98)" --weight-decay 0.01 --clip-norm 0.0 --lr 0.0005 --lr-scheduler inverse_sqrt --warmup-updates 4000 --warmup-init-lr 1e-07 --tokens-per-sample 512 --sample-break-mode none --max-tokens 2048 --update-freq 2 --fp16 --no-epoch-checkpoints --no-last-checkpoints --max-update 50000
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   45620.00 sec.
+    Max Memory :                                 6708 MB
+    Average Memory :                             2351.23 MB
+    Total Requested Memory :                     16384.00 MB
+    Delta Memory :                               9676.00 MB
+    Max Swap :                                   3424 MB
+    Max Processes :                              10
+    Max Threads :                                299
+    Run time :                                   43206 sec.
+    Turnaround time :                            43226 sec.
+    
+2022-03-10 21:46:01 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 21:47:55 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 21:47:55 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 21:47:56 | INFO | fairseq.distributed.utils | distributed init (rank 1): tcp://localhost:19989
+2022-03-10 21:47:56 | INFO | fairseq.distributed.utils | distributed init (rank 0): tcp://localhost:19989
+2022-03-10 21:47:57 | INFO | torch.distributed.distributed_c10d | Added key: store_based_barrier_key:1 to store for rank: 0
+2022-03-10 21:47:57 | INFO | torch.distributed.distributed_c10d | Added key: store_based_barrier_key:1 to store for rank: 1
+2022-03-10 21:47:57 | INFO | torch.distributed.distributed_c10d | Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+2022-03-10 21:47:57 | INFO | torch.distributed.distributed_c10d | Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+2022-03-10 21:47:57 | INFO | fairseq.distributed.utils | initialized host eu-g3-045 as rank 0
+2022-03-10 21:47:57 | INFO | fairseq.distributed.utils | initialized host eu-g3-045 as rank 1
+2022-03-10 21:48:49 | INFO | fairseq_cli.train | {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 100, 'log_format': None, 'log_file': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 128, 'fp16_scale_window': None, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': None, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 2, 'distributed_num_procs': 2, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': 'tcp://localhost:19989', 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': False, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 2, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 2048, 'batch_size': None, 'required_batch_size_multiple': 8, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 2048, 'batch_size_valid': None, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 0, 'max_update': 50000, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [2], 'lr': [0.0005], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints/lang_model', 'restore_file': 'checkpoint_last.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': False, 'reset_lr_scheduler': False, 'reset_meters': False, 'reset_optimizer': False, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': True, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'loss', 'maximize_best_checkpoint_metric': False, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 2}, 'generation': {'_name': None, 'beam': 5, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'lm_max_step': -1, 'len_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'transformer_lm', 'activation_fn': relu, 'dropout': 0.1, 'attention_dropout': 0.0, 'activation_dropout': 0.0, 'relu_dropout': 0.0, 'decoder_embed_dim': 512, 'decoder_output_dim': 512, 'decoder_input_dim': 512, 'decoder_ffn_embed_dim': 2048, 'decoder_layers': 6, 'decoder_attention_heads': 8, 'decoder_normalize_before': False, 'no_decoder_final_norm': False, 'adaptive_softmax_cutoff': None, 'adaptive_softmax_dropout': 0.0, 'adaptive_softmax_factor': 4.0, 'no_token_positional_embeddings': False, 'share_decoder_input_output_embed': True, 'character_embeddings': False, 'character_filters': '[(1, 64), (2, 128), (3, 192), (4, 256), (5, 256), (6, 256), (7, 256)]', 'character_embedding_dim': 4, 'char_embedder_highway_layers': 2, 'adaptive_input': False, 'adaptive_input_factor': 4.0, 'adaptive_input_cutoff': None, 'tie_adaptive_weights': False, 'tie_adaptive_proj': False, 'decoder_learned_pos': False, 'layernorm_embedding': False, 'no_scale_embedding': False, 'checkpoint_activations': False, 'offload_activations': False, 'decoder_layerdrop': 0.0, 'decoder_layers_to_keep': None, 'quant_noise_pq': 0.0, 'quant_noise_pq_block_size': 8, 'quant_noise_scalar': 0.0, 'min_params_to_wrap': 100000000, 'base_layers': 0, 'base_sublayers': 1, 'base_shuffle': 1, 'scale_fc': False, 'scale_attn': False, 'scale_heads': False, 'scale_resids': False, 'add_bos_token': False, 'tokens_per_sample': 512, 'max_target_positions': None, 'tpu': False}, 'task': {'_name': 'language_modeling', 'data': 'data/xsum-lang', 'sample_break_mode': none, 'tokens_per_sample': 512, 'output_dictionary_size': -1, 'self_target': False, 'future_target': False, 'past_target': False, 'add_bos_token': False, 'max_target_positions': None, 'shorten_method': none, 'shorten_data_split_list': '', 'pad_to_fixed_length': False, 'pad_to_fixed_bsz': False, 'seed': 1, 'batch_size': None, 'batch_size_valid': None, 'dataset_impl': None, 'data_buffer_size': 10, 'tpu': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'criterion': {'_name': 'cross_entropy', 'sentence_avg': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9, 0.98)', 'adam_eps': 1e-08, 'weight_decay': 0.01, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [0.0005]}, 'lr_scheduler': {'_name': 'inverse_sqrt', 'warmup_updates': 4000, 'warmup_init_lr': 1e-07, 'lr': [0.0005]}, 'scoring': {'_name': 'bleu', 'pad': 1, 'eos': 2, 'unk': 3}, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'simul_type': None}
+2022-03-10 21:48:50 | INFO | fairseq.tasks.language_modeling | dictionary: 49992 types
+2022-03-10 21:48:58 | INFO | fairseq_cli.train | TransformerLanguageModel(
+  (decoder): TransformerDecoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(49992, 512, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=512, out_features=512, bias=True)
+          (v_proj): Linear(in_features=512, out_features=512, bias=True)
+          (q_proj): Linear(in_features=512, out_features=512, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=512, out_features=512, bias=True)
+          (v_proj): Linear(in_features=512, out_features=512, bias=True)
+          (q_proj): Linear(in_features=512, out_features=512, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=512, out_features=512, bias=True)
+          (v_proj): Linear(in_features=512, out_features=512, bias=True)
+          (q_proj): Linear(in_features=512, out_features=512, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=512, out_features=512, bias=True)
+          (v_proj): Linear(in_features=512, out_features=512, bias=True)
+          (q_proj): Linear(in_features=512, out_features=512, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=512, out_features=512, bias=True)
+          (v_proj): Linear(in_features=512, out_features=512, bias=True)
+          (q_proj): Linear(in_features=512, out_features=512, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=512, out_features=512, bias=True)
+          (v_proj): Linear(in_features=512, out_features=512, bias=True)
+          (q_proj): Linear(in_features=512, out_features=512, bias=True)
+          (out_proj): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (final_layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (output_projection): Linear(in_features=512, out_features=49992, bias=False)
+  )
+)
+2022-03-10 21:48:58 | INFO | fairseq_cli.train | task: LanguageModelingTask
+2022-03-10 21:48:58 | INFO | fairseq_cli.train | model: TransformerLanguageModel
+2022-03-10 21:48:58 | INFO | fairseq_cli.train | criterion: CrossEntropyCriterion
+2022-03-10 21:48:58 | INFO | fairseq_cli.train | num. shared model params: 44,510,208 (num. trained: 44,510,208)
+2022-03-10 21:48:58 | INFO | fairseq_cli.train | num. expert model params: 0 (num. trained: 0)
+2022-03-10 21:48:59 | INFO | fairseq.data.data_utils | loaded 11,332 examples from: data/xsum-lang/valid
+2022-03-10 21:49:01 | INFO | torch.distributed.distributed_c10d | Added key: store_based_barrier_key:2 to store for rank: 0
+2022-03-10 21:49:01 | INFO | torch.distributed.distributed_c10d | Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+2022-03-10 21:49:01 | INFO | fairseq.trainer | detected shared parameter: decoder.embed_tokens.weight <- decoder.output_projection.weight
+2022-03-10 21:49:02 | INFO | fairseq.utils | ***********************CUDA enviroments for all 2 workers***********************
+2022-03-10 21:49:02 | INFO | fairseq.utils | rank   0: capabilities =  7.5  ; total memory = 10.761 GB ; name = NVIDIA GeForce RTX 2080 Ti
+2022-03-10 21:49:02 | INFO | fairseq.utils | rank   1: capabilities =  7.5  ; total memory = 10.761 GB ; name = NVIDIA GeForce RTX 2080 Ti
+2022-03-10 21:49:02 | INFO | fairseq.utils | ***********************CUDA enviroments for all 2 workers***********************
+2022-03-10 21:49:02 | INFO | fairseq_cli.train | training on 2 devices (GPUs/TPUs)
+2022-03-10 21:49:02 | INFO | fairseq_cli.train | max tokens per device = 2048 and max sentences per device = None
+2022-03-10 21:49:02 | INFO | fairseq.trainer | Preparing to load checkpoint checkpoints/lang_model/checkpoint_last.pt
+2022-03-10 21:49:02 | INFO | fairseq.trainer | No existing checkpoint found checkpoints/lang_model/checkpoint_last.pt
+2022-03-10 21:49:02 | INFO | fairseq.trainer | loading train data for epoch 1
+2022-03-10 21:49:02 | INFO | fairseq.data.data_utils | loaded 204,045 examples from: data/xsum-lang/train
+2022-03-10 21:49:04 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 21:49:04 | INFO | fairseq.trainer | begin training epoch 1
+2022-03-10 21:49:04 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 21:50:19 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 21:50:19 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 21:50:34 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 64.0
+2022-03-10 21:50:35 | INFO | root | Reducer buckets have been rebuilt in this iteration.
+2022-03-10 21:50:47 | INFO | train_inner | epoch 001:    101 / 624 loss=14.633, ppl=25410.3, wps=69424.5, ups=8.47, wpb=8192, bsz=16, num_updates=100, lr=1.25975e-05, gnorm=3.393, loss_scale=64, train_wall=22, gb_free=8.4, wall=105
+2022-03-10 21:50:59 | INFO | train_inner | epoch 001:    201 / 624 loss=12.402, ppl=5412.76, wps=71387.8, ups=8.73, wpb=8181.8, bsz=16, num_updates=200, lr=2.5095e-05, gnorm=1.187, loss_scale=64, train_wall=11, gb_free=8.4, wall=117
+2022-03-10 21:51:08 | INFO | train_inner | epoch 001:    301 / 624 loss=10.965, ppl=1999.3, wps=89570.5, ups=10.93, wpb=8192, bsz=16, num_updates=300, lr=3.75925e-05, gnorm=0.836, loss_scale=64, train_wall=9, gb_free=8.4, wall=126
+2022-03-10 21:51:18 | INFO | train_inner | epoch 001:    401 / 624 loss=10.023, ppl=1040.62, wps=84848, ups=10.36, wpb=8187.6, bsz=16, num_updates=400, lr=5.009e-05, gnorm=0.696, loss_scale=64, train_wall=9, gb_free=8.4, wall=135
+2022-03-10 21:51:27 | INFO | train_inner | epoch 001:    501 / 624 loss=9.574, ppl=762, wps=89389.4, ups=10.91, wpb=8192, bsz=16, num_updates=500, lr=6.25875e-05, gnorm=0.779, loss_scale=64, train_wall=9, gb_free=8.4, wall=145
+2022-03-10 21:51:36 | INFO | train_inner | epoch 001:    601 / 624 loss=9.262, ppl=614, wps=89584.5, ups=10.94, wpb=8192, bsz=16, num_updates=600, lr=7.5085e-05, gnorm=0.826, loss_scale=64, train_wall=9, gb_free=8.4, wall=154
+2022-03-10 21:51:38 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 21:52:29 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 21:52:29 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 21:52:35 | INFO | valid | epoch 001 | valid on 'valid' subset | loss 8.974 | ppl 502.69 | wps 236976 | wpb 4053.1 | bsz 7.9 | num_updates 623
+2022-03-10 21:52:35 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 1 @ 623 updates
+2022-03-10 21:52:35 | INFO | fairseq.trainer | Saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 21:52:37 | INFO | fairseq.trainer | Finished saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 21:52:37 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/lang_model/checkpoint_best.pt (epoch 1 @ 623 updates, score 8.974) (writing took 1.9223603131249547 seconds)
+2022-03-10 21:52:37 | INFO | fairseq_cli.train | end of epoch 1 (average epoch stats below)
+2022-03-10 21:52:37 | INFO | train | epoch 001 | loss 11.068 | ppl 2146.17 | wps 41962.9 | ups 5.13 | wpb 8183.1 | bsz 16 | num_updates 623 | lr 7.79594e-05 | gnorm 1.27 | loss_scale 64 | train_wall 72 | gb_free 8.4 | wall 215
+2022-03-10 21:52:37 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 21:52:37 | INFO | fairseq.trainer | begin training epoch 2
+2022-03-10 21:52:37 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 21:54:34 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 21:54:34 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 21:55:52 | INFO | train_inner | epoch 002:     77 / 624 loss=8.961, ppl=498.52, wps=3186.3, ups=0.39, wpb=8151, bsz=15.9, num_updates=700, lr=8.75825e-05, gnorm=0.874, loss_scale=64, train_wall=73, gb_free=8.4, wall=409
+2022-03-10 21:56:01 | INFO | train_inner | epoch 002:    177 / 624 loss=8.739, ppl=427.32, wps=89685.5, ups=10.95, wpb=8192, bsz=16, num_updates=800, lr=0.00010008, gnorm=0.87, loss_scale=64, train_wall=9, gb_free=8.4, wall=419
+2022-03-10 21:56:10 | INFO | train_inner | epoch 002:    277 / 624 loss=8.536, ppl=371.3, wps=86408.1, ups=10.55, wpb=8192, bsz=16, num_updates=900, lr=0.000112578, gnorm=0.877, loss_scale=64, train_wall=9, gb_free=8.4, wall=428
+2022-03-10 21:56:19 | INFO | train_inner | epoch 002:    377 / 624 loss=8.371, ppl=331.01, wps=89660.1, ups=10.96, wpb=8181.8, bsz=16, num_updates=1000, lr=0.000125075, gnorm=0.911, loss_scale=64, train_wall=9, gb_free=8.4, wall=437
+2022-03-10 21:56:29 | INFO | train_inner | epoch 002:    477 / 624 loss=8.224, ppl=298.95, wps=87725.2, ups=10.71, wpb=8187.6, bsz=16, num_updates=1100, lr=0.000137573, gnorm=0.905, loss_scale=64, train_wall=9, gb_free=8.4, wall=447
+2022-03-10 21:56:38 | INFO | train_inner | epoch 002:    577 / 624 loss=8.092, ppl=272.92, wps=89601.9, ups=10.94, wpb=8192, bsz=16, num_updates=1200, lr=0.00015007, gnorm=0.872, loss_scale=64, train_wall=9, gb_free=8.4, wall=456
+2022-03-10 21:56:42 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 21:58:05 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 21:58:05 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 21:58:20 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 7.866 | ppl 233.29 | wps 121235 | wpb 4053.1 | bsz 7.9 | num_updates 1247 | best_loss 7.866
+2022-03-10 21:58:20 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 2 @ 1247 updates
+2022-03-10 21:58:20 | INFO | fairseq.trainer | Saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 21:58:22 | INFO | fairseq.trainer | Finished saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 21:58:22 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/lang_model/checkpoint_best.pt (epoch 2 @ 1247 updates, score 7.866) (writing took 2.07635335624218 seconds)
+2022-03-10 21:58:22 | INFO | fairseq_cli.train | end of epoch 2 (average epoch stats below)
+2022-03-10 21:58:22 | INFO | train | epoch 002 | loss 8.429 | ppl 344.71 | wps 14784.8 | ups 1.81 | wpb 8183.1 | bsz 16 | num_updates 1247 | lr 0.000155944 | gnorm 0.885 | loss_scale 64 | train_wall 120 | gb_free 8.4 | wall 560
+2022-03-10 21:58:23 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 21:58:23 | INFO | fairseq.trainer | begin training epoch 3
+2022-03-10 21:58:23 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 21:59:30 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 21:59:30 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:00:28 | INFO | train_inner | epoch 003:     53 / 624 loss=7.922, ppl=242.57, wps=3540.1, ups=0.43, wpb=8151, bsz=15.9, num_updates=1300, lr=0.000162568, gnorm=0.858, loss_scale=64, train_wall=24, gb_free=8.4, wall=686
+2022-03-10 22:03:02 | INFO | train_inner | epoch 003:    153 / 624 loss=7.773, ppl=218.8, wps=5341.1, ups=0.65, wpb=8192, bsz=16, num_updates=1400, lr=0.000175065, gnorm=0.862, loss_scale=64, train_wall=151, gb_free=8.4, wall=839
+2022-03-10 22:03:11 | INFO | train_inner | epoch 003:    253 / 624 loss=7.652, ppl=201.08, wps=90144.7, ups=11, wpb=8192, bsz=16, num_updates=1500, lr=0.000187563, gnorm=0.88, loss_scale=64, train_wall=9, gb_free=8.4, wall=848
+2022-03-10 22:03:20 | INFO | train_inner | epoch 003:    353 / 624 loss=7.522, ppl=183.85, wps=89199.9, ups=10.9, wpb=8181.8, bsz=16, num_updates=1600, lr=0.00020006, gnorm=0.899, loss_scale=64, train_wall=9, gb_free=8.4, wall=858
+2022-03-10 22:03:29 | INFO | train_inner | epoch 003:    453 / 624 loss=7.412, ppl=170.28, wps=89801.7, ups=10.96, wpb=8192, bsz=16, num_updates=1700, lr=0.000212558, gnorm=0.918, loss_scale=64, train_wall=9, gb_free=8.4, wall=867
+2022-03-10 22:03:38 | INFO | train_inner | epoch 003:    553 / 624 loss=7.296, ppl=157.15, wps=87183.3, ups=10.65, wpb=8187.6, bsz=16, num_updates=1800, lr=0.000225055, gnorm=0.899, loss_scale=64, train_wall=9, gb_free=8.4, wall=876
+2022-03-10 22:03:45 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:04:46 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:04:46 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:04:50 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 7.076 | ppl 134.88 | wps 265167 | wpb 4053.1 | bsz 7.9 | num_updates 1871 | best_loss 7.076
+2022-03-10 22:04:50 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 3 @ 1871 updates
+2022-03-10 22:04:50 | INFO | fairseq.trainer | Saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:04:52 | INFO | fairseq.trainer | Finished saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:04:52 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/lang_model/checkpoint_best.pt (epoch 3 @ 1871 updates, score 7.076) (writing took 2.79417865909636 seconds)
+2022-03-10 22:04:52 | INFO | fairseq_cli.train | end of epoch 3 (average epoch stats below)
+2022-03-10 22:04:52 | INFO | train | epoch 003 | loss 7.522 | ppl 183.75 | wps 13086.8 | ups 1.6 | wpb 8183.1 | bsz 16 | num_updates 1871 | lr 0.000233928 | gnorm 0.889 | loss_scale 64 | train_wall 214 | gb_free 8.4 | wall 950
+2022-03-10 22:04:53 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:04:53 | INFO | fairseq.trainer | begin training epoch 4
+2022-03-10 22:04:53 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:04:58 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:04:58 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:05:02 | INFO | train_inner | epoch 004:     29 / 624 loss=7.144, ppl=141.45, wps=9706.4, ups=1.19, wpb=8151, bsz=15.9, num_updates=1900, lr=0.000237553, gnorm=0.915, loss_scale=64, train_wall=9, gb_free=8.4, wall=960
+2022-03-10 22:05:11 | INFO | train_inner | epoch 004:    129 / 624 loss=6.997, ppl=127.71, wps=89922.4, ups=10.98, wpb=8192, bsz=16, num_updates=2000, lr=0.00025005, gnorm=0.902, loss_scale=64, train_wall=9, gb_free=8.4, wall=969
+2022-03-10 22:05:21 | INFO | train_inner | epoch 004:    229 / 624 loss=6.927, ppl=121.66, wps=90074.2, ups=11, wpb=8187.6, bsz=16, num_updates=2100, lr=0.000262548, gnorm=0.906, loss_scale=64, train_wall=9, gb_free=8.4, wall=978
+2022-03-10 22:05:30 | INFO | train_inner | epoch 004:    329 / 624 loss=6.83, ppl=113.76, wps=90123.7, ups=11.02, wpb=8181.8, bsz=16, num_updates=2200, lr=0.000275045, gnorm=0.901, loss_scale=64, train_wall=9, gb_free=8.4, wall=987
+2022-03-10 22:05:39 | INFO | train_inner | epoch 004:    429 / 624 loss=6.753, ppl=107.84, wps=89055.3, ups=10.87, wpb=8192, bsz=16, num_updates=2300, lr=0.000287543, gnorm=0.882, loss_scale=64, train_wall=9, gb_free=8.4, wall=997
+2022-03-10 22:05:48 | INFO | train_inner | epoch 004:    529 / 624 loss=6.687, ppl=103.02, wps=90090.4, ups=11, wpb=8192, bsz=16, num_updates=2400, lr=0.00030004, gnorm=0.895, loss_scale=64, train_wall=9, gb_free=8.4, wall=1006
+2022-03-10 22:05:57 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:06:00 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:06:00 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:06:02 | INFO | valid | epoch 004 | valid on 'valid' subset | loss 6.516 | ppl 91.53 | wps 268145 | wpb 4053.1 | bsz 7.9 | num_updates 2495 | best_loss 6.516
+2022-03-10 22:06:02 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 4 @ 2495 updates
+2022-03-10 22:06:02 | INFO | fairseq.trainer | Saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:06:03 | INFO | fairseq.trainer | Finished saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:06:03 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/lang_model/checkpoint_best.pt (epoch 4 @ 2495 updates, score 6.516) (writing took 1.3474125852808356 seconds)
+2022-03-10 22:06:03 | INFO | fairseq_cli.train | end of epoch 4 (average epoch stats below)
+2022-03-10 22:06:03 | INFO | train | epoch 004 | loss 6.812 | ppl 112.37 | wps 71941.6 | ups 8.79 | wpb 8183.1 | bsz 16 | num_updates 2495 | lr 0.000311913 | gnorm 0.895 | loss_scale 64 | train_wall 56 | gb_free 8.4 | wall 1021
+2022-03-10 22:06:03 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:06:03 | INFO | fairseq.trainer | begin training epoch 5
+2022-03-10 22:06:03 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:06:06 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:06:08 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:06:09 | INFO | train_inner | epoch 005:      5 / 624 loss=6.602, ppl=97.15, wps=38727.3, ups=4.75, wpb=8151, bsz=15.9, num_updates=2500, lr=0.000312538, gnorm=0.873, loss_scale=64, train_wall=9, gb_free=8.4, wall=1027
+2022-03-10 22:06:18 | INFO | train_inner | epoch 005:    105 / 624 loss=6.409, ppl=85, wps=90200.6, ups=11.01, wpb=8192, bsz=16, num_updates=2600, lr=0.000325035, gnorm=0.887, loss_scale=64, train_wall=9, gb_free=8.4, wall=1036
+2022-03-10 22:06:27 | INFO | train_inner | epoch 005:    205 / 624 loss=6.367, ppl=82.53, wps=88989.7, ups=10.87, wpb=8187.6, bsz=16, num_updates=2700, lr=0.000337533, gnorm=0.879, loss_scale=64, train_wall=9, gb_free=8.4, wall=1045
+2022-03-10 22:06:36 | INFO | train_inner | epoch 005:    305 / 624 loss=6.318, ppl=79.78, wps=90145.8, ups=11.02, wpb=8181.8, bsz=16, num_updates=2800, lr=0.00035003, gnorm=0.871, loss_scale=64, train_wall=9, gb_free=8.4, wall=1054
+2022-03-10 22:06:45 | INFO | train_inner | epoch 005:    405 / 624 loss=6.278, ppl=77.61, wps=90194.2, ups=11.01, wpb=8192, bsz=16, num_updates=2900, lr=0.000362528, gnorm=0.859, loss_scale=64, train_wall=9, gb_free=8.4, wall=1063
+2022-03-10 22:06:55 | INFO | train_inner | epoch 005:    505 / 624 loss=6.245, ppl=75.86, wps=89295.7, ups=10.9, wpb=8192, bsz=16, num_updates=3000, lr=0.000375025, gnorm=0.849, loss_scale=64, train_wall=9, gb_free=8.4, wall=1072
+2022-03-10 22:07:04 | INFO | train_inner | epoch 005:    605 / 624 loss=6.219, ppl=74.47, wps=90198.2, ups=11.01, wpb=8192, bsz=16, num_updates=3100, lr=0.000387523, gnorm=0.861, loss_scale=64, train_wall=9, gb_free=8.4, wall=1081
+2022-03-10 22:07:05 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:07:09 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:07:09 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:07:11 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 6.163 | ppl 71.65 | wps 266623 | wpb 4053.1 | bsz 7.9 | num_updates 3119 | best_loss 6.163
+2022-03-10 22:07:11 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 5 @ 3119 updates
+2022-03-10 22:07:11 | INFO | fairseq.trainer | Saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:07:12 | INFO | fairseq.trainer | Finished saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:07:12 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/lang_model/checkpoint_best.pt (epoch 5 @ 3119 updates, score 6.163) (writing took 1.2504543382674456 seconds)
+2022-03-10 22:07:12 | INFO | fairseq_cli.train | end of epoch 5 (average epoch stats below)
+2022-03-10 22:07:12 | INFO | train | epoch 005 | loss 6.303 | ppl 78.98 | wps 74497.7 | ups 9.1 | wpb 8183.1 | bsz 16 | num_updates 3119 | lr 0.000389897 | gnorm 0.868 | loss_scale 64 | train_wall 56 | gb_free 8.4 | wall 1090
+2022-03-10 22:07:12 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:07:12 | INFO | fairseq.trainer | begin training epoch 6
+2022-03-10 22:07:12 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:07:15 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:07:16 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:07:24 | INFO | train_inner | epoch 006:     81 / 624 loss=6.008, ppl=64.33, wps=39245, ups=4.82, wpb=8146.7, bsz=15.9, num_updates=3200, lr=0.00040002, gnorm=0.849, loss_scale=64, train_wall=9, gb_free=8.4, wall=1102
+2022-03-10 22:07:34 | INFO | train_inner | epoch 006:    181 / 624 loss=5.97, ppl=62.66, wps=89774.3, ups=10.96, wpb=8192, bsz=16, num_updates=3300, lr=0.000412518, gnorm=0.859, loss_scale=64, train_wall=9, gb_free=8.4, wall=1111
+2022-03-10 22:07:43 | INFO | train_inner | epoch 006:    281 / 624 loss=5.954, ppl=62.01, wps=90270.5, ups=11.02, wpb=8192, bsz=16, num_updates=3400, lr=0.000425015, gnorm=0.848, loss_scale=64, train_wall=9, gb_free=8.4, wall=1120
+2022-03-10 22:07:52 | INFO | train_inner | epoch 006:    381 / 624 loss=5.934, ppl=61.15, wps=89541, ups=10.94, wpb=8181.8, bsz=16, num_updates=3500, lr=0.000437513, gnorm=0.845, loss_scale=64, train_wall=9, gb_free=8.4, wall=1130
+2022-03-10 22:08:01 | INFO | train_inner | epoch 006:    481 / 624 loss=5.917, ppl=60.41, wps=89321.2, ups=10.9, wpb=8192, bsz=16, num_updates=3600, lr=0.00045001, gnorm=0.844, loss_scale=64, train_wall=9, gb_free=8.4, wall=1139
+2022-03-10 22:08:10 | INFO | train_inner | epoch 006:    581 / 624 loss=5.904, ppl=59.88, wps=89907.6, ups=10.98, wpb=8192, bsz=16, num_updates=3700, lr=0.000462508, gnorm=0.84, loss_scale=64, train_wall=9, gb_free=8.4, wall=1148
+2022-03-10 22:08:14 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:08:17 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:08:17 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:08:20 | INFO | valid | epoch 006 | valid on 'valid' subset | loss 5.935 | ppl 61.19 | wps 277419 | wpb 4053.1 | bsz 7.9 | num_updates 3743 | best_loss 5.935
+2022-03-10 22:08:20 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 6 @ 3743 updates
+2022-03-10 22:08:20 | INFO | fairseq.trainer | Saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:08:21 | INFO | fairseq.trainer | Finished saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:08:21 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/lang_model/checkpoint_best.pt (epoch 6 @ 3743 updates, score 5.935) (writing took 1.4020944740623236 seconds)
+2022-03-10 22:08:21 | INFO | fairseq_cli.train | end of epoch 6 (average epoch stats below)
+2022-03-10 22:08:21 | INFO | train | epoch 006 | loss 5.937 | ppl 61.25 | wps 74042.6 | ups 9.05 | wpb 8183.1 | bsz 16 | num_updates 3743 | lr 0.000467881 | gnorm 0.846 | loss_scale 64 | train_wall 56 | gb_free 8.4 | wall 1159
+2022-03-10 22:08:21 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:08:21 | INFO | fairseq.trainer | begin training epoch 7
+2022-03-10 22:08:21 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:08:23 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:08:25 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:08:31 | INFO | train_inner | epoch 007:     57 / 624 loss=5.73, ppl=53.09, wps=38681.1, ups=4.75, wpb=8151, bsz=15.9, num_updates=3800, lr=0.000475005, gnorm=0.833, loss_scale=64, train_wall=9, gb_free=8.4, wall=1169
+2022-03-10 22:08:40 | INFO | train_inner | epoch 007:    157 / 624 loss=5.655, ppl=50.4, wps=89933.1, ups=10.98, wpb=8192, bsz=16, num_updates=3900, lr=0.000487503, gnorm=0.843, loss_scale=64, train_wall=9, gb_free=8.4, wall=1178
+2022-03-10 22:08:49 | INFO | train_inner | epoch 007:    257 / 624 loss=5.682, ppl=51.33, wps=89284.5, ups=10.9, wpb=8192, bsz=16, num_updates=4000, lr=0.0005, gnorm=0.84, loss_scale=64, train_wall=9, gb_free=8.4, wall=1187
+2022-03-10 22:08:59 | INFO | train_inner | epoch 007:    357 / 624 loss=5.661, ppl=50.6, wps=89247.1, ups=10.9, wpb=8187.6, bsz=16, num_updates=4100, lr=0.000493865, gnorm=0.845, loss_scale=128, train_wall=9, gb_free=8.4, wall=1196
+2022-03-10 22:09:08 | INFO | train_inner | epoch 007:    457 / 624 loss=5.651, ppl=50.23, wps=89486.3, ups=10.94, wpb=8181.8, bsz=16, num_updates=4200, lr=0.00048795, gnorm=0.831, loss_scale=128, train_wall=9, gb_free=8.4, wall=1205
+2022-03-10 22:09:17 | INFO | train_inner | epoch 007:    557 / 624 loss=5.656, ppl=50.41, wps=89530.5, ups=10.93, wpb=8192, bsz=16, num_updates=4300, lr=0.000482243, gnorm=0.831, loss_scale=128, train_wall=9, gb_free=8.4, wall=1215
+2022-03-10 22:09:23 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:09:26 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:09:26 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:09:28 | INFO | valid | epoch 007 | valid on 'valid' subset | loss 5.744 | ppl 53.61 | wps 261807 | wpb 4053.1 | bsz 7.9 | num_updates 4367 | best_loss 5.744
+2022-03-10 22:09:28 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 7 @ 4367 updates
+2022-03-10 22:09:28 | INFO | fairseq.trainer | Saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:09:30 | INFO | fairseq.trainer | Finished saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:09:30 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/lang_model/checkpoint_best.pt (epoch 7 @ 4367 updates, score 5.744) (writing took 1.177064378745854 seconds)
+2022-03-10 22:09:30 | INFO | fairseq_cli.train | end of epoch 7 (average epoch stats below)
+2022-03-10 22:09:30 | INFO | train | epoch 007 | loss 5.653 | ppl 50.32 | wps 74429 | ups 9.1 | wpb 8183.1 | bsz 16 | num_updates 4367 | lr 0.000478529 | gnorm 0.837 | loss_scale 128 | train_wall 56 | gb_free 8.4 | wall 1227
+2022-03-10 22:09:30 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:09:30 | INFO | fairseq.trainer | begin training epoch 8
+2022-03-10 22:09:30 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:09:32 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:09:34 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:09:38 | INFO | train_inner | epoch 008:     33 / 624 loss=5.528, ppl=46.14, wps=39429.1, ups=4.84, wpb=8151, bsz=15.9, num_updates=4400, lr=0.000476731, gnorm=0.829, loss_scale=128, train_wall=9, gb_free=8.4, wall=1235
+2022-03-10 22:09:47 | INFO | train_inner | epoch 008:    133 / 624 loss=5.356, ppl=40.97, wps=89677.3, ups=10.96, wpb=8181.8, bsz=16, num_updates=4500, lr=0.000471405, gnorm=0.839, loss_scale=128, train_wall=9, gb_free=8.4, wall=1244
+2022-03-10 22:10:08 | INFO | train_inner | epoch 008:    233 / 624 loss=5.378, ppl=41.59, wps=38028.8, ups=4.64, wpb=8192, bsz=16, num_updates=4600, lr=0.000466252, gnorm=0.843, loss_scale=128, train_wall=21, gb_free=8.4, wall=1266
+2022-03-10 22:10:17 | INFO | train_inner | epoch 008:    333 / 624 loss=5.394, ppl=42.04, wps=90058.4, ups=10.99, wpb=8192, bsz=16, num_updates=4700, lr=0.000461266, gnorm=0.849, loss_scale=128, train_wall=9, gb_free=8.4, wall=1275
+2022-03-10 22:10:26 | INFO | train_inner | epoch 008:    433 / 624 loss=5.39, ppl=41.94, wps=89845.6, ups=10.97, wpb=8192, bsz=16, num_updates=4800, lr=0.000456435, gnorm=0.848, loss_scale=128, train_wall=9, gb_free=8.4, wall=1284
+2022-03-10 22:10:36 | INFO | train_inner | epoch 008:    533 / 624 loss=5.401, ppl=42.26, wps=90050.8, ups=10.99, wpb=8192, bsz=16, num_updates=4900, lr=0.000451754, gnorm=0.844, loss_scale=128, train_wall=9, gb_free=8.4, wall=1293
+2022-03-10 22:10:44 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:11:24 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:11:24 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:11:27 | INFO | valid | epoch 008 | valid on 'valid' subset | loss 5.614 | ppl 48.96 | wps 277100 | wpb 4053.1 | bsz 7.9 | num_updates 4991 | best_loss 5.614
+2022-03-10 22:11:27 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 8 @ 4991 updates
+2022-03-10 22:11:27 | INFO | fairseq.trainer | Saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:11:28 | INFO | fairseq.trainer | Finished saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:11:28 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/lang_model/checkpoint_best.pt (epoch 8 @ 4991 updates, score 5.614) (writing took 1.5797533597797155 seconds)
+2022-03-10 22:11:28 | INFO | fairseq_cli.train | end of epoch 8 (average epoch stats below)
+2022-03-10 22:11:28 | INFO | train | epoch 008 | loss 5.381 | ppl 41.68 | wps 42993.8 | ups 5.25 | wpb 8183.1 | bsz 16 | num_updates 4991 | lr 0.000447617 | gnorm 0.843 | loss_scale 128 | train_wall 68 | gb_free 8.4 | wall 1346
+2022-03-10 22:11:28 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:11:28 | INFO | fairseq.trainer | begin training epoch 9
+2022-03-10 22:11:28 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:11:31 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:11:33 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:11:34 | INFO | train_inner | epoch 009:      9 / 624 loss=5.357, ppl=40.99, wps=13872.2, ups=1.7, wpb=8146.7, bsz=15.9, num_updates=5000, lr=0.000447214, gnorm=0.839, loss_scale=128, train_wall=9, gb_free=8.4, wall=1352
+2022-03-10 22:11:43 | INFO | train_inner | epoch 009:    109 / 624 loss=5.09, ppl=34.07, wps=89833.3, ups=10.97, wpb=8192, bsz=16, num_updates=5100, lr=0.000442807, gnorm=0.851, loss_scale=128, train_wall=9, gb_free=8.4, wall=1361
+2022-03-10 22:11:52 | INFO | train_inner | epoch 009:    209 / 624 loss=5.122, ppl=34.82, wps=90242.9, ups=11.02, wpb=8192, bsz=16, num_updates=5200, lr=0.000438529, gnorm=0.862, loss_scale=128, train_wall=9, gb_free=8.4, wall=1370
+2022-03-10 22:12:02 | INFO | train_inner | epoch 009:    309 / 624 loss=5.163, ppl=35.82, wps=89974.6, ups=10.98, wpb=8192, bsz=16, num_updates=5300, lr=0.000434372, gnorm=0.871, loss_scale=128, train_wall=9, gb_free=8.4, wall=1379
+2022-03-10 22:12:11 | INFO | train_inner | epoch 009:    409 / 624 loss=5.174, ppl=36.11, wps=90330, ups=11.03, wpb=8192, bsz=16, num_updates=5400, lr=0.000430331, gnorm=0.87, loss_scale=128, train_wall=9, gb_free=8.4, wall=1388
+2022-03-10 22:12:20 | INFO | train_inner | epoch 009:    509 / 624 loss=5.188, ppl=36.46, wps=89753.3, ups=10.97, wpb=8181.8, bsz=16, num_updates=5500, lr=0.000426401, gnorm=0.867, loss_scale=128, train_wall=9, gb_free=8.4, wall=1398
+2022-03-10 22:12:29 | INFO | train_inner | epoch 009:    609 / 624 loss=5.195, ppl=36.64, wps=90018.9, ups=10.99, wpb=8187.6, bsz=16, num_updates=5600, lr=0.000422577, gnorm=0.859, loss_scale=128, train_wall=9, gb_free=8.4, wall=1407
+2022-03-10 22:12:30 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:12:33 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:12:33 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:12:36 | INFO | valid | epoch 009 | valid on 'valid' subset | loss 5.534 | ppl 46.34 | wps 265871 | wpb 4053.1 | bsz 7.9 | num_updates 5615 | best_loss 5.534
+2022-03-10 22:12:36 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 9 @ 5615 updates
+2022-03-10 22:12:36 | INFO | fairseq.trainer | Saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:12:37 | INFO | fairseq.trainer | Finished saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:12:37 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/lang_model/checkpoint_best.pt (epoch 9 @ 5615 updates, score 5.534) (writing took 1.5174884386360645 seconds)
+2022-03-10 22:12:37 | INFO | fairseq_cli.train | end of epoch 9 (average epoch stats below)
+2022-03-10 22:12:37 | INFO | train | epoch 009 | loss 5.155 | ppl 35.63 | wps 74180.5 | ups 9.07 | wpb 8183.1 | bsz 16 | num_updates 5615 | lr 0.000422012 | gnorm 0.863 | loss_scale 128 | train_wall 56 | gb_free 8.4 | wall 1415
+2022-03-10 22:12:37 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:12:37 | INFO | fairseq.trainer | begin training epoch 10
+2022-03-10 22:12:37 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:12:39 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:12:41 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:12:50 | INFO | train_inner | epoch 010:     85 / 624 loss=4.926, ppl=30.4, wps=38449.1, ups=4.72, wpb=8151, bsz=15.9, num_updates=5700, lr=0.000418854, gnorm=0.88, loss_scale=128, train_wall=9, gb_free=8.4, wall=1428
+2022-03-10 22:12:59 | INFO | train_inner | epoch 010:    185 / 624 loss=4.928, ppl=30.45, wps=89540.3, ups=10.93, wpb=8192, bsz=16, num_updates=5800, lr=0.000415227, gnorm=0.889, loss_scale=128, train_wall=9, gb_free=8.4, wall=1437
+2022-03-10 22:13:08 | INFO | train_inner | epoch 010:    285 / 624 loss=4.964, ppl=31.21, wps=89909.4, ups=10.98, wpb=8192, bsz=16, num_updates=5900, lr=0.000411693, gnorm=0.901, loss_scale=128, train_wall=9, gb_free=8.4, wall=1446
+2022-03-10 22:13:17 | INFO | train_inner | epoch 010:    385 / 624 loss=4.979, ppl=31.53, wps=88975.9, ups=10.86, wpb=8192, bsz=16, num_updates=6000, lr=0.000408248, gnorm=0.902, loss_scale=128, train_wall=9, gb_free=8.4, wall=1455
+2022-03-10 22:13:27 | INFO | train_inner | epoch 010:    485 / 624 loss=5.005, ppl=32.12, wps=89607.1, ups=10.94, wpb=8192, bsz=16, num_updates=6100, lr=0.000404888, gnorm=0.904, loss_scale=128, train_wall=9, gb_free=8.4, wall=1464
+2022-03-10 22:13:36 | INFO | train_inner | epoch 010:    585 / 624 loss=4.993, ppl=31.84, wps=89238.4, ups=10.9, wpb=8187.6, bsz=16, num_updates=6200, lr=0.00040161, gnorm=0.899, loss_scale=128, train_wall=9, gb_free=8.4, wall=1474
+2022-03-10 22:13:39 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:13:43 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:13:43 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:13:45 | INFO | valid | epoch 010 | valid on 'valid' subset | loss 5.489 | ppl 44.92 | wps 270047 | wpb 4053.1 | bsz 7.9 | num_updates 6239 | best_loss 5.489
+2022-03-10 22:13:45 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 10 @ 6239 updates
+2022-03-10 22:13:45 | INFO | fairseq.trainer | Saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:13:46 | INFO | fairseq.trainer | Finished saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:13:46 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/lang_model/checkpoint_best.pt (epoch 10 @ 6239 updates, score 5.489) (writing took 1.296403150074184 seconds)
+2022-03-10 22:13:46 | INFO | fairseq_cli.train | end of epoch 10 (average epoch stats below)
+2022-03-10 22:13:46 | INFO | train | epoch 010 | loss 4.965 | ppl 31.24 | wps 73896.3 | ups 9.03 | wpb 8183.1 | bsz 16 | num_updates 6239 | lr 0.000400352 | gnorm 0.897 | loss_scale 128 | train_wall 56 | gb_free 8.4 | wall 1484
+2022-03-10 22:13:46 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:13:46 | INFO | fairseq.trainer | begin training epoch 11
+2022-03-10 22:13:46 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:13:49 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:13:50 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:13:57 | INFO | train_inner | epoch 011:     61 / 624 loss=4.832, ppl=28.49, wps=38755.4, ups=4.76, wpb=8140.8, bsz=15.9, num_updates=6300, lr=0.00039841, gnorm=0.909, loss_scale=128, train_wall=9, gb_free=8.4, wall=1495
+2022-03-10 22:14:06 | INFO | train_inner | epoch 011:    161 / 624 loss=4.745, ppl=26.82, wps=89281.9, ups=10.9, wpb=8192, bsz=16, num_updates=6400, lr=0.000395285, gnorm=0.927, loss_scale=128, train_wall=9, gb_free=8.4, wall=1504
+2022-03-10 22:14:15 | INFO | train_inner | epoch 011:    261 / 624 loss=4.771, ppl=27.31, wps=89590.4, ups=10.94, wpb=8187.6, bsz=16, num_updates=6500, lr=0.000392232, gnorm=0.925, loss_scale=128, train_wall=9, gb_free=8.4, wall=1513
+2022-03-10 22:14:24 | INFO | train_inner | epoch 011:    361 / 624 loss=4.815, ppl=28.15, wps=89666.6, ups=10.96, wpb=8181.8, bsz=16, num_updates=6600, lr=0.000389249, gnorm=0.94, loss_scale=128, train_wall=9, gb_free=8.4, wall=1522
+2022-03-10 22:14:33 | INFO | train_inner | epoch 011:    461 / 624 loss=4.843, ppl=28.7, wps=89194.9, ups=10.89, wpb=8192, bsz=16, num_updates=6700, lr=0.000386334, gnorm=0.931, loss_scale=128, train_wall=9, gb_free=8.4, wall=1531
+2022-03-10 22:14:43 | INFO | train_inner | epoch 011:    561 / 624 loss=4.849, ppl=28.83, wps=89945.9, ups=10.98, wpb=8192, bsz=16, num_updates=6800, lr=0.000383482, gnorm=0.932, loss_scale=128, train_wall=9, gb_free=8.4, wall=1540
+2022-03-10 22:14:48 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:14:53 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:14:53 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:14:55 | INFO | valid | epoch 011 | valid on 'valid' subset | loss 5.46 | ppl 44.02 | wps 265910 | wpb 4053.1 | bsz 7.9 | num_updates 6863 | best_loss 5.46
+2022-03-10 22:14:55 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 11 @ 6863 updates
+2022-03-10 22:14:55 | INFO | fairseq.trainer | Saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:14:56 | INFO | fairseq.trainer | Finished saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:14:56 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/lang_model/checkpoint_best.pt (epoch 11 @ 6863 updates, score 5.46) (writing took 1.3411633716896176 seconds)
+2022-03-10 22:14:56 | INFO | fairseq_cli.train | end of epoch 11 (average epoch stats below)
+2022-03-10 22:14:57 | INFO | train | epoch 011 | loss 4.802 | ppl 27.89 | wps 72232.5 | ups 8.81 | wpb 8183.1 | bsz 16 | num_updates 6863 | lr 0.000381718 | gnorm 0.93 | loss_scale 128 | train_wall 56 | gb_free 8.4 | wall 1555
+2022-03-10 22:14:57 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:14:57 | INFO | fairseq.trainer | begin training epoch 12
+2022-03-10 22:14:57 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:15:03 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:15:03 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:15:10 | INFO | train_inner | epoch 012:     37 / 624 loss=4.739, ppl=26.7, wps=29784.5, ups=3.65, wpb=8151, bsz=15.9, num_updates=6900, lr=0.000380693, gnorm=0.947, loss_scale=128, train_wall=11, gb_free=8.4, wall=1568
+2022-03-10 22:15:19 | INFO | train_inner | epoch 012:    137 / 624 loss=4.567, ppl=23.7, wps=89283.9, ups=10.9, wpb=8187.6, bsz=16, num_updates=7000, lr=0.000377964, gnorm=0.954, loss_scale=128, train_wall=9, gb_free=8.4, wall=1577
+2022-03-10 22:15:28 | INFO | train_inner | epoch 012:    237 / 624 loss=4.619, ppl=24.57, wps=89843.4, ups=10.97, wpb=8192, bsz=16, num_updates=7100, lr=0.000375293, gnorm=0.967, loss_scale=128, train_wall=9, gb_free=8.4, wall=1586
+2022-03-10 22:15:37 | INFO | train_inner | epoch 012:    337 / 624 loss=4.657, ppl=25.22, wps=88853.7, ups=10.85, wpb=8192, bsz=16, num_updates=7200, lr=0.000372678, gnorm=0.974, loss_scale=128, train_wall=9, gb_free=8.4, wall=1595
+2022-03-10 22:15:47 | INFO | train_inner | epoch 012:    437 / 624 loss=4.702, ppl=26.03, wps=89341.5, ups=10.92, wpb=8181.8, bsz=16, num_updates=7300, lr=0.000370117, gnorm=0.977, loss_scale=128, train_wall=9, gb_free=8.4, wall=1604
+2022-03-10 22:15:56 | INFO | train_inner | epoch 012:    537 / 624 loss=4.716, ppl=26.28, wps=87932.3, ups=10.73, wpb=8192, bsz=16, num_updates=7400, lr=0.000367607, gnorm=0.98, loss_scale=128, train_wall=9, gb_free=8.4, wall=1614
+2022-03-10 22:16:04 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:16:21 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:16:21 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:16:23 | INFO | valid | epoch 012 | valid on 'valid' subset | loss 5.455 | ppl 43.86 | wps 274253 | wpb 4053.1 | bsz 7.9 | num_updates 7487 | best_loss 5.455
+2022-03-10 22:16:23 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 12 @ 7487 updates
+2022-03-10 22:16:23 | INFO | fairseq.trainer | Saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:16:25 | INFO | fairseq.trainer | Finished saving checkpoint to /cluster/work/cotterell/liam/master-thesis/checkpoints/lang_model/checkpoint_best.pt
+2022-03-10 22:16:25 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/lang_model/checkpoint_best.pt (epoch 12 @ 7487 updates, score 5.455) (writing took 1.7758442321792245 seconds)
+2022-03-10 22:16:25 | INFO | fairseq_cli.train | end of epoch 12 (average epoch stats below)
+2022-03-10 22:16:25 | INFO | train | epoch 012 | loss 4.656 | ppl 25.21 | wps 58124.4 | ups 7.1 | wpb 8183.1 | bsz 16 | num_updates 7487 | lr 0.000365465 | gnorm 0.97 | loss_scale 128 | train_wall 59 | gb_free 8.4 | wall 1643
+2022-03-10 22:16:25 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:16:25 | INFO | fairseq.trainer | begin training epoch 13
+2022-03-10 22:16:25 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:16:27 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:16:29 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:16:31 | INFO | train_inner | epoch 013:     13 / 624 loss=4.695, ppl=25.9, wps=23210, ups=2.85, wpb=8151, bsz=15.9, num_updates=7500, lr=0.000365148, gnorm=0.978, loss_scale=128, train_wall=9, gb_free=8.4, wall=1649
+2022-03-10 22:16:40 | INFO | train_inner | epoch 013:    113 / 624 loss=4.405, ppl=21.18, wps=90266.1, ups=11.02, wpb=8192, bsz=16, num_updates=7600, lr=0.000362738, gnorm=0.995, loss_scale=128, train_wall=9, gb_free=8.4, wall=1658
+2022-03-10 22:16:49 | INFO | train_inner | epoch 013:    213 / 624 loss=4.476, ppl=22.26, wps=89586.2, ups=10.94, wpb=8192, bsz=16, num_updates=7700, lr=0.000360375, gnorm=1.007, loss_scale=128, train_wall=9, gb_free=8.4, wall=1667
+2022-03-10 22:16:54 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 64.0
+2022-03-10 22:16:58 | INFO | train_inner | epoch 013:    314 / 624 loss=4.527, ppl=23.05, wps=88818, ups=10.85, wpb=8187.6, bsz=16, num_updates=7800, lr=0.000358057, gnorm=1.007, loss_scale=64, train_wall=9, gb_free=8.4, wall=1676
+2022-03-10 22:17:07 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+2022-03-10 22:17:08 | INFO | train_inner | epoch 013:    415 / 624 loss=4.558, ppl=23.56, wps=89373.6, ups=10.91, wpb=8192, bsz=16, num_updates=7900, lr=0.000355784, gnorm=1.01, loss_scale=32, train_wall=9, gb_free=8.4, wall=1685
+2022-03-10 22:17:17 | INFO | train_inner | epoch 013:    515 / 624 loss=4.589, ppl=24.06, wps=89785.6, ups=10.97, wpb=8181.8, bsz=16, num_updates=8000, lr=0.000353553, gnorm=1.015, loss_scale=32, train_wall=9, gb_free=8.4, wall=1695
+2022-03-10 22:17:26 | INFO | train_inner | epoch 013:    615 / 624 loss=4.608, ppl=24.39, wps=89701.6, ups=10.95, wpb=8192, bsz=16, num_updates=8100, lr=0.000351364, gnorm=1.015, loss_scale=32, train_wall=9, gb_free=8.4, wall=1704
+2022-03-10 22:17:27 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:17:30 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:17:30 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:17:32 | INFO | valid | epoch 013 | valid on 'valid' subset | loss 5.461 | ppl 44.06 | wps 276556 | wpb 4053.1 | bsz 7.9 | num_updates 8109 | best_loss 5.455
+2022-03-10 22:17:32 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 13 @ 8109 updates
+2022-03-10 22:17:32 | INFO | fairseq_cli.train | end of epoch 13 (average epoch stats below)
+2022-03-10 22:17:32 | INFO | train | epoch 013 | loss 4.525 | ppl 23.03 | wps 75645.7 | ups 9.24 | wpb 8183.1 | bsz 16 | num_updates 8109 | lr 0.000351169 | gnorm 1.008 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 1710
+2022-03-10 22:17:32 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:17:32 | INFO | fairseq.trainer | begin training epoch 14
+2022-03-10 22:17:32 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:17:35 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:17:35 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:17:45 | INFO | train_inner | epoch 014:     91 / 624 loss=4.311, ppl=19.85, wps=42675, ups=5.24, wpb=8151, bsz=15.9, num_updates=8200, lr=0.000349215, gnorm=1.021, loss_scale=32, train_wall=9, gb_free=8.4, wall=1723
+2022-03-10 22:17:54 | INFO | train_inner | epoch 014:    191 / 624 loss=4.339, ppl=20.25, wps=89759.1, ups=10.98, wpb=8177.4, bsz=16, num_updates=8300, lr=0.000347105, gnorm=1.044, loss_scale=32, train_wall=9, gb_free=8.4, wall=1732
+2022-03-10 22:18:03 | INFO | train_inner | epoch 014:    291 / 624 loss=4.393, ppl=21.01, wps=89697.8, ups=10.95, wpb=8192, bsz=16, num_updates=8400, lr=0.000345033, gnorm=1.055, loss_scale=32, train_wall=9, gb_free=8.4, wall=1741
+2022-03-10 22:18:12 | INFO | train_inner | epoch 014:    391 / 624 loss=4.434, ppl=21.62, wps=89606.6, ups=10.94, wpb=8192, bsz=16, num_updates=8500, lr=0.000342997, gnorm=1.06, loss_scale=32, train_wall=9, gb_free=8.4, wall=1750
+2022-03-10 22:18:22 | INFO | train_inner | epoch 014:    491 / 624 loss=4.457, ppl=21.96, wps=89520.9, ups=10.93, wpb=8192, bsz=16, num_updates=8600, lr=0.000340997, gnorm=1.053, loss_scale=32, train_wall=9, gb_free=8.4, wall=1759
+2022-03-10 22:18:31 | INFO | train_inner | epoch 014:    591 / 624 loss=4.489, ppl=22.46, wps=89597.5, ups=10.94, wpb=8192, bsz=16, num_updates=8700, lr=0.000339032, gnorm=1.063, loss_scale=32, train_wall=9, gb_free=8.4, wall=1768
+2022-03-10 22:18:34 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:18:37 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:18:37 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:18:39 | INFO | valid | epoch 014 | valid on 'valid' subset | loss 5.467 | ppl 44.23 | wps 261634 | wpb 4053.1 | bsz 7.9 | num_updates 8733 | best_loss 5.455
+2022-03-10 22:18:39 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 14 @ 8733 updates
+2022-03-10 22:18:39 | INFO | fairseq_cli.train | end of epoch 14 (average epoch stats below)
+2022-03-10 22:18:39 | INFO | train | epoch 014 | loss 4.407 | ppl 21.21 | wps 76248.2 | ups 9.32 | wpb 8183.1 | bsz 16 | num_updates 8733 | lr 0.000338391 | gnorm 1.05 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 1777
+2022-03-10 22:18:39 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:18:39 | INFO | fairseq.trainer | begin training epoch 15
+2022-03-10 22:18:39 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:18:42 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:18:42 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:18:50 | INFO | train_inner | epoch 015:     67 / 624 loss=4.26, ppl=19.15, wps=42511, ups=5.22, wpb=8140.8, bsz=15.9, num_updates=8800, lr=0.0003371, gnorm=1.059, loss_scale=32, train_wall=9, gb_free=8.4, wall=1788
+2022-03-10 22:18:58 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-03-10 22:18:59 | INFO | train_inner | epoch 015:    168 / 624 loss=4.212, ppl=18.53, wps=88797, ups=10.84, wpb=8192, bsz=16, num_updates=8900, lr=0.000335201, gnorm=1.076, loss_scale=16, train_wall=9, gb_free=8.4, wall=1797
+2022-03-10 22:19:08 | INFO | train_inner | epoch 015:    268 / 624 loss=4.284, ppl=19.48, wps=89486.2, ups=10.92, wpb=8192, bsz=16, num_updates=9000, lr=0.000333333, gnorm=1.155, loss_scale=16, train_wall=9, gb_free=8.4, wall=1806
+2022-03-10 22:19:17 | INFO | train_inner | epoch 015:    368 / 624 loss=4.315, ppl=19.9, wps=89484.7, ups=10.93, wpb=8187.6, bsz=16, num_updates=9100, lr=0.000331497, gnorm=1.093, loss_scale=16, train_wall=9, gb_free=8.4, wall=1815
+2022-03-10 22:19:26 | INFO | train_inner | epoch 015:    468 / 624 loss=4.349, ppl=20.38, wps=89959.1, ups=10.98, wpb=8192, bsz=16, num_updates=9200, lr=0.00032969, gnorm=1.117, loss_scale=16, train_wall=9, gb_free=8.4, wall=1824
+2022-03-10 22:19:36 | INFO | train_inner | epoch 015:    568 / 624 loss=4.378, ppl=20.8, wps=90033.2, ups=10.99, wpb=8192, bsz=16, num_updates=9300, lr=0.000327913, gnorm=1.14, loss_scale=16, train_wall=9, gb_free=8.4, wall=1833
+2022-03-10 22:19:41 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:19:44 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:19:44 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:19:46 | INFO | valid | epoch 015 | valid on 'valid' subset | loss 5.484 | ppl 44.75 | wps 272158 | wpb 4053.1 | bsz 7.9 | num_updates 9356 | best_loss 5.455
+2022-03-10 22:19:46 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 15 @ 9356 updates
+2022-03-10 22:19:46 | INFO | fairseq_cli.train | end of epoch 15 (average epoch stats below)
+2022-03-10 22:19:46 | INFO | train | epoch 015 | loss 4.297 | ppl 19.66 | wps 76240.6 | ups 9.32 | wpb 8183.1 | bsz 16 | num_updates 9356 | lr 0.00032693 | gnorm 1.109 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 1844
+2022-03-10 22:19:46 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:19:46 | INFO | fairseq.trainer | begin training epoch 16
+2022-03-10 22:19:46 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:19:49 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:19:49 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:19:55 | INFO | train_inner | epoch 016:     44 / 624 loss=4.236, ppl=18.85, wps=40867.2, ups=5.01, wpb=8151, bsz=15.9, num_updates=9400, lr=0.000326164, gnorm=1.098, loss_scale=16, train_wall=10, gb_free=8.4, wall=1853
+2022-03-10 22:20:05 | INFO | train_inner | epoch 016:    144 / 624 loss=4.089, ppl=17.02, wps=89598.6, ups=10.94, wpb=8187.6, bsz=16, num_updates=9500, lr=0.000324443, gnorm=1.113, loss_scale=16, train_wall=9, gb_free=8.4, wall=1862
+2022-03-10 22:20:16 | INFO | train_inner | epoch 016:    244 / 624 loss=4.16, ppl=17.88, wps=70180.4, ups=8.57, wpb=8192, bsz=16, num_updates=9600, lr=0.000322749, gnorm=1.126, loss_scale=16, train_wall=11, gb_free=8.4, wall=1874
+2022-03-10 22:20:25 | INFO | train_inner | epoch 016:    344 / 624 loss=4.208, ppl=18.48, wps=90247.3, ups=11.02, wpb=8192, bsz=16, num_updates=9700, lr=0.000321081, gnorm=1.136, loss_scale=16, train_wall=9, gb_free=8.4, wall=1883
+2022-03-10 22:20:34 | INFO | train_inner | epoch 016:    444 / 624 loss=4.243, ppl=18.94, wps=90007.2, ups=11, wpb=8181.8, bsz=16, num_updates=9800, lr=0.000319438, gnorm=1.141, loss_scale=16, train_wall=9, gb_free=8.4, wall=1892
+2022-03-10 22:20:44 | INFO | train_inner | epoch 016:    544 / 624 loss=4.27, ppl=19.29, wps=81977, ups=10.01, wpb=8192, bsz=16, num_updates=9900, lr=0.000317821, gnorm=1.141, loss_scale=16, train_wall=10, gb_free=8.4, wall=1902
+2022-03-10 22:20:52 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:21:09 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:21:09 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:21:11 | INFO | valid | epoch 016 | valid on 'valid' subset | loss 5.505 | ppl 45.42 | wps 289491 | wpb 4053.1 | bsz 7.9 | num_updates 9980 | best_loss 5.455
+2022-03-10 22:21:11 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 16 @ 9980 updates
+2022-03-10 22:21:11 | INFO | fairseq_cli.train | end of epoch 16 (average epoch stats below)
+2022-03-10 22:21:11 | INFO | train | epoch 016 | loss 4.197 | ppl 18.34 | wps 59804.1 | ups 7.31 | wpb 8183.1 | bsz 16 | num_updates 9980 | lr 0.000316544 | gnorm 1.13 | loss_scale 16 | train_wall 60 | gb_free 8.4 | wall 1929
+2022-03-10 22:21:11 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:21:11 | INFO | fairseq.trainer | begin training epoch 17
+2022-03-10 22:21:11 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:21:15 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:21:15 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:21:18 | INFO | train_inner | epoch 017:     20 / 624 loss=4.231, ppl=18.78, wps=24386.4, ups=2.99, wpb=8151, bsz=15.9, num_updates=10000, lr=0.000316228, gnorm=1.135, loss_scale=16, train_wall=9, gb_free=8.4, wall=1936
+2022-03-10 22:21:27 | INFO | train_inner | epoch 017:    120 / 624 loss=3.98, ppl=15.78, wps=90337.6, ups=11.03, wpb=8187.6, bsz=16, num_updates=10100, lr=0.000314658, gnorm=1.141, loss_scale=16, train_wall=9, gb_free=8.4, wall=1945
+2022-03-10 22:21:36 | INFO | train_inner | epoch 017:    220 / 624 loss=4.044, ppl=16.5, wps=90363.7, ups=11.03, wpb=8192, bsz=16, num_updates=10200, lr=0.000313112, gnorm=1.157, loss_scale=16, train_wall=9, gb_free=8.4, wall=1954
+2022-03-10 22:21:45 | INFO | train_inner | epoch 017:    320 / 624 loss=4.107, ppl=17.23, wps=89844.8, ups=10.97, wpb=8192, bsz=16, num_updates=10300, lr=0.000311588, gnorm=1.174, loss_scale=16, train_wall=9, gb_free=8.4, wall=1963
+2022-03-10 22:21:54 | INFO | train_inner | epoch 017:    420 / 624 loss=4.138, ppl=17.61, wps=88754.2, ups=10.83, wpb=8192, bsz=16, num_updates=10400, lr=0.000310087, gnorm=1.177, loss_scale=16, train_wall=9, gb_free=8.4, wall=1972
+2022-03-10 22:22:03 | INFO | train_inner | epoch 017:    520 / 624 loss=4.163, ppl=17.92, wps=89692.9, ups=10.95, wpb=8192, bsz=16, num_updates=10500, lr=0.000308607, gnorm=1.173, loss_scale=16, train_wall=9, gb_free=8.4, wall=1981
+2022-03-10 22:22:13 | INFO | train_inner | epoch 017:    620 / 624 loss=4.216, ppl=18.59, wps=89623.5, ups=10.95, wpb=8181.8, bsz=16, num_updates=10600, lr=0.000307148, gnorm=1.181, loss_scale=16, train_wall=9, gb_free=8.4, wall=1990
+2022-03-10 22:22:13 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:22:17 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:22:17 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:22:19 | INFO | valid | epoch 017 | valid on 'valid' subset | loss 5.554 | ppl 46.99 | wps 262509 | wpb 4053.1 | bsz 7.9 | num_updates 10604 | best_loss 5.455
+2022-03-10 22:22:19 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 17 @ 10604 updates
+2022-03-10 22:22:19 | INFO | fairseq_cli.train | end of epoch 17 (average epoch stats below)
+2022-03-10 22:22:19 | INFO | train | epoch 017 | loss 4.103 | ppl 17.18 | wps 75810 | ups 9.26 | wpb 8183.1 | bsz 16 | num_updates 10604 | lr 0.00030709 | gnorm 1.166 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 1997
+2022-03-10 22:22:19 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:22:19 | INFO | fairseq.trainer | begin training epoch 18
+2022-03-10 22:22:19 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:22:22 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:22:22 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:22:32 | INFO | train_inner | epoch 018:     96 / 624 loss=3.883, ppl=14.75, wps=42389.1, ups=5.2, wpb=8151, bsz=15.9, num_updates=10700, lr=0.000305709, gnorm=1.172, loss_scale=16, train_wall=9, gb_free=8.4, wall=2010
+2022-03-10 22:22:41 | INFO | train_inner | epoch 018:    196 / 624 loss=3.943, ppl=15.38, wps=90218.7, ups=11.01, wpb=8192, bsz=16, num_updates=10800, lr=0.00030429, gnorm=1.198, loss_scale=16, train_wall=9, gb_free=8.4, wall=2019
+2022-03-10 22:22:50 | INFO | train_inner | epoch 018:    296 / 624 loss=4, ppl=16, wps=88686, ups=10.83, wpb=8187.6, bsz=16, num_updates=10900, lr=0.000302891, gnorm=1.209, loss_scale=16, train_wall=9, gb_free=8.4, wall=2028
+2022-03-10 22:22:59 | INFO | train_inner | epoch 018:    396 / 624 loss=4.051, ppl=16.58, wps=89066, ups=10.87, wpb=8192, bsz=16, num_updates=11000, lr=0.000301511, gnorm=1.21, loss_scale=16, train_wall=9, gb_free=8.4, wall=2037
+2022-03-10 22:23:08 | INFO | train_inner | epoch 018:    496 / 624 loss=4.071, ppl=16.81, wps=89684.5, ups=10.96, wpb=8181.8, bsz=16, num_updates=11100, lr=0.00030015, gnorm=1.215, loss_scale=16, train_wall=9, gb_free=8.4, wall=2046
+2022-03-10 22:23:18 | INFO | train_inner | epoch 018:    596 / 624 loss=4.119, ppl=17.38, wps=88759.7, ups=10.83, wpb=8192, bsz=16, num_updates=11200, lr=0.000298807, gnorm=1.215, loss_scale=16, train_wall=9, gb_free=8.4, wall=2056
+2022-03-10 22:23:20 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:23:24 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:23:24 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:23:26 | INFO | valid | epoch 018 | valid on 'valid' subset | loss 5.58 | ppl 47.83 | wps 274337 | wpb 4053.1 | bsz 7.9 | num_updates 11228 | best_loss 5.455
+2022-03-10 22:23:26 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 18 @ 11228 updates
+2022-03-10 22:23:26 | INFO | fairseq_cli.train | end of epoch 18 (average epoch stats below)
+2022-03-10 22:23:26 | INFO | train | epoch 018 | loss 4.016 | ppl 16.17 | wps 76386 | ups 9.33 | wpb 8183.1 | bsz 16 | num_updates 11228 | lr 0.000298434 | gnorm 1.204 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 2063
+2022-03-10 22:23:26 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:23:26 | INFO | fairseq.trainer | begin training epoch 19
+2022-03-10 22:23:26 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:23:29 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:23:29 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:23:37 | INFO | train_inner | epoch 019:     72 / 624 loss=3.882, ppl=14.74, wps=42717.9, ups=5.24, wpb=8151, bsz=15.9, num_updates=11300, lr=0.000297482, gnorm=1.207, loss_scale=16, train_wall=9, gb_free=8.4, wall=2075
+2022-03-10 22:23:46 | INFO | train_inner | epoch 019:    172 / 624 loss=3.842, ppl=14.34, wps=89288.3, ups=10.9, wpb=8192, bsz=16, num_updates=11400, lr=0.000296174, gnorm=1.222, loss_scale=16, train_wall=9, gb_free=8.4, wall=2084
+2022-03-10 22:23:55 | INFO | train_inner | epoch 019:    272 / 624 loss=3.908, ppl=15.02, wps=88470.7, ups=10.8, wpb=8192, bsz=16, num_updates=11500, lr=0.000294884, gnorm=1.239, loss_scale=16, train_wall=9, gb_free=8.4, wall=2093
+2022-03-10 22:24:04 | INFO | train_inner | epoch 019:    372 / 624 loss=3.945, ppl=15.4, wps=89986.2, ups=10.98, wpb=8192, bsz=16, num_updates=11600, lr=0.00029361, gnorm=1.241, loss_scale=16, train_wall=9, gb_free=8.4, wall=2102
+2022-03-10 22:24:14 | INFO | train_inner | epoch 019:    472 / 624 loss=4, ppl=15.99, wps=89361.5, ups=10.91, wpb=8187.6, bsz=16, num_updates=11700, lr=0.000292353, gnorm=1.254, loss_scale=16, train_wall=9, gb_free=8.4, wall=2111
+2022-03-10 22:24:23 | INFO | train_inner | epoch 019:    572 / 624 loss=4.031, ppl=16.35, wps=89451.4, ups=10.93, wpb=8181.8, bsz=16, num_updates=11800, lr=0.000291111, gnorm=1.247, loss_scale=16, train_wall=9, gb_free=8.4, wall=2120
+2022-03-10 22:24:27 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:24:31 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:24:31 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:24:33 | INFO | valid | epoch 019 | valid on 'valid' subset | loss 5.611 | ppl 48.86 | wps 275618 | wpb 4053.1 | bsz 7.9 | num_updates 11852 | best_loss 5.455
+2022-03-10 22:24:33 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 19 @ 11852 updates
+2022-03-10 22:24:33 | INFO | fairseq_cli.train | end of epoch 19 (average epoch stats below)
+2022-03-10 22:24:33 | INFO | train | epoch 019 | loss 3.935 | ppl 15.29 | wps 76101.9 | ups 9.3 | wpb 8183.1 | bsz 16 | num_updates 11852 | lr 0.000290472 | gnorm 1.237 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 2131
+2022-03-10 22:24:33 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:24:33 | INFO | fairseq.trainer | begin training epoch 20
+2022-03-10 22:24:33 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:24:36 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:24:36 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:24:42 | INFO | train_inner | epoch 020:     48 / 624 loss=3.874, ppl=14.66, wps=43055.6, ups=5.29, wpb=8140.8, bsz=15.9, num_updates=11900, lr=0.000289886, gnorm=1.246, loss_scale=16, train_wall=9, gb_free=8.4, wall=2139
+2022-03-10 22:24:51 | INFO | train_inner | epoch 020:    148 / 624 loss=3.744, ppl=13.4, wps=89517.9, ups=10.93, wpb=8192, bsz=16, num_updates=12000, lr=0.000288675, gnorm=1.246, loss_scale=16, train_wall=9, gb_free=8.4, wall=2149
+2022-03-10 22:25:00 | INFO | train_inner | epoch 020:    248 / 624 loss=3.811, ppl=14.03, wps=89475.4, ups=10.92, wpb=8192, bsz=16, num_updates=12100, lr=0.00028748, gnorm=1.264, loss_scale=16, train_wall=9, gb_free=8.4, wall=2158
+2022-03-10 22:25:09 | INFO | train_inner | epoch 020:    348 / 624 loss=3.866, ppl=14.58, wps=89580.4, ups=10.94, wpb=8192, bsz=16, num_updates=12200, lr=0.000286299, gnorm=1.275, loss_scale=16, train_wall=9, gb_free=8.4, wall=2167
+2022-03-10 22:25:18 | INFO | train_inner | epoch 020:    448 / 624 loss=3.914, ppl=15.07, wps=89385.5, ups=10.91, wpb=8192, bsz=16, num_updates=12300, lr=0.000285133, gnorm=1.282, loss_scale=16, train_wall=9, gb_free=8.4, wall=2176
+2022-03-10 22:25:27 | INFO | train_inner | epoch 020:    548 / 624 loss=3.938, ppl=15.33, wps=89864.2, ups=10.97, wpb=8192, bsz=16, num_updates=12400, lr=0.000283981, gnorm=1.284, loss_scale=16, train_wall=9, gb_free=8.4, wall=2185
+2022-03-10 22:25:34 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:25:39 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:25:39 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:25:41 | INFO | valid | epoch 020 | valid on 'valid' subset | loss 5.64 | ppl 49.87 | wps 270610 | wpb 4053.1 | bsz 7.9 | num_updates 12476 | best_loss 5.455
+2022-03-10 22:25:41 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 20 @ 12476 updates
+2022-03-10 22:25:41 | INFO | fairseq_cli.train | end of epoch 20 (average epoch stats below)
+2022-03-10 22:25:41 | INFO | train | epoch 020 | loss 3.858 | ppl 14.5 | wps 74321.4 | ups 9.08 | wpb 8183.1 | bsz 16 | num_updates 12476 | lr 0.000283115 | gnorm 1.27 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 2199
+2022-03-10 22:25:41 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:25:41 | INFO | fairseq.trainer | begin training epoch 21
+2022-03-10 22:25:41 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:25:45 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:25:45 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:25:48 | INFO | train_inner | epoch 021:     24 / 624 loss=3.897, ppl=14.9, wps=39463.4, ups=4.84, wpb=8146.7, bsz=15.9, num_updates=12500, lr=0.000282843, gnorm=1.283, loss_scale=16, train_wall=9, gb_free=8.4, wall=2206
+2022-03-10 22:25:57 | INFO | train_inner | epoch 021:    124 / 624 loss=3.643, ppl=12.49, wps=88825.7, ups=10.84, wpb=8192, bsz=16, num_updates=12600, lr=0.000281718, gnorm=1.275, loss_scale=16, train_wall=9, gb_free=8.4, wall=2215
+2022-03-10 22:26:07 | INFO | train_inner | epoch 021:    224 / 624 loss=3.726, ppl=13.23, wps=81507.3, ups=9.95, wpb=8187.6, bsz=16, num_updates=12700, lr=0.000280607, gnorm=1.299, loss_scale=16, train_wall=10, gb_free=8.4, wall=2225
+2022-03-10 22:26:16 | INFO | train_inner | epoch 021:    324 / 624 loss=3.778, ppl=13.71, wps=89361.6, ups=10.91, wpb=8192, bsz=16, num_updates=12800, lr=0.000279508, gnorm=1.305, loss_scale=16, train_wall=9, gb_free=8.4, wall=2234
+2022-03-10 22:26:26 | INFO | train_inner | epoch 021:    424 / 624 loss=3.834, ppl=14.26, wps=88976.4, ups=10.86, wpb=8192, bsz=16, num_updates=12900, lr=0.000278423, gnorm=1.315, loss_scale=16, train_wall=9, gb_free=8.4, wall=2243
+2022-03-10 22:26:35 | INFO | train_inner | epoch 021:    524 / 624 loss=3.867, ppl=14.59, wps=89245.5, ups=10.91, wpb=8181.8, bsz=16, num_updates=13000, lr=0.00027735, gnorm=1.318, loss_scale=32, train_wall=9, gb_free=8.4, wall=2253
+2022-03-10 22:26:44 | INFO | train_inner | epoch 021:    624 / 624 loss=3.904, ppl=14.97, wps=89920.6, ups=11.03, wpb=8151, bsz=15.9, num_updates=13100, lr=0.000276289, gnorm=1.318, loss_scale=32, train_wall=9, gb_free=8.4, wall=2262
+2022-03-10 22:26:44 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:27:03 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:27:03 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:27:06 | INFO | valid | epoch 021 | valid on 'valid' subset | loss 5.674 | ppl 51.06 | wps 263219 | wpb 4053.1 | bsz 7.9 | num_updates 13100 | best_loss 5.455
+2022-03-10 22:27:06 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 21 @ 13100 updates
+2022-03-10 22:27:06 | INFO | fairseq_cli.train | end of epoch 21 (average epoch stats below)
+2022-03-10 22:27:06 | INFO | train | epoch 021 | loss 3.785 | ppl 13.79 | wps 60547.8 | ups 7.4 | wpb 8183.1 | bsz 16 | num_updates 13100 | lr 0.000276289 | gnorm 1.303 | loss_scale 32 | train_wall 57 | gb_free 8.4 | wall 2284
+2022-03-10 22:27:06 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:27:06 | INFO | fairseq.trainer | begin training epoch 22
+2022-03-10 22:27:06 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:27:09 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:27:09 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:27:19 | INFO | train_inner | epoch 022:    100 / 624 loss=3.574, ppl=11.91, wps=23118.9, ups=2.82, wpb=8192, bsz=16, num_updates=13200, lr=0.000275241, gnorm=1.305, loss_scale=32, train_wall=9, gb_free=8.4, wall=2297
+2022-03-10 22:27:28 | INFO | train_inner | epoch 022:    200 / 624 loss=3.632, ppl=12.4, wps=90379, ups=11.03, wpb=8192, bsz=16, num_updates=13300, lr=0.000274204, gnorm=1.317, loss_scale=32, train_wall=9, gb_free=8.4, wall=2306
+2022-03-10 22:27:37 | INFO | train_inner | epoch 022:    300 / 624 loss=3.702, ppl=13.01, wps=89400.5, ups=10.91, wpb=8192, bsz=16, num_updates=13400, lr=0.000273179, gnorm=1.342, loss_scale=32, train_wall=9, gb_free=8.4, wall=2315
+2022-03-10 22:27:47 | INFO | train_inner | epoch 022:    400 / 624 loss=3.748, ppl=13.44, wps=90018.7, ups=10.99, wpb=8187.6, bsz=16, num_updates=13500, lr=0.000272166, gnorm=1.343, loss_scale=32, train_wall=9, gb_free=8.4, wall=2324
+2022-03-10 22:27:56 | INFO | train_inner | epoch 022:    500 / 624 loss=3.787, ppl=13.81, wps=90004.1, ups=11, wpb=8181.8, bsz=16, num_updates=13600, lr=0.000271163, gnorm=1.347, loss_scale=32, train_wall=9, gb_free=8.4, wall=2333
+2022-03-10 22:27:59 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-03-10 22:28:05 | INFO | train_inner | epoch 022:    601 / 624 loss=3.828, ppl=14.2, wps=89189.3, ups=10.89, wpb=8192, bsz=16, num_updates=13700, lr=0.000270172, gnorm=1.353, loss_scale=16, train_wall=9, gb_free=8.4, wall=2343
+2022-03-10 22:28:07 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:28:11 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:28:11 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:28:13 | INFO | valid | epoch 022 | valid on 'valid' subset | loss 5.712 | ppl 52.4 | wps 267632 | wpb 4053.1 | bsz 7.9 | num_updates 13723 | best_loss 5.455
+2022-03-10 22:28:13 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 22 @ 13723 updates
+2022-03-10 22:28:13 | INFO | fairseq_cli.train | end of epoch 22 (average epoch stats below)
+2022-03-10 22:28:13 | INFO | train | epoch 022 | loss 3.717 | ppl 13.15 | wps 76198.1 | ups 9.31 | wpb 8183.1 | bsz 16 | num_updates 13723 | lr 0.000269945 | gnorm 1.336 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 2350
+2022-03-10 22:28:13 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:28:13 | INFO | fairseq.trainer | begin training epoch 23
+2022-03-10 22:28:13 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:28:16 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:28:16 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:28:24 | INFO | train_inner | epoch 023:     77 / 624 loss=3.579, ppl=11.95, wps=42391.6, ups=5.2, wpb=8151, bsz=15.9, num_updates=13800, lr=0.000269191, gnorm=1.332, loss_scale=16, train_wall=9, gb_free=8.4, wall=2362
+2022-03-10 22:28:33 | INFO | train_inner | epoch 023:    177 / 624 loss=3.559, ppl=11.79, wps=89373.1, ups=10.91, wpb=8192, bsz=16, num_updates=13900, lr=0.000268221, gnorm=1.352, loss_scale=16, train_wall=9, gb_free=8.4, wall=2371
+2022-03-10 22:28:43 | INFO | train_inner | epoch 023:    277 / 624 loss=3.622, ppl=12.31, wps=88115, ups=10.76, wpb=8192, bsz=16, num_updates=14000, lr=0.000267261, gnorm=1.37, loss_scale=16, train_wall=9, gb_free=8.4, wall=2380
+2022-03-10 22:28:52 | INFO | train_inner | epoch 023:    377 / 624 loss=3.669, ppl=12.72, wps=89486.6, ups=10.92, wpb=8192, bsz=16, num_updates=14100, lr=0.000266312, gnorm=1.374, loss_scale=16, train_wall=9, gb_free=8.4, wall=2389
+2022-03-10 22:29:01 | INFO | train_inner | epoch 023:    477 / 624 loss=3.72, ppl=13.18, wps=89334.6, ups=10.92, wpb=8177.4, bsz=16, num_updates=14200, lr=0.000265372, gnorm=1.376, loss_scale=16, train_wall=9, gb_free=8.4, wall=2399
+2022-03-10 22:29:10 | INFO | train_inner | epoch 023:    577 / 624 loss=3.757, ppl=13.52, wps=89356.3, ups=10.91, wpb=8192, bsz=16, num_updates=14300, lr=0.000264443, gnorm=1.392, loss_scale=16, train_wall=9, gb_free=8.4, wall=2408
+2022-03-10 22:29:14 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:29:18 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:29:18 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:29:20 | INFO | valid | epoch 023 | valid on 'valid' subset | loss 5.741 | ppl 53.49 | wps 265329 | wpb 4053.1 | bsz 7.9 | num_updates 14347 | best_loss 5.455
+2022-03-10 22:29:20 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 23 @ 14347 updates
+2022-03-10 22:29:20 | INFO | fairseq_cli.train | end of epoch 23 (average epoch stats below)
+2022-03-10 22:29:20 | INFO | train | epoch 023 | loss 3.654 | ppl 12.59 | wps 76218.2 | ups 9.31 | wpb 8183.1 | bsz 16 | num_updates 14347 | lr 0.000264009 | gnorm 1.368 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 2417
+2022-03-10 22:29:20 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:29:20 | INFO | fairseq.trainer | begin training epoch 24
+2022-03-10 22:29:20 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:29:23 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:29:23 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:29:29 | INFO | train_inner | epoch 024:     53 / 624 loss=3.579, ppl=11.95, wps=42667, ups=5.24, wpb=8140.8, bsz=15.9, num_updates=14400, lr=0.000263523, gnorm=1.364, loss_scale=16, train_wall=9, gb_free=8.4, wall=2427
+2022-03-10 22:29:38 | INFO | train_inner | epoch 024:    153 / 624 loss=3.494, ppl=11.27, wps=90093.8, ups=11, wpb=8192, bsz=16, num_updates=14500, lr=0.000262613, gnorm=1.382, loss_scale=16, train_wall=9, gb_free=8.4, wall=2436
+2022-03-10 22:29:47 | INFO | train_inner | epoch 024:    253 / 624 loss=3.548, ppl=11.7, wps=89382.1, ups=10.91, wpb=8192, bsz=16, num_updates=14600, lr=0.000261712, gnorm=1.389, loss_scale=16, train_wall=9, gb_free=8.4, wall=2445
+2022-03-10 22:29:56 | INFO | train_inner | epoch 024:    353 / 624 loss=3.603, ppl=12.15, wps=90204.3, ups=11.01, wpb=8192, bsz=16, num_updates=14700, lr=0.00026082, gnorm=1.402, loss_scale=16, train_wall=9, gb_free=8.4, wall=2454
+2022-03-10 22:30:06 | INFO | train_inner | epoch 024:    453 / 624 loss=3.644, ppl=12.51, wps=89205.9, ups=10.89, wpb=8192, bsz=16, num_updates=14800, lr=0.000259938, gnorm=1.413, loss_scale=16, train_wall=9, gb_free=8.4, wall=2463
+2022-03-10 22:30:15 | INFO | train_inner | epoch 024:    553 / 624 loss=3.687, ppl=12.88, wps=89332.2, ups=10.91, wpb=8187.6, bsz=16, num_updates=14900, lr=0.000259064, gnorm=1.415, loss_scale=16, train_wall=9, gb_free=8.4, wall=2473
+2022-03-10 22:30:21 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:30:25 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:30:25 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:30:27 | INFO | valid | epoch 024 | valid on 'valid' subset | loss 5.794 | ppl 55.5 | wps 258176 | wpb 4053.1 | bsz 7.9 | num_updates 14971 | best_loss 5.455
+2022-03-10 22:30:27 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 24 @ 14971 updates
+2022-03-10 22:30:27 | INFO | fairseq_cli.train | end of epoch 24 (average epoch stats below)
+2022-03-10 22:30:27 | INFO | train | epoch 024 | loss 3.592 | ppl 12.06 | wps 75643.4 | ups 9.24 | wpb 8183.1 | bsz 16 | num_updates 14971 | lr 0.000258449 | gnorm 1.397 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 2485
+2022-03-10 22:30:27 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:30:27 | INFO | fairseq.trainer | begin training epoch 25
+2022-03-10 22:30:27 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:30:31 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:30:31 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:30:35 | INFO | train_inner | epoch 025:     29 / 624 loss=3.613, ppl=12.24, wps=41276.5, ups=5.06, wpb=8151, bsz=15.9, num_updates=15000, lr=0.000258199, gnorm=1.404, loss_scale=16, train_wall=9, gb_free=8.4, wall=2492
+2022-03-10 22:30:44 | INFO | train_inner | epoch 025:    129 / 624 loss=3.398, ppl=10.54, wps=89654.9, ups=10.95, wpb=8187.6, bsz=16, num_updates=15100, lr=0.000257343, gnorm=1.401, loss_scale=16, train_wall=9, gb_free=8.4, wall=2501
+2022-03-10 22:30:53 | INFO | train_inner | epoch 025:    229 / 624 loss=3.48, ppl=11.16, wps=90537.4, ups=11.05, wpb=8192, bsz=16, num_updates=15200, lr=0.000256495, gnorm=1.413, loss_scale=16, train_wall=9, gb_free=8.4, wall=2511
+2022-03-10 22:31:02 | INFO | train_inner | epoch 025:    329 / 624 loss=3.538, ppl=11.61, wps=88666.5, ups=10.82, wpb=8192, bsz=16, num_updates=15300, lr=0.000255655, gnorm=1.433, loss_scale=16, train_wall=9, gb_free=8.4, wall=2520
+2022-03-10 22:31:11 | INFO | train_inner | epoch 025:    429 / 624 loss=3.577, ppl=11.93, wps=86386.5, ups=10.56, wpb=8181.8, bsz=16, num_updates=15400, lr=0.000254824, gnorm=1.426, loss_scale=16, train_wall=9, gb_free=8.4, wall=2529
+2022-03-10 22:31:21 | INFO | train_inner | epoch 025:    529 / 624 loss=3.623, ppl=12.32, wps=89421.1, ups=10.92, wpb=8192, bsz=16, num_updates=15500, lr=0.000254, gnorm=1.439, loss_scale=16, train_wall=9, gb_free=8.4, wall=2538
+2022-03-10 22:31:29 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:31:42 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:31:42 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:31:44 | INFO | valid | epoch 025 | valid on 'valid' subset | loss 5.817 | ppl 56.38 | wps 262688 | wpb 4053.1 | bsz 7.9 | num_updates 15595 | best_loss 5.455
+2022-03-10 22:31:44 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 25 @ 15595 updates
+2022-03-10 22:31:44 | INFO | fairseq_cli.train | end of epoch 25 (average epoch stats below)
+2022-03-10 22:31:44 | INFO | train | epoch 025 | loss 3.535 | ppl 11.59 | wps 66691 | ups 8.15 | wpb 8183.1 | bsz 16 | num_updates 15595 | lr 0.000253225 | gnorm 1.425 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 2562
+2022-03-10 22:31:44 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:31:44 | INFO | fairseq.trainer | begin training epoch 26
+2022-03-10 22:31:44 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:31:50 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:31:50 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:31:51 | INFO | train_inner | epoch 026:      5 / 624 loss=3.628, ppl=12.36, wps=26537.8, ups=3.26, wpb=8151, bsz=15.9, num_updates=15600, lr=0.000253185, gnorm=1.45, loss_scale=16, train_wall=9, gb_free=8.4, wall=2569
+2022-03-10 22:32:00 | INFO | train_inner | epoch 026:    105 / 624 loss=3.34, ppl=10.13, wps=90395.2, ups=11.03, wpb=8192, bsz=16, num_updates=15700, lr=0.000252377, gnorm=1.408, loss_scale=16, train_wall=9, gb_free=8.4, wall=2578
+2022-03-10 22:32:10 | INFO | train_inner | epoch 026:    205 / 624 loss=3.405, ppl=10.6, wps=89168.6, ups=10.89, wpb=8187.6, bsz=16, num_updates=15800, lr=0.000251577, gnorm=1.434, loss_scale=16, train_wall=9, gb_free=8.4, wall=2587
+2022-03-10 22:32:19 | INFO | train_inner | epoch 026:    305 / 624 loss=3.462, ppl=11.02, wps=89611.1, ups=10.94, wpb=8192, bsz=16, num_updates=15900, lr=0.000250785, gnorm=1.46, loss_scale=16, train_wall=9, gb_free=8.4, wall=2596
+2022-03-10 22:32:28 | INFO | train_inner | epoch 026:    405 / 624 loss=3.511, ppl=11.4, wps=90002.9, ups=10.99, wpb=8192, bsz=16, num_updates=16000, lr=0.00025, gnorm=1.46, loss_scale=16, train_wall=9, gb_free=8.4, wall=2606
+2022-03-10 22:32:37 | INFO | train_inner | epoch 026:    505 / 624 loss=3.565, ppl=11.84, wps=89823.4, ups=10.96, wpb=8192, bsz=16, num_updates=16100, lr=0.000249222, gnorm=1.473, loss_scale=16, train_wall=9, gb_free=8.4, wall=2615
+2022-03-10 22:32:46 | INFO | train_inner | epoch 026:    605 / 624 loss=3.585, ppl=12, wps=89084.9, ups=10.87, wpb=8192, bsz=16, num_updates=16200, lr=0.000248452, gnorm=1.467, loss_scale=16, train_wall=9, gb_free=8.4, wall=2624
+2022-03-10 22:32:48 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:32:51 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:32:51 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:32:54 | INFO | valid | epoch 026 | valid on 'valid' subset | loss 5.857 | ppl 57.95 | wps 271278 | wpb 4053.1 | bsz 7.9 | num_updates 16219 | best_loss 5.455
+2022-03-10 22:32:54 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 26 @ 16219 updates
+2022-03-10 22:32:54 | INFO | fairseq_cli.train | end of epoch 26 (average epoch stats below)
+2022-03-10 22:32:54 | INFO | train | epoch 026 | loss 3.481 | ppl 11.16 | wps 73076 | ups 8.93 | wpb 8183.1 | bsz 16 | num_updates 16219 | lr 0.000248306 | gnorm 1.451 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 2631
+2022-03-10 22:32:54 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:32:54 | INFO | fairseq.trainer | begin training epoch 27
+2022-03-10 22:32:54 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:32:58 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:32:58 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:33:06 | INFO | train_inner | epoch 027:     81 / 624 loss=3.337, ppl=10.11, wps=40030.9, ups=4.92, wpb=8140.8, bsz=15.9, num_updates=16300, lr=0.000247689, gnorm=1.442, loss_scale=16, train_wall=9, gb_free=8.4, wall=2644
+2022-03-10 22:33:16 | INFO | train_inner | epoch 027:    181 / 624 loss=3.337, ppl=10.11, wps=90233.2, ups=11.01, wpb=8192, bsz=16, num_updates=16400, lr=0.000246932, gnorm=1.453, loss_scale=16, train_wall=9, gb_free=8.4, wall=2653
+2022-03-10 22:33:25 | INFO | train_inner | epoch 027:    281 / 624 loss=3.393, ppl=10.5, wps=89728.5, ups=10.95, wpb=8192, bsz=16, num_updates=16500, lr=0.000246183, gnorm=1.471, loss_scale=16, train_wall=9, gb_free=8.4, wall=2662
+2022-03-10 22:33:34 | INFO | train_inner | epoch 027:    381 / 624 loss=3.448, ppl=10.91, wps=89364.6, ups=10.91, wpb=8192, bsz=16, num_updates=16600, lr=0.00024544, gnorm=1.49, loss_scale=16, train_wall=9, gb_free=8.4, wall=2672
+2022-03-10 22:33:43 | INFO | train_inner | epoch 027:    481 / 624 loss=3.497, ppl=11.29, wps=90063.2, ups=11.01, wpb=8181.8, bsz=16, num_updates=16700, lr=0.000244704, gnorm=1.509, loss_scale=16, train_wall=9, gb_free=8.4, wall=2681
+2022-03-10 22:33:52 | INFO | train_inner | epoch 027:    581 / 624 loss=3.541, ppl=11.64, wps=89786, ups=10.97, wpb=8187.6, bsz=16, num_updates=16800, lr=0.000243975, gnorm=1.498, loss_scale=16, train_wall=9, gb_free=8.4, wall=2690
+2022-03-10 22:33:56 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:34:00 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:34:00 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:34:02 | INFO | valid | epoch 027 | valid on 'valid' subset | loss 5.892 | ppl 59.38 | wps 270603 | wpb 4053.1 | bsz 7.9 | num_updates 16843 | best_loss 5.455
+2022-03-10 22:34:02 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 27 @ 16843 updates
+2022-03-10 22:34:02 | INFO | fairseq_cli.train | end of epoch 27 (average epoch stats below)
+2022-03-10 22:34:02 | INFO | train | epoch 027 | loss 3.428 | ppl 10.76 | wps 74779.5 | ups 9.14 | wpb 8183.1 | bsz 16 | num_updates 16843 | lr 0.000243663 | gnorm 1.478 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 2700
+2022-03-10 22:34:02 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:34:02 | INFO | fairseq.trainer | begin training epoch 28
+2022-03-10 22:34:02 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:34:05 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:34:05 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:34:12 | INFO | train_inner | epoch 028:     57 / 624 loss=3.354, ppl=10.23, wps=41348.5, ups=5.08, wpb=8140.8, bsz=15.9, num_updates=16900, lr=0.000243252, gnorm=1.474, loss_scale=16, train_wall=9, gb_free=8.4, wall=2710
+2022-03-10 22:34:21 | INFO | train_inner | epoch 028:    157 / 624 loss=3.272, ppl=9.66, wps=89958.6, ups=10.98, wpb=8192, bsz=16, num_updates=17000, lr=0.000242536, gnorm=1.476, loss_scale=16, train_wall=9, gb_free=8.4, wall=2719
+2022-03-10 22:34:30 | INFO | train_inner | epoch 028:    257 / 624 loss=3.329, ppl=10.05, wps=89750.7, ups=10.96, wpb=8187.6, bsz=16, num_updates=17100, lr=0.000241825, gnorm=1.499, loss_scale=16, train_wall=9, gb_free=8.4, wall=2728
+2022-03-10 22:34:39 | INFO | train_inner | epoch 028:    357 / 624 loss=3.39, ppl=10.48, wps=89847.3, ups=10.97, wpb=8192, bsz=16, num_updates=17200, lr=0.000241121, gnorm=1.512, loss_scale=16, train_wall=9, gb_free=8.4, wall=2737
+2022-03-10 22:34:48 | INFO | train_inner | epoch 028:    457 / 624 loss=3.44, ppl=10.85, wps=89746.1, ups=10.96, wpb=8192, bsz=16, num_updates=17300, lr=0.000240424, gnorm=1.512, loss_scale=16, train_wall=9, gb_free=8.4, wall=2746
+2022-03-10 22:34:57 | INFO | train_inner | epoch 028:    557 / 624 loss=3.474, ppl=11.11, wps=89573.7, ups=10.93, wpb=8192, bsz=16, num_updates=17400, lr=0.000239732, gnorm=1.515, loss_scale=16, train_wall=9, gb_free=8.4, wall=2755
+2022-03-10 22:35:03 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:35:07 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:35:07 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:35:09 | INFO | valid | epoch 028 | valid on 'valid' subset | loss 5.939 | ppl 61.34 | wps 261576 | wpb 4053.1 | bsz 7.9 | num_updates 17467 | best_loss 5.455
+2022-03-10 22:35:09 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 28 @ 17467 updates
+2022-03-10 22:35:09 | INFO | fairseq_cli.train | end of epoch 28 (average epoch stats below)
+2022-03-10 22:35:09 | INFO | train | epoch 028 | loss 3.378 | ppl 10.39 | wps 76043.2 | ups 9.29 | wpb 8183.1 | bsz 16 | num_updates 17467 | lr 0.000239271 | gnorm 1.501 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 2767
+2022-03-10 22:35:09 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:35:09 | INFO | fairseq.trainer | begin training epoch 29
+2022-03-10 22:35:09 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:35:12 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:35:12 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:35:17 | INFO | train_inner | epoch 029:     33 / 624 loss=3.386, ppl=10.45, wps=42448.4, ups=5.21, wpb=8151, bsz=15.9, num_updates=17500, lr=0.000239046, gnorm=1.511, loss_scale=16, train_wall=9, gb_free=8.4, wall=2774
+2022-03-10 22:35:26 | INFO | train_inner | epoch 029:    133 / 624 loss=3.207, ppl=9.24, wps=88073.3, ups=10.75, wpb=8192, bsz=16, num_updates=17600, lr=0.000238366, gnorm=1.501, loss_scale=16, train_wall=9, gb_free=8.4, wall=2784
+2022-03-10 22:35:35 | INFO | train_inner | epoch 029:    233 / 624 loss=3.267, ppl=9.63, wps=89972, ups=11, wpb=8181.8, bsz=16, num_updates=17700, lr=0.000237691, gnorm=1.512, loss_scale=16, train_wall=9, gb_free=8.4, wall=2793
+2022-03-10 22:35:44 | INFO | train_inner | epoch 029:    333 / 624 loss=3.333, ppl=10.08, wps=89721.1, ups=10.96, wpb=8187.6, bsz=16, num_updates=17800, lr=0.000237023, gnorm=1.531, loss_scale=32, train_wall=9, gb_free=8.4, wall=2802
+2022-03-10 22:35:53 | INFO | train_inner | epoch 029:    433 / 624 loss=3.374, ppl=10.37, wps=89880.4, ups=10.97, wpb=8192, bsz=16, num_updates=17900, lr=0.00023636, gnorm=1.541, loss_scale=32, train_wall=9, gb_free=8.4, wall=2811
+2022-03-10 22:36:02 | INFO | train_inner | epoch 029:    533 / 624 loss=3.419, ppl=10.7, wps=89247.8, ups=10.89, wpb=8192, bsz=16, num_updates=18000, lr=0.000235702, gnorm=1.539, loss_scale=32, train_wall=9, gb_free=8.4, wall=2820
+2022-03-10 22:36:11 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:36:14 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:36:14 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:36:16 | INFO | valid | epoch 029 | valid on 'valid' subset | loss 5.971 | ppl 62.72 | wps 280053 | wpb 4053.1 | bsz 7.9 | num_updates 18091 | best_loss 5.455
+2022-03-10 22:36:16 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 29 @ 18091 updates
+2022-03-10 22:36:16 | INFO | fairseq_cli.train | end of epoch 29 (average epoch stats below)
+2022-03-10 22:36:16 | INFO | train | epoch 029 | loss 3.331 | ppl 10.06 | wps 76104.3 | ups 9.3 | wpb 8183.1 | bsz 16 | num_updates 18091 | lr 0.000235109 | gnorm 1.527 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 2834
+2022-03-10 22:36:16 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:36:16 | INFO | fairseq.trainer | begin training epoch 30
+2022-03-10 22:36:16 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:36:19 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:36:19 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:36:21 | INFO | train_inner | epoch 030:      9 / 624 loss=3.423, ppl=10.73, wps=42785.1, ups=5.25, wpb=8151, bsz=15.9, num_updates=18100, lr=0.00023505, gnorm=1.548, loss_scale=32, train_wall=9, gb_free=8.4, wall=2839
+2022-03-10 22:36:31 | INFO | train_inner | epoch 030:    109 / 624 loss=3.14, ppl=8.82, wps=87169.4, ups=10.64, wpb=8192, bsz=16, num_updates=18200, lr=0.000234404, gnorm=1.51, loss_scale=32, train_wall=9, gb_free=8.4, wall=2849
+2022-03-10 22:36:40 | INFO | train_inner | epoch 030:    209 / 624 loss=3.213, ppl=9.27, wps=88965.4, ups=10.86, wpb=8192, bsz=16, num_updates=18300, lr=0.000233762, gnorm=1.541, loss_scale=32, train_wall=9, gb_free=8.4, wall=2858
+2022-03-10 22:36:49 | INFO | train_inner | epoch 030:    309 / 624 loss=3.269, ppl=9.64, wps=89550.3, ups=10.95, wpb=8181.8, bsz=16, num_updates=18400, lr=0.000233126, gnorm=1.551, loss_scale=32, train_wall=9, gb_free=8.4, wall=2867
+2022-03-10 22:36:58 | INFO | train_inner | epoch 030:    409 / 624 loss=3.317, ppl=9.97, wps=89950.1, ups=10.98, wpb=8192, bsz=16, num_updates=18500, lr=0.000232495, gnorm=1.56, loss_scale=32, train_wall=9, gb_free=8.4, wall=2876
+2022-03-10 22:37:07 | INFO | train_inner | epoch 030:    509 / 624 loss=3.368, ppl=10.32, wps=89335.4, ups=10.91, wpb=8192, bsz=16, num_updates=18600, lr=0.000231869, gnorm=1.558, loss_scale=32, train_wall=9, gb_free=8.4, wall=2885
+2022-03-10 22:37:17 | INFO | train_inner | epoch 030:    609 / 624 loss=3.404, ppl=10.58, wps=89098, ups=10.88, wpb=8187.6, bsz=16, num_updates=18700, lr=0.000231249, gnorm=1.569, loss_scale=32, train_wall=9, gb_free=8.4, wall=2894
+2022-03-10 22:37:18 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:37:35 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:37:35 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:37:37 | INFO | valid | epoch 030 | valid on 'valid' subset | loss 6.005 | ppl 64.2 | wps 269372 | wpb 4053.1 | bsz 7.9 | num_updates 18715 | best_loss 5.455
+2022-03-10 22:37:37 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 30 @ 18715 updates
+2022-03-10 22:37:37 | INFO | fairseq_cli.train | end of epoch 30 (average epoch stats below)
+2022-03-10 22:37:37 | INFO | train | epoch 030 | loss 3.286 | ppl 9.75 | wps 63260.1 | ups 7.73 | wpb 8183.1 | bsz 16 | num_updates 18715 | lr 0.000231156 | gnorm 1.549 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 2915
+2022-03-10 22:37:37 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:37:37 | INFO | fairseq.trainer | begin training epoch 31
+2022-03-10 22:37:37 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:37:40 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:37:40 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:37:49 | INFO | train_inner | epoch 031:     85 / 624 loss=3.135, ppl=8.79, wps=24817.1, ups=3.04, wpb=8151, bsz=15.9, num_updates=18800, lr=0.000230633, gnorm=1.538, loss_scale=32, train_wall=9, gb_free=8.4, wall=2927
+2022-03-10 22:37:59 | INFO | train_inner | epoch 031:    185 / 624 loss=3.155, ppl=8.91, wps=88899.9, ups=10.85, wpb=8192, bsz=16, num_updates=18900, lr=0.000230022, gnorm=1.55, loss_scale=32, train_wall=9, gb_free=8.4, wall=2936
+2022-03-10 22:38:08 | INFO | train_inner | epoch 031:    285 / 624 loss=3.206, ppl=9.23, wps=89863.6, ups=10.98, wpb=8181.8, bsz=16, num_updates=19000, lr=0.000229416, gnorm=1.572, loss_scale=32, train_wall=9, gb_free=8.4, wall=2946
+2022-03-10 22:38:17 | INFO | train_inner | epoch 031:    385 / 624 loss=3.275, ppl=9.68, wps=89827.9, ups=10.97, wpb=8192, bsz=16, num_updates=19100, lr=0.000228814, gnorm=1.586, loss_scale=32, train_wall=9, gb_free=8.4, wall=2955
+2022-03-10 22:38:26 | INFO | train_inner | epoch 031:    485 / 624 loss=3.305, ppl=9.88, wps=88737.5, ups=10.83, wpb=8192, bsz=16, num_updates=19200, lr=0.000228218, gnorm=1.581, loss_scale=32, train_wall=9, gb_free=8.4, wall=2964
+2022-03-10 22:38:35 | INFO | train_inner | epoch 031:    585 / 624 loss=3.348, ppl=10.18, wps=89600.8, ups=10.94, wpb=8187.6, bsz=16, num_updates=19300, lr=0.000227626, gnorm=1.592, loss_scale=32, train_wall=9, gb_free=8.4, wall=2973
+2022-03-10 22:38:39 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:38:42 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:38:42 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:38:45 | INFO | valid | epoch 031 | valid on 'valid' subset | loss 6.038 | ppl 65.73 | wps 265753 | wpb 4053.1 | bsz 7.9 | num_updates 19339 | best_loss 5.455
+2022-03-10 22:38:45 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 31 @ 19339 updates
+2022-03-10 22:38:45 | INFO | fairseq_cli.train | end of epoch 31 (average epoch stats below)
+2022-03-10 22:38:45 | INFO | train | epoch 031 | loss 3.241 | ppl 9.45 | wps 75201.7 | ups 9.19 | wpb 8183.1 | bsz 16 | num_updates 19339 | lr 0.000227396 | gnorm 1.571 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 2983
+2022-03-10 22:38:45 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:38:45 | INFO | fairseq.trainer | begin training epoch 32
+2022-03-10 22:38:45 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:38:48 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:38:48 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:38:55 | INFO | train_inner | epoch 032:     61 / 624 loss=3.166, ppl=8.97, wps=42111.7, ups=5.17, wpb=8151, bsz=15.9, num_updates=19400, lr=0.000227038, gnorm=1.568, loss_scale=32, train_wall=9, gb_free=8.4, wall=2992
+2022-03-10 22:39:04 | INFO | train_inner | epoch 032:    161 / 624 loss=3.089, ppl=8.51, wps=89928.7, ups=10.98, wpb=8192, bsz=16, num_updates=19500, lr=0.000226455, gnorm=1.568, loss_scale=32, train_wall=9, gb_free=8.4, wall=3002
+2022-03-10 22:39:13 | INFO | train_inner | epoch 032:    261 / 624 loss=3.156, ppl=8.92, wps=89523.2, ups=10.94, wpb=8181.8, bsz=16, num_updates=19600, lr=0.000225877, gnorm=1.593, loss_scale=32, train_wall=9, gb_free=8.4, wall=3011
+2022-03-10 22:39:22 | INFO | train_inner | epoch 032:    361 / 624 loss=3.211, ppl=9.26, wps=89871.8, ups=10.97, wpb=8192, bsz=16, num_updates=19700, lr=0.000225303, gnorm=1.598, loss_scale=32, train_wall=9, gb_free=8.4, wall=3020
+2022-03-10 22:39:31 | INFO | train_inner | epoch 032:    461 / 624 loss=3.253, ppl=9.53, wps=89481.9, ups=10.93, wpb=8187.6, bsz=16, num_updates=19800, lr=0.000224733, gnorm=1.603, loss_scale=32, train_wall=9, gb_free=8.4, wall=3029
+2022-03-10 22:39:40 | INFO | train_inner | epoch 032:    561 / 624 loss=3.295, ppl=9.82, wps=89257.9, ups=10.9, wpb=8192, bsz=16, num_updates=19900, lr=0.000224168, gnorm=1.615, loss_scale=32, train_wall=9, gb_free=8.4, wall=3038
+2022-03-10 22:39:46 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:39:50 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:39:50 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:39:52 | INFO | valid | epoch 032 | valid on 'valid' subset | loss 6.078 | ppl 67.58 | wps 274497 | wpb 4053.1 | bsz 7.9 | num_updates 19963 | best_loss 5.455
+2022-03-10 22:39:52 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 32 @ 19963 updates
+2022-03-10 22:39:52 | INFO | fairseq_cli.train | end of epoch 32 (average epoch stats below)
+2022-03-10 22:39:52 | INFO | train | epoch 032 | loss 3.197 | ppl 9.17 | wps 76407 | ups 9.34 | wpb 8183.1 | bsz 16 | num_updates 19963 | lr 0.000223814 | gnorm 1.593 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 3049
+2022-03-10 22:39:52 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:39:52 | INFO | fairseq.trainer | begin training epoch 33
+2022-03-10 22:39:52 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:39:55 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:39:55 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:39:59 | INFO | train_inner | epoch 033:     37 / 624 loss=3.201, ppl=9.19, wps=43252.8, ups=5.31, wpb=8151, bsz=15.9, num_updates=20000, lr=0.000223607, gnorm=1.598, loss_scale=32, train_wall=9, gb_free=8.4, wall=3057
+2022-03-10 22:40:08 | INFO | train_inner | epoch 033:    137 / 624 loss=3.03, ppl=8.17, wps=89877.4, ups=10.99, wpb=8181.8, bsz=16, num_updates=20100, lr=0.00022305, gnorm=1.584, loss_scale=32, train_wall=9, gb_free=8.4, wall=3066
+2022-03-10 22:40:17 | INFO | train_inner | epoch 033:    237 / 624 loss=3.103, ppl=8.59, wps=90053.1, ups=10.99, wpb=8192, bsz=16, num_updates=20200, lr=0.000222497, gnorm=1.609, loss_scale=32, train_wall=9, gb_free=8.4, wall=3075
+2022-03-10 22:40:27 | INFO | train_inner | epoch 033:    337 / 624 loss=3.157, ppl=8.92, wps=89811.4, ups=10.97, wpb=8187.6, bsz=16, num_updates=20300, lr=0.000221948, gnorm=1.616, loss_scale=32, train_wall=9, gb_free=8.4, wall=3084
+2022-03-10 22:40:36 | INFO | train_inner | epoch 033:    437 / 624 loss=3.208, ppl=9.24, wps=89626.7, ups=10.94, wpb=8192, bsz=16, num_updates=20400, lr=0.000221404, gnorm=1.632, loss_scale=32, train_wall=9, gb_free=8.4, wall=3093
+2022-03-10 22:40:45 | INFO | train_inner | epoch 033:    537 / 624 loss=3.24, ppl=9.45, wps=89653.7, ups=10.94, wpb=8192, bsz=16, num_updates=20500, lr=0.000220863, gnorm=1.629, loss_scale=32, train_wall=9, gb_free=8.4, wall=3103
+2022-03-10 22:40:53 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:40:56 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:40:56 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:40:58 | INFO | valid | epoch 033 | valid on 'valid' subset | loss 6.105 | ppl 68.84 | wps 254422 | wpb 4053.1 | bsz 7.9 | num_updates 20587 | best_loss 5.455
+2022-03-10 22:40:58 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 33 @ 20587 updates
+2022-03-10 22:40:58 | INFO | fairseq_cli.train | end of epoch 33 (average epoch stats below)
+2022-03-10 22:40:58 | INFO | train | epoch 033 | loss 3.159 | ppl 8.93 | wps 76501.8 | ups 9.35 | wpb 8183.1 | bsz 16 | num_updates 20587 | lr 0.000220396 | gnorm 1.615 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 3116
+2022-03-10 22:40:58 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:40:58 | INFO | fairseq.trainer | begin training epoch 34
+2022-03-10 22:40:58 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:41:02 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:41:02 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:41:04 | INFO | train_inner | epoch 034:     13 / 624 loss=3.239, ppl=9.44, wps=42940.7, ups=5.27, wpb=8151, bsz=15.9, num_updates=20600, lr=0.000220326, gnorm=1.637, loss_scale=32, train_wall=9, gb_free=8.4, wall=3122
+2022-03-10 22:41:13 | INFO | train_inner | epoch 034:    113 / 624 loss=2.973, ppl=7.85, wps=89732.2, ups=10.95, wpb=8192, bsz=16, num_updates=20700, lr=0.000219793, gnorm=1.595, loss_scale=32, train_wall=9, gb_free=8.4, wall=3131
+2022-03-10 22:41:23 | INFO | train_inner | epoch 034:    213 / 624 loss=3.055, ppl=8.31, wps=85000.1, ups=10.38, wpb=8192, bsz=16, num_updates=20800, lr=0.000219265, gnorm=1.623, loss_scale=32, train_wall=9, gb_free=8.4, wall=3140
+2022-03-10 22:41:32 | INFO | train_inner | epoch 034:    313 / 624 loss=3.114, ppl=8.66, wps=88646.5, ups=10.82, wpb=8192, bsz=16, num_updates=20900, lr=0.000218739, gnorm=1.641, loss_scale=32, train_wall=9, gb_free=8.4, wall=3150
+2022-03-10 22:41:41 | INFO | train_inner | epoch 034:    413 / 624 loss=3.152, ppl=8.89, wps=89474.2, ups=10.92, wpb=8192, bsz=16, num_updates=21000, lr=0.000218218, gnorm=1.644, loss_scale=32, train_wall=9, gb_free=8.4, wall=3159
+2022-03-10 22:41:50 | INFO | train_inner | epoch 034:    513 / 624 loss=3.199, ppl=9.18, wps=89043.6, ups=10.89, wpb=8177.4, bsz=16, num_updates=21100, lr=0.0002177, gnorm=1.649, loss_scale=32, train_wall=9, gb_free=8.4, wall=3168
+2022-03-10 22:41:59 | INFO | train_inner | epoch 034:    613 / 624 loss=3.229, ppl=9.38, wps=90145.9, ups=11, wpb=8192, bsz=16, num_updates=21200, lr=0.000217186, gnorm=1.651, loss_scale=32, train_wall=9, gb_free=8.4, wall=3177
+2022-03-10 22:42:00 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:42:15 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:42:15 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:42:17 | INFO | valid | epoch 034 | valid on 'valid' subset | loss 6.136 | ppl 70.34 | wps 285363 | wpb 4053.1 | bsz 7.9 | num_updates 21211 | best_loss 5.455
+2022-03-10 22:42:17 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 34 @ 21211 updates
+2022-03-10 22:42:17 | INFO | fairseq_cli.train | end of epoch 34 (average epoch stats below)
+2022-03-10 22:42:17 | INFO | train | epoch 034 | loss 3.118 | ppl 8.68 | wps 65310 | ups 7.98 | wpb 8183.1 | bsz 16 | num_updates 21211 | lr 0.00021713 | gnorm 1.634 | loss_scale 32 | train_wall 57 | gb_free 8.4 | wall 3194
+2022-03-10 22:42:17 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:42:17 | INFO | fairseq.trainer | begin training epoch 35
+2022-03-10 22:42:17 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:42:22 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:42:22 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:42:32 | INFO | train_inner | epoch 035:     89 / 624 loss=2.971, ppl=7.84, wps=25059.9, ups=3.07, wpb=8151, bsz=15.9, num_updates=21300, lr=0.000216676, gnorm=1.616, loss_scale=32, train_wall=9, gb_free=8.4, wall=3210
+2022-03-10 22:42:41 | INFO | train_inner | epoch 035:    189 / 624 loss=2.996, ppl=7.98, wps=89995.2, ups=11, wpb=8181.8, bsz=16, num_updates=21400, lr=0.000216169, gnorm=1.634, loss_scale=32, train_wall=9, gb_free=8.4, wall=3219
+2022-03-10 22:42:50 | INFO | train_inner | epoch 035:    289 / 624 loss=3.058, ppl=8.33, wps=89714.9, ups=10.95, wpb=8192, bsz=16, num_updates=21500, lr=0.000215666, gnorm=1.653, loss_scale=32, train_wall=9, gb_free=8.4, wall=3228
+2022-03-10 22:42:59 | INFO | train_inner | epoch 035:    389 / 624 loss=3.105, ppl=8.6, wps=89867.1, ups=10.97, wpb=8192, bsz=16, num_updates=21600, lr=0.000215166, gnorm=1.663, loss_scale=32, train_wall=9, gb_free=8.4, wall=3237
+2022-03-10 22:43:08 | INFO | train_inner | epoch 035:    489 / 624 loss=3.151, ppl=8.88, wps=89153.9, ups=10.88, wpb=8192, bsz=16, num_updates=21700, lr=0.000214669, gnorm=1.669, loss_scale=32, train_wall=9, gb_free=8.4, wall=3246
+2022-03-10 22:43:17 | INFO | train_inner | epoch 035:    589 / 624 loss=3.189, ppl=9.12, wps=89295.3, ups=10.91, wpb=8187.6, bsz=16, num_updates=21800, lr=0.000214176, gnorm=1.677, loss_scale=32, train_wall=9, gb_free=8.4, wall=3255
+2022-03-10 22:43:21 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:43:24 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:43:24 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:43:26 | INFO | valid | epoch 035 | valid on 'valid' subset | loss 6.181 | ppl 72.56 | wps 302636 | wpb 4053.1 | bsz 7.9 | num_updates 21835 | best_loss 5.455
+2022-03-10 22:43:26 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 35 @ 21835 updates
+2022-03-10 22:43:26 | INFO | fairseq_cli.train | end of epoch 35 (average epoch stats below)
+2022-03-10 22:43:26 | INFO | train | epoch 035 | loss 3.082 | ppl 8.47 | wps 73609.1 | ups 9 | wpb 8183.1 | bsz 16 | num_updates 21835 | lr 0.000214005 | gnorm 1.653 | loss_scale 64 | train_wall 56 | gb_free 8.4 | wall 3264
+2022-03-10 22:43:26 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:43:26 | INFO | fairseq.trainer | begin training epoch 36
+2022-03-10 22:43:26 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:43:29 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:43:29 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:43:37 | INFO | train_inner | epoch 036:     65 / 624 loss=3.002, ppl=8.01, wps=42525.3, ups=5.22, wpb=8151, bsz=15.9, num_updates=21900, lr=0.000213687, gnorm=1.642, loss_scale=64, train_wall=9, gb_free=8.4, wall=3274
+2022-03-10 22:43:46 | INFO | train_inner | epoch 036:    165 / 624 loss=2.944, ppl=7.69, wps=89576.6, ups=10.93, wpb=8192, bsz=16, num_updates=22000, lr=0.000213201, gnorm=1.657, loss_scale=64, train_wall=9, gb_free=8.4, wall=3284
+2022-03-10 22:43:55 | INFO | train_inner | epoch 036:    265 / 624 loss=3.013, ppl=8.07, wps=89536.1, ups=10.93, wpb=8192, bsz=16, num_updates=22100, lr=0.000212718, gnorm=1.682, loss_scale=64, train_wall=9, gb_free=8.4, wall=3293
+2022-03-10 22:44:04 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+2022-03-10 22:44:04 | INFO | train_inner | epoch 036:    366 / 624 loss=3.054, ppl=8.3, wps=89085.7, ups=10.88, wpb=8187.6, bsz=16, num_updates=22200, lr=0.000212238, gnorm=1.678, loss_scale=32, train_wall=9, gb_free=8.4, wall=3302
+2022-03-10 22:44:13 | INFO | train_inner | epoch 036:    466 / 624 loss=3.108, ppl=8.62, wps=89861.8, ups=10.98, wpb=8181.8, bsz=16, num_updates=22300, lr=0.000211762, gnorm=1.706, loss_scale=32, train_wall=9, gb_free=8.4, wall=3311
+2022-03-10 22:44:22 | INFO | train_inner | epoch 036:    566 / 624 loss=3.139, ppl=8.81, wps=89756.9, ups=10.96, wpb=8192, bsz=16, num_updates=22400, lr=0.000211289, gnorm=1.703, loss_scale=32, train_wall=9, gb_free=8.4, wall=3320
+2022-03-10 22:44:28 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:44:31 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:44:31 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:44:33 | INFO | valid | epoch 036 | valid on 'valid' subset | loss 6.208 | ppl 73.95 | wps 258752 | wpb 4053.1 | bsz 7.9 | num_updates 22458 | best_loss 5.455
+2022-03-10 22:44:33 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 36 @ 22458 updates
+2022-03-10 22:44:34 | INFO | fairseq_cli.train | end of epoch 36 (average epoch stats below)
+2022-03-10 22:44:34 | INFO | train | epoch 036 | loss 3.046 | ppl 8.26 | wps 75442.1 | ups 9.22 | wpb 8183.1 | bsz 16 | num_updates 22458 | lr 0.000211016 | gnorm 1.68 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 3331
+2022-03-10 22:44:34 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:44:34 | INFO | fairseq.trainer | begin training epoch 37
+2022-03-10 22:44:34 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:44:37 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:44:37 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:44:42 | INFO | train_inner | epoch 037:     42 / 624 loss=3.031, ppl=8.18, wps=41408.2, ups=5.08, wpb=8151, bsz=15.9, num_updates=22500, lr=0.000210819, gnorm=1.674, loss_scale=32, train_wall=9, gb_free=8.4, wall=3340
+2022-03-10 22:44:51 | INFO | train_inner | epoch 037:    142 / 624 loss=2.898, ppl=7.45, wps=89944.9, ups=10.98, wpb=8192, bsz=16, num_updates=22600, lr=0.000210352, gnorm=1.654, loss_scale=32, train_wall=9, gb_free=8.4, wall=3349
+2022-03-10 22:45:00 | INFO | train_inner | epoch 037:    242 / 624 loss=2.958, ppl=7.77, wps=89204.8, ups=10.89, wpb=8192, bsz=16, num_updates=22700, lr=0.000209888, gnorm=1.683, loss_scale=32, train_wall=9, gb_free=8.4, wall=3358
+2022-03-10 22:45:09 | INFO | train_inner | epoch 037:    342 / 624 loss=3.012, ppl=8.06, wps=90101.4, ups=11, wpb=8192, bsz=16, num_updates=22800, lr=0.000209427, gnorm=1.695, loss_scale=32, train_wall=9, gb_free=8.4, wall=3367
+2022-03-10 22:45:18 | INFO | train_inner | epoch 037:    442 / 624 loss=3.06, ppl=8.34, wps=90440.2, ups=11.04, wpb=8192, bsz=16, num_updates=22900, lr=0.000208969, gnorm=1.708, loss_scale=32, train_wall=9, gb_free=8.4, wall=3376
+2022-03-10 22:45:28 | INFO | train_inner | epoch 037:    542 / 624 loss=3.099, ppl=8.57, wps=89224.6, ups=10.89, wpb=8192, bsz=16, num_updates=23000, lr=0.000208514, gnorm=1.715, loss_scale=32, train_wall=9, gb_free=8.4, wall=3385
+2022-03-10 22:45:35 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:45:39 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:45:39 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:45:41 | INFO | valid | epoch 037 | valid on 'valid' subset | loss 6.245 | ppl 75.85 | wps 271334 | wpb 4053.1 | bsz 7.9 | num_updates 23082 | best_loss 5.455
+2022-03-10 22:45:41 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 37 @ 23082 updates
+2022-03-10 22:45:41 | INFO | fairseq_cli.train | end of epoch 37 (average epoch stats below)
+2022-03-10 22:45:41 | INFO | train | epoch 037 | loss 3.01 | ppl 8.06 | wps 75978 | ups 9.28 | wpb 8183.1 | bsz 16 | num_updates 23082 | lr 0.000208144 | gnorm 1.691 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 3398
+2022-03-10 22:45:41 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:45:41 | INFO | fairseq.trainer | begin training epoch 38
+2022-03-10 22:45:41 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:45:44 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:45:44 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:45:47 | INFO | train_inner | epoch 038:     18 / 624 loss=3.065, ppl=8.37, wps=42299.8, ups=5.2, wpb=8136.4, bsz=15.9, num_updates=23100, lr=0.000208063, gnorm=1.708, loss_scale=32, train_wall=9, gb_free=8.4, wall=3405
+2022-03-10 22:45:56 | INFO | train_inner | epoch 038:    118 / 624 loss=2.845, ppl=7.18, wps=90164.4, ups=11.01, wpb=8192, bsz=16, num_updates=23200, lr=0.000207614, gnorm=1.676, loss_scale=32, train_wall=9, gb_free=8.4, wall=3414
+2022-03-10 22:46:05 | INFO | train_inner | epoch 038:    218 / 624 loss=2.919, ppl=7.56, wps=89255.8, ups=10.9, wpb=8192, bsz=16, num_updates=23300, lr=0.000207168, gnorm=1.706, loss_scale=32, train_wall=9, gb_free=8.4, wall=3423
+2022-03-10 22:46:14 | INFO | train_inner | epoch 038:    318 / 624 loss=2.966, ppl=7.81, wps=89731.4, ups=10.95, wpb=8192, bsz=16, num_updates=23400, lr=0.000206725, gnorm=1.709, loss_scale=32, train_wall=9, gb_free=8.4, wall=3432
+2022-03-10 22:46:23 | INFO | train_inner | epoch 038:    418 / 624 loss=3.007, ppl=8.04, wps=89751, ups=10.96, wpb=8192, bsz=16, num_updates=23500, lr=0.000206284, gnorm=1.722, loss_scale=32, train_wall=9, gb_free=8.4, wall=3441
+2022-03-10 22:46:33 | INFO | train_inner | epoch 038:    518 / 624 loss=3.057, ppl=8.32, wps=88146.4, ups=10.76, wpb=8192, bsz=16, num_updates=23600, lr=0.000205847, gnorm=1.733, loss_scale=32, train_wall=9, gb_free=8.4, wall=3450
+2022-03-10 22:46:42 | INFO | train_inner | epoch 038:    618 / 624 loss=3.093, ppl=8.53, wps=88936.4, ups=10.88, wpb=8177.4, bsz=16, num_updates=23700, lr=0.000205412, gnorm=1.748, loss_scale=32, train_wall=9, gb_free=8.4, wall=3460
+2022-03-10 22:46:42 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:46:50 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:46:50 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:46:53 | INFO | valid | epoch 038 | valid on 'valid' subset | loss 6.268 | ppl 77.04 | wps 259680 | wpb 4053.1 | bsz 7.9 | num_updates 23706 | best_loss 5.455
+2022-03-10 22:46:53 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 38 @ 23706 updates
+2022-03-10 22:46:53 | INFO | fairseq_cli.train | end of epoch 38 (average epoch stats below)
+2022-03-10 22:46:53 | INFO | train | epoch 038 | loss 2.976 | ppl 7.87 | wps 71061.4 | ups 8.68 | wpb 8183.1 | bsz 16 | num_updates 23706 | lr 0.000205386 | gnorm 1.715 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 3470
+2022-03-10 22:46:53 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:46:53 | INFO | fairseq.trainer | begin training epoch 39
+2022-03-10 22:46:53 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:46:56 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:46:56 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:47:06 | INFO | train_inner | epoch 039:     94 / 624 loss=2.803, ppl=6.98, wps=34270.9, ups=4.2, wpb=8151, bsz=15.9, num_updates=23800, lr=0.00020498, gnorm=1.684, loss_scale=32, train_wall=9, gb_free=8.4, wall=3483
+2022-03-10 22:47:15 | INFO | train_inner | epoch 039:    194 / 624 loss=2.87, ppl=7.31, wps=90185.8, ups=11.01, wpb=8192, bsz=16, num_updates=23900, lr=0.000204551, gnorm=1.711, loss_scale=32, train_wall=9, gb_free=8.4, wall=3493
+2022-03-10 22:47:24 | INFO | train_inner | epoch 039:    294 / 624 loss=2.921, ppl=7.58, wps=89264.5, ups=10.9, wpb=8187.6, bsz=16, num_updates=24000, lr=0.000204124, gnorm=1.727, loss_scale=32, train_wall=9, gb_free=8.4, wall=3502
+2022-03-10 22:47:33 | INFO | train_inner | epoch 039:    394 / 624 loss=2.977, ppl=7.88, wps=90140.6, ups=11, wpb=8192, bsz=16, num_updates=24100, lr=0.0002037, gnorm=1.739, loss_scale=32, train_wall=9, gb_free=8.4, wall=3511
+2022-03-10 22:47:42 | INFO | train_inner | epoch 039:    494 / 624 loss=3.013, ppl=8.07, wps=90040.9, ups=10.99, wpb=8192, bsz=16, num_updates=24200, lr=0.000203279, gnorm=1.747, loss_scale=32, train_wall=9, gb_free=8.4, wall=3520
+2022-03-10 22:47:51 | INFO | train_inner | epoch 039:    594 / 624 loss=3.049, ppl=8.28, wps=90108.8, ups=11.01, wpb=8181.8, bsz=16, num_updates=24300, lr=0.00020286, gnorm=1.757, loss_scale=32, train_wall=9, gb_free=8.4, wall=3529
+2022-03-10 22:47:54 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:48:06 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:48:06 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:48:08 | INFO | valid | epoch 039 | valid on 'valid' subset | loss 6.31 | ppl 79.34 | wps 265189 | wpb 4053.1 | bsz 7.9 | num_updates 24330 | best_loss 5.455
+2022-03-10 22:48:08 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 39 @ 24330 updates
+2022-03-10 22:48:08 | INFO | fairseq_cli.train | end of epoch 39 (average epoch stats below)
+2022-03-10 22:48:08 | INFO | train | epoch 039 | loss 2.944 | ppl 7.7 | wps 67305.1 | ups 8.22 | wpb 8183.1 | bsz 16 | num_updates 24330 | lr 0.000202735 | gnorm 1.728 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 3546
+2022-03-10 22:48:08 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:48:08 | INFO | fairseq.trainer | begin training epoch 40
+2022-03-10 22:48:08 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:48:12 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:48:12 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:48:19 | INFO | train_inner | epoch 040:     70 / 624 loss=2.851, ppl=7.21, wps=28939.6, ups=3.55, wpb=8140.8, bsz=15.9, num_updates=24400, lr=0.000202444, gnorm=1.709, loss_scale=32, train_wall=9, gb_free=8.4, wall=3557
+2022-03-10 22:48:28 | INFO | train_inner | epoch 040:    170 / 624 loss=2.824, ppl=7.08, wps=89932.8, ups=10.98, wpb=8192, bsz=16, num_updates=24500, lr=0.000202031, gnorm=1.727, loss_scale=32, train_wall=9, gb_free=8.4, wall=3566
+2022-03-10 22:48:38 | INFO | train_inner | epoch 040:    270 / 624 loss=2.877, ppl=7.35, wps=89762.3, ups=10.96, wpb=8192, bsz=16, num_updates=24600, lr=0.000201619, gnorm=1.739, loss_scale=32, train_wall=9, gb_free=8.4, wall=3575
+2022-03-10 22:48:47 | INFO | train_inner | epoch 040:    370 / 624 loss=2.924, ppl=7.59, wps=89439.1, ups=10.92, wpb=8187.6, bsz=16, num_updates=24700, lr=0.000201211, gnorm=1.742, loss_scale=32, train_wall=9, gb_free=8.4, wall=3584
+2022-03-10 22:48:56 | INFO | train_inner | epoch 040:    470 / 624 loss=2.969, ppl=7.83, wps=90224.4, ups=11.01, wpb=8192, bsz=16, num_updates=24800, lr=0.000200805, gnorm=1.763, loss_scale=32, train_wall=9, gb_free=8.4, wall=3594
+2022-03-10 22:49:05 | INFO | train_inner | epoch 040:    570 / 624 loss=3.008, ppl=8.05, wps=89950.7, ups=10.98, wpb=8192, bsz=16, num_updates=24900, lr=0.000200401, gnorm=1.776, loss_scale=32, train_wall=9, gb_free=8.4, wall=3603
+2022-03-10 22:49:10 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:49:13 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:49:13 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:49:15 | INFO | valid | epoch 040 | valid on 'valid' subset | loss 6.331 | ppl 80.49 | wps 263744 | wpb 4053.1 | bsz 7.9 | num_updates 24954 | best_loss 5.455
+2022-03-10 22:49:15 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 40 @ 24954 updates
+2022-03-10 22:49:15 | INFO | fairseq_cli.train | end of epoch 40 (average epoch stats below)
+2022-03-10 22:49:15 | INFO | train | epoch 040 | loss 2.913 | ppl 7.53 | wps 76440 | ups 9.34 | wpb 8183.1 | bsz 16 | num_updates 24954 | lr 0.000200184 | gnorm 1.745 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 3613
+2022-03-10 22:49:15 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:49:15 | INFO | fairseq.trainer | begin training epoch 41
+2022-03-10 22:49:15 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:49:18 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:49:18 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:49:24 | INFO | train_inner | epoch 041:     46 / 624 loss=2.893, ppl=7.43, wps=43018.6, ups=5.28, wpb=8151, bsz=15.9, num_updates=25000, lr=0.0002, gnorm=1.747, loss_scale=32, train_wall=9, gb_free=8.4, wall=3622
+2022-03-10 22:49:33 | INFO | train_inner | epoch 041:    146 / 624 loss=2.771, ppl=6.83, wps=89428, ups=10.93, wpb=8181.8, bsz=16, num_updates=25100, lr=0.000199601, gnorm=1.731, loss_scale=32, train_wall=9, gb_free=8.4, wall=3631
+2022-03-10 22:49:42 | INFO | train_inner | epoch 041:    246 / 624 loss=2.839, ppl=7.16, wps=89501.8, ups=10.93, wpb=8192, bsz=16, num_updates=25200, lr=0.000199205, gnorm=1.756, loss_scale=32, train_wall=9, gb_free=8.4, wall=3640
+2022-03-10 22:49:51 | INFO | train_inner | epoch 041:    346 / 624 loss=2.884, ppl=7.38, wps=89689.2, ups=10.95, wpb=8192, bsz=16, num_updates=25300, lr=0.000198811, gnorm=1.765, loss_scale=32, train_wall=9, gb_free=8.4, wall=3649
+2022-03-10 22:50:00 | INFO | train_inner | epoch 041:    446 / 624 loss=2.935, ppl=7.65, wps=89919.8, ups=10.98, wpb=8192, bsz=16, num_updates=25400, lr=0.000198419, gnorm=1.776, loss_scale=32, train_wall=9, gb_free=8.4, wall=3658
+2022-03-10 22:50:09 | INFO | train_inner | epoch 041:    546 / 624 loss=2.964, ppl=7.8, wps=90142.2, ups=11.01, wpb=8187.6, bsz=16, num_updates=25500, lr=0.00019803, gnorm=1.784, loss_scale=32, train_wall=9, gb_free=8.4, wall=3667
+2022-03-10 22:50:17 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:50:20 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:50:20 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:50:22 | INFO | valid | epoch 041 | valid on 'valid' subset | loss 6.37 | ppl 82.73 | wps 272375 | wpb 4053.1 | bsz 7.9 | num_updates 25578 | best_loss 5.455
+2022-03-10 22:50:22 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 41 @ 25578 updates
+2022-03-10 22:50:22 | INFO | fairseq_cli.train | end of epoch 41 (average epoch stats below)
+2022-03-10 22:50:22 | INFO | train | epoch 041 | loss 2.883 | ppl 7.38 | wps 76196.9 | ups 9.31 | wpb 8183.1 | bsz 16 | num_updates 25578 | lr 0.000197727 | gnorm 1.762 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 3680
+2022-03-10 22:50:22 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:50:22 | INFO | fairseq.trainer | begin training epoch 42
+2022-03-10 22:50:22 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:50:25 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:50:25 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:50:29 | INFO | train_inner | epoch 042:     22 / 624 loss=2.936, ppl=7.65, wps=42775.4, ups=5.25, wpb=8140.8, bsz=15.9, num_updates=25600, lr=0.000197642, gnorm=1.781, loss_scale=32, train_wall=9, gb_free=8.4, wall=3686
+2022-03-10 22:50:38 | INFO | train_inner | epoch 042:    122 / 624 loss=2.724, ppl=6.61, wps=90123.1, ups=11, wpb=8192, bsz=16, num_updates=25700, lr=0.000197257, gnorm=1.738, loss_scale=32, train_wall=9, gb_free=8.4, wall=3695
+2022-03-10 22:50:47 | INFO | train_inner | epoch 042:    222 / 624 loss=2.784, ppl=6.89, wps=90316.6, ups=11.02, wpb=8192, bsz=16, num_updates=25800, lr=0.000196875, gnorm=1.759, loss_scale=32, train_wall=9, gb_free=8.4, wall=3704
+2022-03-10 22:50:56 | INFO | train_inner | epoch 042:    322 / 624 loss=2.846, ppl=7.19, wps=90131.9, ups=11.01, wpb=8187.6, bsz=16, num_updates=25900, lr=0.000196494, gnorm=1.784, loss_scale=32, train_wall=9, gb_free=8.4, wall=3714
+2022-03-10 22:51:05 | INFO | train_inner | epoch 042:    422 / 624 loss=2.894, ppl=7.43, wps=89805.9, ups=10.96, wpb=8192, bsz=16, num_updates=26000, lr=0.000196116, gnorm=1.801, loss_scale=32, train_wall=9, gb_free=8.4, wall=3723
+2022-03-10 22:51:14 | INFO | train_inner | epoch 042:    522 / 624 loss=2.932, ppl=7.63, wps=89659.8, ups=10.94, wpb=8192, bsz=16, num_updates=26100, lr=0.00019574, gnorm=1.8, loss_scale=32, train_wall=9, gb_free=8.4, wall=3732
+2022-03-10 22:51:23 | INFO | train_inner | epoch 042:    622 / 624 loss=2.965, ppl=7.81, wps=90018.9, ups=10.99, wpb=8192, bsz=16, num_updates=26200, lr=0.000195366, gnorm=1.803, loss_scale=32, train_wall=9, gb_free=8.4, wall=3741
+2022-03-10 22:51:23 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:51:27 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:51:27 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:51:29 | INFO | valid | epoch 042 | valid on 'valid' subset | loss 6.382 | ppl 83.43 | wps 271186 | wpb 4053.1 | bsz 7.9 | num_updates 26202 | best_loss 5.455
+2022-03-10 22:51:29 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 42 @ 26202 updates
+2022-03-10 22:51:29 | INFO | fairseq_cli.train | end of epoch 42 (average epoch stats below)
+2022-03-10 22:51:29 | INFO | train | epoch 042 | loss 2.852 | ppl 7.22 | wps 76769.2 | ups 9.38 | wpb 8183.1 | bsz 16 | num_updates 26202 | lr 0.000195359 | gnorm 1.78 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 3747
+2022-03-10 22:51:29 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:51:29 | INFO | fairseq.trainer | begin training epoch 43
+2022-03-10 22:51:29 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:51:32 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:51:32 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:51:42 | INFO | train_inner | epoch 043:     98 / 624 loss=2.679, ppl=6.4, wps=42723.7, ups=5.25, wpb=8140.8, bsz=15.9, num_updates=26300, lr=0.000194994, gnorm=1.752, loss_scale=64, train_wall=9, gb_free=8.4, wall=3760
+2022-03-10 22:51:44 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+2022-03-10 22:51:51 | INFO | train_inner | epoch 043:    199 / 624 loss=2.759, ppl=6.77, wps=88642.1, ups=10.82, wpb=8192, bsz=16, num_updates=26400, lr=0.000194625, gnorm=1.785, loss_scale=32, train_wall=9, gb_free=8.4, wall=3769
+2022-03-10 22:52:01 | INFO | train_inner | epoch 043:    299 / 624 loss=2.805, ppl=6.99, wps=88576.6, ups=10.81, wpb=8192, bsz=16, num_updates=26500, lr=0.000194257, gnorm=1.796, loss_scale=32, train_wall=9, gb_free=8.4, wall=3778
+2022-03-10 22:52:10 | INFO | train_inner | epoch 043:    399 / 624 loss=2.851, ppl=7.21, wps=90090.5, ups=11, wpb=8187.6, bsz=16, num_updates=26600, lr=0.000193892, gnorm=1.806, loss_scale=32, train_wall=9, gb_free=8.4, wall=3788
+2022-03-10 22:52:19 | INFO | train_inner | epoch 043:    499 / 624 loss=2.891, ppl=7.42, wps=89577.4, ups=10.93, wpb=8192, bsz=16, num_updates=26700, lr=0.000193528, gnorm=1.815, loss_scale=32, train_wall=9, gb_free=8.4, wall=3797
+2022-03-10 22:52:28 | INFO | train_inner | epoch 043:    599 / 624 loss=2.931, ppl=7.62, wps=88456, ups=10.8, wpb=8192, bsz=16, num_updates=26800, lr=0.000193167, gnorm=1.821, loss_scale=32, train_wall=9, gb_free=8.4, wall=3806
+2022-03-10 22:52:30 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:52:38 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:52:38 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:52:40 | INFO | valid | epoch 043 | valid on 'valid' subset | loss 6.427 | ppl 86.05 | wps 268947 | wpb 4053.1 | bsz 7.9 | num_updates 26825 | best_loss 5.455
+2022-03-10 22:52:40 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 43 @ 26825 updates
+2022-03-10 22:52:40 | INFO | fairseq_cli.train | end of epoch 43 (average epoch stats below)
+2022-03-10 22:52:40 | INFO | train | epoch 043 | loss 2.824 | ppl 7.08 | wps 71532.3 | ups 8.74 | wpb 8183.1 | bsz 16 | num_updates 26825 | lr 0.000193077 | gnorm 1.797 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 3818
+2022-03-10 22:52:40 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:52:40 | INFO | fairseq.trainer | begin training epoch 44
+2022-03-10 22:52:40 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:52:43 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:52:43 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:52:51 | INFO | train_inner | epoch 044:     75 / 624 loss=2.716, ppl=6.57, wps=35288.7, ups=4.33, wpb=8151, bsz=15.9, num_updates=26900, lr=0.000192807, gnorm=1.77, loss_scale=32, train_wall=9, gb_free=8.4, wall=3829
+2022-03-10 22:53:01 | INFO | train_inner | epoch 044:    175 / 624 loss=2.712, ppl=6.55, wps=88569.8, ups=10.82, wpb=8187.6, bsz=16, num_updates=27000, lr=0.00019245, gnorm=1.781, loss_scale=32, train_wall=9, gb_free=8.4, wall=3838
+2022-03-10 22:53:10 | INFO | train_inner | epoch 044:    275 / 624 loss=2.768, ppl=6.81, wps=89818.9, ups=10.98, wpb=8181.8, bsz=16, num_updates=27100, lr=0.000192095, gnorm=1.81, loss_scale=32, train_wall=9, gb_free=8.4, wall=3847
+2022-03-10 22:53:19 | INFO | train_inner | epoch 044:    375 / 624 loss=2.819, ppl=7.06, wps=90446.1, ups=11.04, wpb=8192, bsz=16, num_updates=27200, lr=0.000191741, gnorm=1.821, loss_scale=32, train_wall=9, gb_free=8.4, wall=3856
+2022-03-10 22:53:28 | INFO | train_inner | epoch 044:    475 / 624 loss=2.855, ppl=7.23, wps=89839.3, ups=10.97, wpb=8192, bsz=16, num_updates=27300, lr=0.00019139, gnorm=1.831, loss_scale=32, train_wall=9, gb_free=8.4, wall=3866
+2022-03-10 22:53:37 | INFO | train_inner | epoch 044:    575 / 624 loss=2.888, ppl=7.4, wps=89869.3, ups=10.97, wpb=8192, bsz=16, num_updates=27400, lr=0.00019104, gnorm=1.828, loss_scale=32, train_wall=9, gb_free=8.4, wall=3875
+2022-03-10 22:53:41 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:53:51 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:53:51 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:53:53 | INFO | valid | epoch 044 | valid on 'valid' subset | loss 6.452 | ppl 87.57 | wps 263008 | wpb 4053.1 | bsz 7.9 | num_updates 27449 | best_loss 5.455
+2022-03-10 22:53:53 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 44 @ 27449 updates
+2022-03-10 22:53:53 | INFO | fairseq_cli.train | end of epoch 44 (average epoch stats below)
+2022-03-10 22:53:53 | INFO | train | epoch 044 | loss 2.796 | ppl 6.95 | wps 69808.6 | ups 8.53 | wpb 8183.1 | bsz 16 | num_updates 27449 | lr 0.00019087 | gnorm 1.809 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 3891
+2022-03-10 22:53:53 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:53:53 | INFO | fairseq.trainer | begin training epoch 45
+2022-03-10 22:53:53 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:53:56 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:53:56 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:54:02 | INFO | train_inner | epoch 045:     51 / 624 loss=2.754, ppl=6.75, wps=32237.2, ups=3.96, wpb=8140.8, bsz=15.9, num_updates=27500, lr=0.000190693, gnorm=1.809, loss_scale=32, train_wall=9, gb_free=8.4, wall=3900
+2022-03-10 22:54:11 | INFO | train_inner | epoch 045:    151 / 624 loss=2.672, ppl=6.37, wps=89945.2, ups=10.98, wpb=8192, bsz=16, num_updates=27600, lr=0.000190347, gnorm=1.803, loss_scale=32, train_wall=9, gb_free=8.4, wall=3909
+2022-03-10 22:54:20 | INFO | train_inner | epoch 045:    251 / 624 loss=2.727, ppl=6.62, wps=89990.7, ups=10.99, wpb=8187.6, bsz=16, num_updates=27700, lr=0.000190003, gnorm=1.821, loss_scale=32, train_wall=9, gb_free=8.4, wall=3918
+2022-03-10 22:54:29 | INFO | train_inner | epoch 045:    351 / 624 loss=2.778, ppl=6.86, wps=89926.4, ups=10.98, wpb=8192, bsz=16, num_updates=27800, lr=0.000189661, gnorm=1.833, loss_scale=32, train_wall=9, gb_free=8.4, wall=3927
+2022-03-10 22:54:39 | INFO | train_inner | epoch 045:    451 / 624 loss=2.813, ppl=7.03, wps=89868.6, ups=10.97, wpb=8192, bsz=16, num_updates=27900, lr=0.000189321, gnorm=1.836, loss_scale=32, train_wall=9, gb_free=8.4, wall=3936
+2022-03-10 22:54:48 | INFO | train_inner | epoch 045:    551 / 624 loss=2.855, ppl=7.24, wps=89671.4, ups=10.95, wpb=8192, bsz=16, num_updates=28000, lr=0.000188982, gnorm=1.85, loss_scale=32, train_wall=9, gb_free=8.4, wall=3946
+2022-03-10 22:54:54 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:54:58 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:54:58 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:55:00 | INFO | valid | epoch 045 | valid on 'valid' subset | loss 6.475 | ppl 88.94 | wps 280703 | wpb 4053.1 | bsz 7.9 | num_updates 28073 | best_loss 5.455
+2022-03-10 22:55:00 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 45 @ 28073 updates
+2022-03-10 22:55:00 | INFO | fairseq_cli.train | end of epoch 45 (average epoch stats below)
+2022-03-10 22:55:00 | INFO | train | epoch 045 | loss 2.768 | ppl 6.81 | wps 76327.6 | ups 9.33 | wpb 8183.1 | bsz 16 | num_updates 28073 | lr 0.000188736 | gnorm 1.827 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 3958
+2022-03-10 22:55:00 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:55:00 | INFO | fairseq.trainer | begin training epoch 46
+2022-03-10 22:55:00 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:55:03 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:55:03 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:55:07 | INFO | train_inner | epoch 046:     27 / 624 loss=2.79, ppl=6.91, wps=42510.6, ups=5.22, wpb=8151, bsz=15.9, num_updates=28100, lr=0.000188646, gnorm=1.836, loss_scale=32, train_wall=9, gb_free=8.4, wall=3965
+2022-03-10 22:55:16 | INFO | train_inner | epoch 046:    127 / 624 loss=2.621, ppl=6.15, wps=89934.4, ups=11, wpb=8177.4, bsz=16, num_updates=28200, lr=0.000188311, gnorm=1.798, loss_scale=32, train_wall=9, gb_free=8.4, wall=3974
+2022-03-10 22:55:25 | INFO | train_inner | epoch 046:    227 / 624 loss=2.689, ppl=6.45, wps=89393.9, ups=10.91, wpb=8192, bsz=16, num_updates=28300, lr=0.000187978, gnorm=1.827, loss_scale=32, train_wall=9, gb_free=8.4, wall=3983
+2022-03-10 22:55:34 | INFO | train_inner | epoch 046:    327 / 624 loss=2.738, ppl=6.67, wps=90535.3, ups=11.05, wpb=8192, bsz=16, num_updates=28400, lr=0.000187647, gnorm=1.84, loss_scale=32, train_wall=9, gb_free=8.4, wall=3992
+2022-03-10 22:55:43 | INFO | train_inner | epoch 046:    427 / 624 loss=2.784, ppl=6.89, wps=88491, ups=10.8, wpb=8192, bsz=16, num_updates=28500, lr=0.000187317, gnorm=1.865, loss_scale=32, train_wall=9, gb_free=8.4, wall=4001
+2022-03-10 22:55:53 | INFO | train_inner | epoch 046:    527 / 624 loss=2.822, ppl=7.07, wps=90104.6, ups=11, wpb=8192, bsz=16, num_updates=28600, lr=0.000186989, gnorm=1.867, loss_scale=32, train_wall=9, gb_free=8.4, wall=4010
+2022-03-10 22:56:01 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:56:05 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:56:05 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:56:07 | INFO | valid | epoch 046 | valid on 'valid' subset | loss 6.508 | ppl 91.04 | wps 271706 | wpb 4053.1 | bsz 7.9 | num_updates 28697 | best_loss 5.455
+2022-03-10 22:56:07 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 46 @ 28697 updates
+2022-03-10 22:56:07 | INFO | fairseq_cli.train | end of epoch 46 (average epoch stats below)
+2022-03-10 22:56:07 | INFO | train | epoch 046 | loss 2.742 | ppl 6.69 | wps 76437.2 | ups 9.34 | wpb 8183.1 | bsz 16 | num_updates 28697 | lr 0.000186673 | gnorm 1.843 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 4025
+2022-03-10 22:56:07 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:56:07 | INFO | fairseq.trainer | begin training epoch 47
+2022-03-10 22:56:07 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:56:10 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:56:10 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:56:12 | INFO | train_inner | epoch 047:      3 / 624 loss=2.841, ppl=7.17, wps=42654.8, ups=5.23, wpb=8151, bsz=15.9, num_updates=28700, lr=0.000186663, gnorm=1.882, loss_scale=32, train_wall=9, gb_free=8.4, wall=4029
+2022-03-10 22:56:21 | INFO | train_inner | epoch 047:    103 / 624 loss=2.577, ppl=5.97, wps=89631.9, ups=10.94, wpb=8192, bsz=16, num_updates=28800, lr=0.000186339, gnorm=1.798, loss_scale=32, train_wall=9, gb_free=8.4, wall=4039
+2022-03-10 22:56:30 | INFO | train_inner | epoch 047:    203 / 624 loss=2.641, ppl=6.24, wps=89966.7, ups=10.98, wpb=8192, bsz=16, num_updates=28900, lr=0.000186016, gnorm=1.835, loss_scale=32, train_wall=9, gb_free=8.4, wall=4048
+2022-03-10 22:56:39 | INFO | train_inner | epoch 047:    303 / 624 loss=2.704, ppl=6.52, wps=89697.7, ups=10.95, wpb=8192, bsz=16, num_updates=29000, lr=0.000185695, gnorm=1.854, loss_scale=32, train_wall=9, gb_free=8.4, wall=4057
+2022-03-10 22:56:48 | INFO | train_inner | epoch 047:    403 / 624 loss=2.75, ppl=6.73, wps=88804.2, ups=10.84, wpb=8192, bsz=16, num_updates=29100, lr=0.000185376, gnorm=1.868, loss_scale=32, train_wall=9, gb_free=8.4, wall=4066
+2022-03-10 22:56:57 | INFO | train_inner | epoch 047:    503 / 624 loss=2.785, ppl=6.89, wps=89059.3, ups=10.88, wpb=8187.6, bsz=16, num_updates=29200, lr=0.000185058, gnorm=1.875, loss_scale=32, train_wall=9, gb_free=8.4, wall=4075
+2022-03-10 22:57:07 | INFO | train_inner | epoch 047:    603 / 624 loss=2.821, ppl=7.07, wps=87768.4, ups=10.73, wpb=8181.8, bsz=16, num_updates=29300, lr=0.000184742, gnorm=1.887, loss_scale=32, train_wall=9, gb_free=8.4, wall=4085
+2022-03-10 22:57:09 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:57:16 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:57:16 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:57:18 | INFO | valid | epoch 047 | valid on 'valid' subset | loss 6.526 | ppl 92.13 | wps 258995 | wpb 4053.1 | bsz 7.9 | num_updates 29321 | best_loss 5.455
+2022-03-10 22:57:18 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 47 @ 29321 updates
+2022-03-10 22:57:18 | INFO | fairseq_cli.train | end of epoch 47 (average epoch stats below)
+2022-03-10 22:57:18 | INFO | train | epoch 047 | loss 2.717 | ppl 6.57 | wps 71333.7 | ups 8.72 | wpb 8183.1 | bsz 16 | num_updates 29321 | lr 0.000184676 | gnorm 1.855 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 4096
+2022-03-10 22:57:18 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:57:18 | INFO | fairseq.trainer | begin training epoch 48
+2022-03-10 22:57:18 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:57:22 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:57:22 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:57:30 | INFO | train_inner | epoch 048:     79 / 624 loss=2.606, ppl=6.09, wps=34612.1, ups=4.25, wpb=8151, bsz=15.9, num_updates=29400, lr=0.000184428, gnorm=1.831, loss_scale=32, train_wall=9, gb_free=8.4, wall=4108
+2022-03-10 22:57:40 | INFO | train_inner | epoch 048:    179 / 624 loss=2.612, ppl=6.11, wps=87825.2, ups=10.72, wpb=8192, bsz=16, num_updates=29500, lr=0.000184115, gnorm=1.848, loss_scale=32, train_wall=9, gb_free=8.4, wall=4117
+2022-03-10 22:57:49 | INFO | train_inner | epoch 048:    279 / 624 loss=2.662, ppl=6.33, wps=89038.2, ups=10.88, wpb=8181.8, bsz=16, num_updates=29600, lr=0.000183804, gnorm=1.867, loss_scale=32, train_wall=9, gb_free=8.4, wall=4127
+2022-03-10 22:57:58 | INFO | train_inner | epoch 048:    379 / 624 loss=2.712, ppl=6.55, wps=89345.9, ups=10.91, wpb=8192, bsz=16, num_updates=29700, lr=0.000183494, gnorm=1.877, loss_scale=32, train_wall=9, gb_free=8.4, wall=4136
+2022-03-10 22:58:07 | INFO | train_inner | epoch 048:    479 / 624 loss=2.752, ppl=6.74, wps=89176.5, ups=10.89, wpb=8192, bsz=16, num_updates=29800, lr=0.000183186, gnorm=1.885, loss_scale=32, train_wall=9, gb_free=8.4, wall=4145
+2022-03-10 22:58:16 | INFO | train_inner | epoch 048:    579 / 624 loss=2.783, ppl=6.88, wps=88522.3, ups=10.81, wpb=8192, bsz=16, num_updates=29900, lr=0.000182879, gnorm=1.887, loss_scale=32, train_wall=9, gb_free=8.4, wall=4154
+2022-03-10 22:58:21 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:58:31 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:58:31 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:58:34 | INFO | valid | epoch 048 | valid on 'valid' subset | loss 6.562 | ppl 94.48 | wps 269622 | wpb 4053.1 | bsz 7.9 | num_updates 29945 | best_loss 5.455
+2022-03-10 22:58:34 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 48 @ 29945 updates
+2022-03-10 22:58:34 | INFO | fairseq_cli.train | end of epoch 48 (average epoch stats below)
+2022-03-10 22:58:34 | INFO | train | epoch 048 | loss 2.692 | ppl 6.46 | wps 67976.2 | ups 8.31 | wpb 8183.1 | bsz 16 | num_updates 29945 | lr 0.000182742 | gnorm 1.867 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 4171
+2022-03-10 22:58:34 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:58:34 | INFO | fairseq.trainer | begin training epoch 49
+2022-03-10 22:58:34 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:58:37 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:58:37 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:58:43 | INFO | train_inner | epoch 049:     55 / 624 loss=2.649, ppl=6.27, wps=30222.1, ups=3.71, wpb=8146.7, bsz=15.9, num_updates=30000, lr=0.000182574, gnorm=1.855, loss_scale=32, train_wall=9, gb_free=8.4, wall=4181
+2022-03-10 22:58:53 | INFO | train_inner | epoch 049:    155 / 624 loss=2.566, ppl=5.92, wps=89680.6, ups=10.95, wpb=8192, bsz=16, num_updates=30100, lr=0.000182271, gnorm=1.849, loss_scale=32, train_wall=9, gb_free=8.4, wall=4190
+2022-03-10 22:59:02 | INFO | train_inner | epoch 049:    255 / 624 loss=2.626, ppl=6.17, wps=86436.5, ups=10.55, wpb=8192, bsz=16, num_updates=30200, lr=0.000181969, gnorm=1.872, loss_scale=32, train_wall=9, gb_free=8.4, wall=4200
+2022-03-10 22:59:11 | INFO | train_inner | epoch 049:    355 / 624 loss=2.676, ppl=6.39, wps=90032.9, ups=10.99, wpb=8192, bsz=16, num_updates=30300, lr=0.000181668, gnorm=1.892, loss_scale=32, train_wall=9, gb_free=8.4, wall=4209
+2022-03-10 22:59:20 | INFO | train_inner | epoch 049:    455 / 624 loss=2.726, ppl=6.62, wps=89859.8, ups=10.98, wpb=8181.8, bsz=16, num_updates=30400, lr=0.000181369, gnorm=1.907, loss_scale=32, train_wall=9, gb_free=8.4, wall=4218
+2022-03-10 22:59:22 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+2022-03-10 22:59:30 | INFO | train_inner | epoch 049:    556 / 624 loss=2.753, ppl=6.74, wps=87802.9, ups=10.72, wpb=8192, bsz=16, num_updates=30500, lr=0.000181071, gnorm=1.909, loss_scale=32, train_wall=9, gb_free=8.4, wall=4227
+2022-03-10 22:59:36 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 22:59:51 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:59:51 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:59:53 | INFO | valid | epoch 049 | valid on 'valid' subset | loss 6.593 | ppl 96.5 | wps 281800 | wpb 4053.1 | bsz 7.9 | num_updates 30568 | best_loss 5.455
+2022-03-10 22:59:53 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 49 @ 30568 updates
+2022-03-10 22:59:53 | INFO | fairseq_cli.train | end of epoch 49 (average epoch stats below)
+2022-03-10 22:59:53 | INFO | train | epoch 049 | loss 2.668 | ppl 6.36 | wps 64128.5 | ups 7.84 | wpb 8183.1 | bsz 16 | num_updates 30568 | lr 0.00018087 | gnorm 1.883 | loss_scale 32 | train_wall 56 | gb_free 8.4 | wall 4251
+2022-03-10 22:59:53 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 22:59:53 | INFO | fairseq.trainer | begin training epoch 50
+2022-03-10 22:59:53 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 22:59:56 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 22:59:56 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 23:00:01 | INFO | train_inner | epoch 050:     32 / 624 loss=2.689, ppl=6.45, wps=26218.1, ups=3.22, wpb=8146.7, bsz=15.9, num_updates=30600, lr=0.000180775, gnorm=1.897, loss_scale=32, train_wall=9, gb_free=8.4, wall=4258
+2022-03-10 23:00:10 | INFO | train_inner | epoch 050:    132 / 624 loss=2.532, ppl=5.78, wps=89005.9, ups=10.86, wpb=8192, bsz=16, num_updates=30700, lr=0.000180481, gnorm=1.855, loss_scale=32, train_wall=9, gb_free=8.4, wall=4268
+2022-03-10 23:00:19 | INFO | train_inner | epoch 050:    232 / 624 loss=2.593, ppl=6.03, wps=89400.2, ups=10.91, wpb=8192, bsz=16, num_updates=30800, lr=0.000180187, gnorm=1.885, loss_scale=32, train_wall=9, gb_free=8.4, wall=4277
+2022-03-10 23:00:28 | INFO | train_inner | epoch 050:    332 / 624 loss=2.645, ppl=6.25, wps=89747.3, ups=10.96, wpb=8187.6, bsz=16, num_updates=30900, lr=0.000179896, gnorm=1.903, loss_scale=32, train_wall=9, gb_free=8.4, wall=4286
+2022-03-10 23:00:37 | INFO | train_inner | epoch 050:    432 / 624 loss=2.685, ppl=6.43, wps=90176.3, ups=11.01, wpb=8192, bsz=16, num_updates=31000, lr=0.000179605, gnorm=1.908, loss_scale=32, train_wall=9, gb_free=8.4, wall=4295
+2022-03-10 23:00:46 | INFO | train_inner | epoch 050:    532 / 624 loss=2.724, ppl=6.61, wps=90048.1, ups=11.01, wpb=8181.8, bsz=16, num_updates=31100, lr=0.000179316, gnorm=1.924, loss_scale=32, train_wall=9, gb_free=8.4, wall=4304
+2022-03-10 23:00:47 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-03-10 23:00:55 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 23:00:58 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 23:00:58 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 23:01:00 | INFO | valid | epoch 050 | valid on 'valid' subset | loss 6.611 | ppl 97.75 | wps 261980 | wpb 4053.1 | bsz 7.9 | num_updates 31191 | best_loss 5.455
+2022-03-10 23:01:00 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 50 @ 31191 updates
+2022-03-10 23:01:00 | INFO | fairseq_cli.train | end of epoch 50 (average epoch stats below)
+2022-03-10 23:01:00 | INFO | train | epoch 050 | loss 2.646 | ppl 6.26 | wps 75838.7 | ups 9.27 | wpb 8183.1 | bsz 16 | num_updates 31191 | lr 0.000179055 | gnorm 1.898 | loss_scale 16 | train_wall 56 | gb_free 8.4 | wall 4318
+2022-03-10 23:01:00 | INFO | fairseq.data.iterators | grouped total_num_itrs = 624
+2022-03-10 23:01:00 | INFO | fairseq.trainer | begin training epoch 51
+2022-03-10 23:01:00 | INFO | fairseq_cli.train | Start iterating over samples
+2022-03-10 23:01:04 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 23:01:04 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+2022-03-10 23:01:05 | INFO | train_inner | epoch 051:      9 / 624 loss=2.735, ppl=6.66, wps=42568.6, ups=5.22, wpb=8151, bsz=15.9, num_updates=31200, lr=0.000179029, gnorm=1.93, loss_scale=16, train_wall=9, gb_free=8.4, wall=4323
+2022-03-10 23:01:15 | INFO | train_inner | epoch 051:    109 / 624 loss=2.49, ppl=5.62, wps=90336.2, ups=11.03, wpb=8192, bsz=16, num_updates=31300, lr=0.000178743, gnorm=1.862, loss_scale=16, train_wall=9, gb_free=8.4, wall=4332
+2022-03-10 23:01:24 | INFO | train_inner | epoch 051:    209 / 624 loss=2.556, ppl=5.88, wps=89640, ups=10.95, wpb=8187.6, bsz=16, num_updates=31400, lr=0.000178458, gnorm=1.89, loss_scale=16, train_wall=9, gb_free=8.4, wall=4341
+2022-03-10 23:01:33 | INFO | train_inner | epoch 051:    309 / 624 loss=2.609, ppl=6.1, wps=89424.4, ups=10.92, wpb=8192, bsz=16, num_updates=31500, lr=0.000178174, gnorm=1.905, loss_scale=16, train_wall=9, gb_free=8.4, wall=4351
+2022-03-10 23:01:42 | INFO | train_inner | epoch 051:    409 / 624 loss=2.643, ppl=6.25, wps=87052.7, ups=10.63, wpb=8192, bsz=16, num_updates=31600, lr=0.000177892, gnorm=1.916, loss_scale=16, train_wall=9, gb_free=8.4, wall=4360
+2022-03-10 23:01:51 | INFO | train_inner | epoch 051:    509 / 624 loss=2.698, ppl=6.49, wps=89937.3, ups=10.98, wpb=8192, bsz=16, num_updates=31700, lr=0.000177611, gnorm=1.933, loss_scale=16, train_wall=9, gb_free=8.4, wall=4369
+2022-03-10 23:02:54 | INFO | train_inner | epoch 051:    609 / 624 loss=2.726, ppl=6.62, wps=13106.5, ups=1.6, wpb=8181.8, bsz=16, num_updates=31800, lr=0.000177332, gnorm=1.944, loss_scale=16, train_wall=61, gb_free=8.4, wall=4432
+2022-03-10 23:02:55 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-03-10 23:06:58 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+User defined signal 2

@@ -1,0 +1,15 @@
+data/xsum-summarizer/*
+data/xsum-summarizer-bart/*
+data/xsum-summarizer-no-500*
+data/xsum-lang/*
+data/xsum-lang-full/*
+data/xsum-lang-bart*
+data/cnn-dm-summarizer/*
+data/cnn-dm-lang/*
+data/cnn-dm-lang-full/*
+data/bbc-summary-data/*
+data/cnn/*
+data/dailymail/*
+checkpoints/*
+__pycache__/
+src/hyperparameter_search/__pycache__/*

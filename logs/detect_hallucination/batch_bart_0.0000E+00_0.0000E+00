@@ -1,0 +1,159 @@
+Sender: LSF System <lsfadmin@eu-g3-045>
+Subject: Job 222423987: <generate_labels_bart_0.0000E+00_0.0000E+00> in cluster <euler> Done
+
+Job <generate_labels_bart_0.0000E+00_0.0000E+00> was submitted from host <eu-login-15> by user <euler_username> in cluster <euler> at Wed Jun 22 10:56:06 2022
+Job was executed on host(s) <4*eu-g3-045>, in queue <gpu.24h>, as user <euler_username> in cluster <euler> at Wed Jun 22 10:56:21 2022
+</cluster/home/euler_username> was used as the home directory.
+</cluster/work/cotterell/liam/master-thesis> was used as the working directory.
+Started at Wed Jun 22 10:56:21 2022
+Terminated at Wed Jun 22 14:34:56 2022
+Results reported at Wed Jun 22 14:34:56 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+src/detect_hallucination/extract_hypos.sh -b bart_no_500_0.0000E+00_0.0000E+00 bart_0.0000E+00_0.0000E+00; source /cluster/work/cotterell/liam/detect_hall/bin/activate; cd ../fairseq-detect-hallucination/; python util_scripts/predict_hallucination_xsum.py _bart_0.0000E+00_0.0000E+00 ../master-thesis/data/xsum-detect-hall/ ../master-thesis/data/xsum-detect-hall/; source /cluster/work/cotterell/liam/fair_env/bin/activate; cd ../master-thesis/; python src/detect_hallucination/process_labels.py bart_0.0000E+00_0.0000E+00 label_processed_bart_0.0000E+00_0.0000E+00
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   228.73 sec.
+    Max Memory :                                 6247 MB
+    Average Memory :                             163.19 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               1945.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                7
+    Run time :                                   13111 sec.
+    Turnaround time :                            13130 sec.
+
+The output (if any) follows:
+
+/cluster/work/cotterell/liam/fair_env/lib64/python3.8/site-packages/torch/cuda/__init__.py:80: UserWarning: CUDA initialization: Unexpected error from cudaGetDeviceCount(). Did you run some cuda functions before calling NumCudaDevices() that might have already set an error? Error 805: unrecognized error code (Triggered internally at  ../c10/cuda/CUDAFunctions.cpp:112.)
+  return torch._C._cuda_getDeviceCount() > 0
+2022-06-22 14:26:32 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+clean-corpus.perl: processing data/xsum-detect-hall/tmp.en & .en to data/xsum-detect-hall/hypo_bart_0.0000E+00_0.0000E+00, cutoff 1-1000000, ratio 1000000
+.
+Input sentences: 10834  Output sentences:  10834
+log dir: ../master-thesis/data/xsum-detect-hall/
+models/xsum.roberta.tar.gz
+Loaded the model!
+use ref = 0
+2022-06-22 14:34:43 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+i = 0
+i = 100
+i = 200
+i = 300
+i = 400
+i = 500
+i = 600
+i = 700
+i = 800
+i = 900
+i = 1000
+i = 1100
+i = 1200
+i = 1300
+i = 1400
+i = 1500
+i = 1600
+i = 1700
+i = 1800
+i = 1900
+i = 2000
+i = 2100
+i = 2200
+i = 2300
+i = 2400
+i = 2500
+i = 2600
+i = 2700
+i = 2800
+i = 2900
+i = 3000
+i = 3100
+i = 3200
+i = 3300
+i = 3400
+i = 3500
+i = 3600
+i = 3700
+i = 3800
+i = 3900
+i = 4000
+i = 4100
+i = 4200
+i = 4300
+i = 4400
+i = 4500
+i = 4600
+i = 4700
+i = 4800
+i = 4900
+i = 5000
+i = 5100
+i = 5200
+i = 5300
+i = 5400
+i = 5500
+i = 5600
+i = 5700
+i = 5800
+i = 5900
+i = 6000
+i = 6100
+i = 6200
+i = 6300
+i = 6400
+i = 6500
+i = 6600
+i = 6700
+i = 6800
+i = 6900
+i = 7000
+i = 7100
+i = 7200
+i = 7300
+i = 7400
+i = 7500
+i = 7600
+i = 7700
+i = 7800
+i = 7900
+i = 8000
+i = 8100
+i = 8200
+i = 8300
+i = 8400
+i = 8500
+i = 8600
+i = 8700
+i = 8800
+i = 8900
+i = 9000
+i = 9100
+i = 9200
+i = 9300
+i = 9400
+i = 9500
+i = 9600
+i = 9700
+i = 9800
+i = 9900
+i = 10000
+i = 10100
+i = 10200
+i = 10300
+i = 10400
+i = 10500
+i = 10600
+i = 10700
+i = 10800
+Failure percentage: 0.21
+00h:00m:05.50s
+Removing files...
+Done.

@@ -1,0 +1,207 @@
+Sender: LSF System <lsfadmin@eu-g3-029>
+Subject: Job 221942352: <generate_labels_bart_ref_0.0000E+00_0.0000E+00> in cluster <euler> Exited
+
+Job <generate_labels_bart_ref_0.0000E+00_0.0000E+00> was submitted from host <eu-login-10> by user <euler_username> in cluster <euler> at Sat Jun 18 15:38:02 2022
+Job was executed on host(s) <4*eu-g3-029>, in queue <gpu.24h>, as user <euler_username> in cluster <euler> at Sat Jun 18 15:38:35 2022
+</cluster/home/euler_username> was used as the home directory.
+</cluster/work/cotterell/liam/master-thesis> was used as the working directory.
+Started at Sat Jun 18 15:38:35 2022
+Terminated at Sat Jun 18 15:43:39 2022
+Results reported at Sat Jun 18 15:43:39 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+src/detect_hallucination/extract_hypos.sh -b bart_ref_no_500_0.0000E+00_0.0000E+00 bart_ref_0.0000E+00_0.0000E+00; source /cluster/work/cotterell/liam/detect_hall/bin/activate; cd ../fairseq-detect-hallucination/; python util_scripts/predict_hallucination_xsum.py _bart_ref_0.0000E+00_0.0000E+00 ../master-thesis/data/xsum-detect-hall/ ../master-thesis/data/xsum-detect-hall/; source /cluster/work/cotterell/liam/fair_env/bin/activate; cd ../master-thesis/; python src/detect_hallucination/process_labels.py bart_ref_0.0000E+00_0.0000E+00 label_processed_bart_ref
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   53.01 sec.
+    Max Memory :                                 6193 MB
+    Average Memory :                             1826.08 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               1999.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                7
+    Run time :                                   304 sec.
+    Turnaround time :                            337 sec.
+
+The output (if any) follows:
+
+2022-06-18 15:40:19 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+log dir: ../master-thesis/data/xsum-detect-hall/
+models/xsum.roberta.tar.gz
+Loaded the model!
+use ref = 0
+Traceback (most recent call last):
+  File "util_scripts/predict_hallucination_xsum.py", line 109, in <module>
+    token_prediction_labels = convert_gpt2_labels_to_raw_labels(sent,
+  File "util_scripts/predict_hallucination_xsum.py", line 45, in convert_gpt2_labels_to_raw_labels
+    assert len(sent_detoks) == len(detok_labels)
+AssertionError
+2022-06-18 15:43:34 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+Traceback (most recent call last):
+  File "src/detect_hallucination/process_labels.py", line 88, in <module>
+    assert len(hypo_raw) == len(labels_raw)
+AssertionError
+Sender: LSF System <lsfadmin@eu-g3-024>
+Subject: Job 221970627: <generate_labels_bart_ref_0.0000E+00_0.0000E+00> in cluster <euler> Done
+
+Job <generate_labels_bart_ref_0.0000E+00_0.0000E+00> was submitted from host <eu-login-08> by user <euler_username> in cluster <euler> at Sun Jun 19 12:40:59 2022
+Job was executed on host(s) <4*eu-g3-024>, in queue <gpu.24h>, as user <euler_username> in cluster <euler> at Sun Jun 19 12:41:05 2022
+</cluster/home/euler_username> was used as the home directory.
+</cluster/work/cotterell/liam/master-thesis> was used as the working directory.
+Started at Sun Jun 19 12:41:05 2022
+Terminated at Sun Jun 19 12:50:31 2022
+Results reported at Sun Jun 19 12:50:31 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+src/detect_hallucination/extract_hypos.sh -b bart_ref_no_500_0.0000E+00_0.0000E+00 bart_ref_0.0000E+00_0.0000E+00; source /cluster/work/cotterell/liam/detect_hall/bin/activate; cd ../fairseq-detect-hallucination/; python util_scripts/predict_hallucination_xsum.py _bart_ref_0.0000E+00_0.0000E+00 ../master-thesis/data/xsum-detect-hall/ ../master-thesis/data/xsum-detect-hall/; source /cluster/work/cotterell/liam/fair_env/bin/activate; cd ../master-thesis/; python src/detect_hallucination/process_labels.py bart_ref_0.0000E+00_0.0000E+00 label_processed_bart_ref
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   221.53 sec.
+    Max Memory :                                 6383 MB
+    Average Memory :                             1688.05 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               1809.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                7
+    Run time :                                   565 sec.
+    Turnaround time :                            572 sec.
+
+The output (if any) follows:
+
+2022-06-19 12:42:46 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+clean-corpus.perl: processing data/xsum-detect-hall/tmp.en & .en to data/xsum-detect-hall/hypo_bart_ref_0.0000E+00_0.0000E+00, cutoff 1-1000000, ratio 1000000
+.
+Input sentences: 10834  Output sentences:  10834
+log dir: ../master-thesis/data/xsum-detect-hall/
+models/xsum.roberta.tar.gz
+Loaded the model!
+use ref = 0
+2022-06-19 12:50:17 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+i = 0
+i = 100
+i = 200
+i = 300
+i = 400
+i = 500
+i = 600
+i = 700
+i = 800
+i = 900
+i = 1000
+i = 1100
+i = 1200
+i = 1300
+i = 1400
+i = 1500
+i = 1600
+i = 1700
+i = 1800
+i = 1900
+i = 2000
+i = 2100
+i = 2200
+i = 2300
+i = 2400
+i = 2500
+i = 2600
+i = 2700
+i = 2800
+i = 2900
+i = 3000
+i = 3100
+i = 3200
+i = 3300
+i = 3400
+i = 3500
+i = 3600
+i = 3700
+i = 3800
+i = 3900
+i = 4000
+i = 4100
+i = 4200
+i = 4300
+i = 4400
+i = 4500
+i = 4600
+i = 4700
+i = 4800
+i = 4900
+i = 5000
+i = 5100
+i = 5200
+i = 5300
+i = 5400
+i = 5500
+i = 5600
+i = 5700
+i = 5800
+i = 5900
+i = 6000
+i = 6100
+i = 6200
+i = 6300
+i = 6400
+i = 6500
+i = 6600
+i = 6700
+i = 6800
+i = 6900
+i = 7000
+i = 7100
+i = 7200
+i = 7300
+i = 7400
+i = 7500
+i = 7600
+i = 7700
+i = 7800
+i = 7900
+i = 8000
+i = 8100
+i = 8200
+i = 8300
+i = 8400
+i = 8500
+i = 8600
+i = 8700
+i = 8800
+i = 8900
+i = 9000
+i = 9100
+i = 9200
+i = 9300
+i = 9400
+i = 9500
+i = 9600
+i = 9700
+i = 9800
+i = 9900
+i = 10000
+i = 10100
+i = 10200
+i = 10300
+i = 10400
+i = 10500
+i = 10600
+i = 10700
+i = 10800
+Failure percentage: 0.30
+00h:00m:06.14s
+Done.

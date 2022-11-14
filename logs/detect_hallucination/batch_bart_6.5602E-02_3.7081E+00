@@ -1,0 +1,52 @@
+Sender: LSF System <lsfadmin@eu-g3-019>
+Subject: Job 222346055: <generate_labels_bart_6.5602E-02_3.7081E+00> in cluster <euler> Exited
+
+Job <generate_labels_bart_6.5602E-02_3.7081E+00> was submitted from host <eu-login-17> by user <euler_username> in cluster <euler> at Tue Jun 21 18:29:29 2022
+Job was executed on host(s) <4*eu-g3-019>, in queue <gpu.24h>, as user <euler_username> in cluster <euler> at Tue Jun 21 18:29:59 2022
+</cluster/home/euler_username> was used as the home directory.
+</cluster/work/cotterell/liam/master-thesis> was used as the working directory.
+Started at Tue Jun 21 18:29:59 2022
+Terminated at Tue Jun 21 18:38:46 2022
+Results reported at Tue Jun 21 18:38:46 2022
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+src/detect_hallucination/extract_hypos.sh -b bart_no_500_6.5602E-02_3.7081E+00 bart_6.5602E-02_3.7081E+00; source /cluster/work/cotterell/liam/detect_hall/bin/activate; cd ../fairseq-detect-hallucination/; python util_scripts/predict_hallucination_xsum.py _bart_6.5602E-02_3.7081E+00 ../master-thesis/data/xsum-detect-hall/ ../master-thesis/data/xsum-detect-hall/; source /cluster/work/cotterell/liam/fair_env/bin/activate; cd ../master-thesis/; python src/detect_hallucination/process_labels.py bart_6.5602E-02_3.7081E+00 label_processed_bart_6.5602E-02_3.7081E+00
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   29.09 sec.
+    Max Memory :                                 477 MB
+    Average Memory :                             267.95 MB
+    Total Requested Memory :                     8192.00 MB
+    Delta Memory :                               7715.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                6
+    Run time :                                   527 sec.
+    Turnaround time :                            557 sec.
+
+The output (if any) follows:
+
+2022-06-21 18:31:17 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+clean-corpus.perl: processing data/xsum-detect-hall/tmp.en & .en to data/xsum-detect-hall/hypo_bart_6.5602E-02_3.7081E+00, cutoff 1-1000000, ratio 1000000
+Error: data/xsum-detect-hall/tmp.en does not exist at /cluster/home/euler_username/mosesdecoder/scripts/training/clean-corpus-n.perl line 58.
+rm: cannot remove 'data/xsum-detect-hall/tmp.en': No such file or directory
+mv: cannot stat 'data/xsum-detect-hall/hypo_bart_6.5602E-02_3.7081E+00.en': No such file or directory
+log dir: ../master-thesis/data/xsum-detect-hall/
+Traceback (most recent call last):
+  File "util_scripts/predict_hallucination_xsum.py", line 68, in <module>
+    open(os.path.join(raw_dir, hypo_fname), encoding='utf-8') as fin2:
+FileNotFoundError: [Errno 2] No such file or directory: '../master-thesis/data/xsum-detect-hall/hypo_bart_6.5602E-02_3.7081E+00'
+2022-06-21 18:38:44 | INFO | fairseq.tasks.text_to_speech | Please install tensorboardX: pip install tensorboardX
+Traceback (most recent call last):
+  File "src/detect_hallucination/process_labels.py", line 83, in <module>
+    hypo_raw = read_lines(hypo_raw_filename, str)
+  File "src/detect_hallucination/process_labels.py", line 14, in read_lines
+    with open(filename) as file:
+FileNotFoundError: [Errno 2] No such file or directory: 'data/xsum-detect-hall/hypo_bart_6.5602E-02_3.7081E+00'
